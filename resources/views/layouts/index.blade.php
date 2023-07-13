@@ -96,7 +96,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/kanban.html" class="nav-link">
+                        <a href="{{ route('partners.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-columns"></i>
                             <p>
                                 Партнёры

@@ -27,4 +27,5 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/', IndexController::class)->name('admin.index');
 
     Route::resource('/jury', \App\Http\Controllers\Admin\JuryController::class); // CRUD model Jury
+    Route::resource('/partners', \App\Http\Controllers\Admin\PartnerController::class); // CRUD model Partner
 });

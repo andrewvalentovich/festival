@@ -14,6 +14,7 @@ class JuryController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function index()
     {
@@ -23,6 +24,7 @@ class JuryController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function create()
     {
@@ -32,7 +34,7 @@ class JuryController extends Controller
     /**
      * Store a newly created resource in storage.
      * @param StoreRequest $request
-     * @return string
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreRequest $request)
     {
@@ -63,6 +65,7 @@ class JuryController extends Controller
     /**
      * Display the specified resource.
      * @param Jury $jury
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function show(Jury $jury)
     {
@@ -70,7 +73,9 @@ class JuryController extends Controller
     }
 
     /**
+     * Edit the specified resource.
      * @param Jury $jury
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function edit(Jury $jury)
     {
@@ -78,8 +83,10 @@ class JuryController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
      * @param UpdateRequest $request
      * @param Jury $jury
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateRequest $request, Jury $jury)
     {
