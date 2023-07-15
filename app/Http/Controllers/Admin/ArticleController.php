@@ -65,10 +65,10 @@ class ArticleController extends Controller
     public function update(UpdateRequest $request, Article $article)
     {
         $data = $request->validated();
-        
+
         // Изменяем дату-время, чтобы в базу пришло корректное значение
         if(isset($data['created_at'])) {
-
+            // Баг с датой чилсо-месяц -> месяц-число
         }
 
         // Кладём картинку в хранилище, если изменили её
