@@ -20,12 +20,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header border-bottom-0">
                             <a href="{{ route('partners.create') }}" class="btn btn-primary">Добавть партнёра</a>
                         </div>
                         <!-- /.card-header -->
-                        <p class="card-body table-responsive p-0" style="width: 100%;overflow:hidden">
-                            <table class="table table-hover text-nowrap" style="max-width: 100%;overflow:hidden;">
+                        <p class="card-body table-responsive p-0 m-0">
+                            <table class="table table-hover text-nowrap">
                                 <thead>
                                 <tr>
                                     <td>ID</td>

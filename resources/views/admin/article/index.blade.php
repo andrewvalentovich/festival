@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Жюри</h1>
+                    <h1 class="m-0">Новости</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -21,47 +21,45 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('jury.create') }}" class="btn btn-primary">Добавть жюри</a>
+                            <a href="{{ route('articles.create') }}" class="btn btn-primary">Создать новость</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
                             <table class="table table-hover text-nowrap">
                                 <thead>
-                                <tr>
-                                    <td>ID</td>
-                                    <td style="max-width: 160px;">Фото</td>
-                                    <td>Имя</td>
-                                    <td>Фамилия</td>
-                                    <td>Отчество</td>
-                                    <td>Описание</td>
-                                    <td>Действие</td>
-                                </tr>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>Фото</td>
+                                        <td>Заголовок</td>
+                                        <td>Дата создания</td>
+                                        <td>Действия</td>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($jury as $person)
+                                @foreach($articles as $article)
                                     <tr>
-                                        <td>{{ $person->id }}</td>
+                                        <td>{{ $article->id }}</td>
                                         <td>
-                                            <img src="{{ asset('storage/' . $person->preview_image) }}" alt="Фото жюри">
+                                            @if(isset($article->image))
+                                                <img style="max-width: 150px;" src="{{ $article->image_url }}" alt="Картинка новости">
+                                            @endif
                                         </td>
-                                        <td>{{ $person->name }}</td>
-                                        <td>{{ $person->last_name }}</td>
-                                        <td>{{ $person->patronymic }}</td>
-                                        <td>{{ Str::limit($person->description, 30) }}</td>
+                                        <td>{{ $article->title }}</td>
+                                        <td>{{ $article->created_at }}</td>
                                         <td class="project-actions">
-                                            <a class="btn btn-primary btn-sm" href="{{ route('jury.show', $person->id) }}">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('articles.show', $article->id) }}">
                                                 <i class="fas fa-folder"></i>
                                                 Открыть
                                             </a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('jury.edit', $person->id) }}">
+                                            <a class="btn btn-info btn-sm" href="{{ route('articles.edit', $article->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 Редактировать
                                             </a>
-                                            <form id="delete_jury_form-{{ $person->id }}" style="display: none;" action="{{ route('jury.destroy', $person->id) }}" method="post">
+                                            <form id="delete_article_form-{{ $article->id }}" style="display: none;" action="{{ route('articles.destroy', $article->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                             </form>
-                                            <a class="btn btn-danger btn-sm" onclick="document.getElementById('delete_jury_form-{{ $person->id }}').submit(); return false;">
+                                            <a class="btn btn-danger btn-sm" onclick="document.getElementById('delete_article_form-{{ $article->id }}').submit(); return false;">
                                                 <i class="fas fa-trash"></i>
                                                 Удалить
                                             </a>

@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.css') }}">
+    <!-- Moment -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/datepicker/css/datepicker.css') }}">
+    <!-- Datepicker -->
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/datepicker/css/datepicker.css') }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -104,7 +108,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/kanban.html" class="nav-link">
+                        <a href="{{ route('articles.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-book"></i>
                             <p>
                                 Новости
@@ -199,6 +203,10 @@
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
 <!-- Summernote -->
 <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<!-- Moment -->
+<script src="{{ asset('adminlte/plugins/moment/moment.min.js') }}"></script>
+<!-- Datepicker -->
+<script src="{{ asset('adminlte/plugins/datepicker/js/datepicker.js') }}"></script>
 @yield('scripts')
 </body>
 </html>

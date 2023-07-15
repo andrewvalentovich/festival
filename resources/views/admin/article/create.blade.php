@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Добавление жюри</h1>
+                    <h1 class="m-0">Создание новости</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -19,7 +19,7 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-6">
-                    <form action="{{ route('jury.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('articles.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -38,41 +38,27 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="text" value="{{ old('name') }}" name="name" class="form-control" placeholder="Имя">
-                            @error('name')
-                                <label class="text-danger font-weight-normal" for="name">{{ $message }}</label>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" value="{{ old('last_name') }}" name="last_name" class="form-control" placeholder="Фамилия">
-                            @error('last_name')
-                                <label class="text-danger font-weight-normal" for="last_name">{{ $message }}</label>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" value="{{ old('patronymic') }}" name="patronymic" class="form-control" placeholder="Отчество">
-                            @error('patronymic')
-                                <label class="text-danger font-weight-normal" for="patronymic">{{ $message }}</label>
+                            <input type="text" value="{{ old('title') }}" name="title" class="form-control" placeholder="Заголовок">
+                            @error('title')
+                                <label class="text-danger font-weight-normal" for="title">{{ $message }}</label>
                             @enderror
                         </div>
 
                         <div class="form-group">
                             <textarea
-                                name="description"
-                                id="admin_jury_create_textarea"
+                                name="content"
+                                id="admin_article_create_textarea"
                                 class="form-control"
-                                placeholder="Описание"
-                                cols="30" rows="5"
-                            >{{ old('description') }}</textarea>
-                            @error('description')
-                                <label class="text-danger font-weight-normal" for="description">{{ $message }}</label>
+                                placeholder="Контент"
+                                cols="30" rows="10"
+                            >{{ old('content') }}</textarea>
+                            @error('content')
+                                <label class="text-danger font-weight-normal" for="content">{{ $message }}</label>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Добавить">
+                            <input type="submit" class="btn btn-primary" value="Создать">
                         </div>
                     </form>
                 </div>
