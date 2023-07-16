@@ -77,14 +77,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/kanban.html" class="nav-link">
-                            <i class="fas fa-play nav-icon"></i>
-                            <p>
-                                Видео
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{ route('partners.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-columns"></i>
                             <p>
@@ -101,6 +93,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('events.index') }}" class="nav-link">
+                            <i class="nav-icon far fa-calendar-alt"></i>
+                            <p>
+                                События
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="pages/kanban.html" class="nav-link">
                             <i class="nav-icon far fa-envelope"></i>
                             <p>
@@ -109,10 +109,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('events.index') }}" class="nav-link">
-                            <i class="nav-icon far fa-calendar-alt"></i>
+                        <a href="pages/kanban.html" class="nav-link">
+                            <i class="fas fa-play nav-icon"></i>
                             <p>
-                                События
+                                Видео
                             </p>
                         </a>
                     </li>
@@ -166,7 +166,7 @@
 
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2023-{{ now()->year }} <a href="{{ route('welcome') }}">Rachmaninoff Festival</a>.</strong>
+        <strong>Copyright &copy; 2023-{{ now()->year }} <a href="{{ route('home') }}">Rachmaninoff Festival</a>.</strong>
         All rights reserved.
     </footer>
 
