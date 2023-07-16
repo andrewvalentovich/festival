@@ -3,96 +3,45 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Jury\StoreRequest;
-use App\Http\Requests\Admin\Jury\UpdateRequest;
-use App\Models\Jury;
+use App\Http\Requests\Admin\Photo\StoreRequest;
+use App\Http\Requests\Admin\Photo\UpdateRequest;
+use App\Models\Album;
+use App\Models\Photo;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
-class JuryController extends Controller
+class PhotoController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
-    public function index()
+    public function index(Album $album)
     {
-        $jury = Jury::all();
-        return view('admin.jury.index', compact('jury'));
+        $photos = $album->photos()->get();
+
+        return view('admin.photos.index', compact('album', 'photos'));
     }
 
     /**
      * Show the form for creating a new resource.
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
-    public function create()
+    public function create(Album $album)
     {
-        return view('admin.jury.create');
+        return view('admin.photos.create', compact('album'));
     }
 
     /**
      * Store a newly created resource in storage.
-     * @param StoreRequest $request
-     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(StoreRequest $request)
+    public function store(StoreRequest $request, Album $album)
     {
         $data = $request->validated();
 
         // Создание превью
-        if (isset($data['image'])) {
-
-            $previewName = 'prev_' . md5(Carbon::now()
-                . '_' . $data['image']->getClientOriginalName())
-                . '.' .$data['image']->getClientOriginalExtension()
-            ;
-
-            $previewPath = storage_path() . '/app/public/images/' . $previewName;
-
-            // Сохраняем фото и превью (сделанное из фото) в хранилище Storage
-            Image::make($data['image'])->fit(150, 150)->save($previewPath);
-            $data['image'] = Storage::disk('public')->put('/images', $data['image']);
-
-            $data['preview_image'] = 'images/' . $previewName;
-        }
-
-        Jury::create($data);
-
-        return redirect()->route('jury.index');
-    }
-
-    /**
-     * Display the specified resource.
-     * @param Jury $jury
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
-     */
-    public function show(Jury $jury)
-    {
-        return view('admin.jury.show', compact('jury'));
-    }
-
-    /**
-     * Edit the specified resource.
-     * @param Jury $jury
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
-     */
-    public function edit(Jury $jury)
-    {
-        return view('admin.jury.edit', compact('jury'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param UpdateRequest $request
-     * @param Jury $jury
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update(UpdateRequest $request, Jury $jury)
-    {
-        $data = $request->validated();
-
-        // Создание превью, если изменили фотографию
+        // Сохранение картинки и превью_картинки в хранилище
+        // Формирование $data для сохранения картинок в бд
         if (isset($data['image'])) {
 
             $previewName = 'prev_' . md5(Carbon::now()
@@ -109,19 +58,69 @@ class JuryController extends Controller
             $data['preview_image'] = 'images/' . $previewName;
         }
 
-        $jury->update($data);
+        $photo = $album->photos()->create($data);
 
-        return redirect()->route('jury.show', compact('jury'));
+        return redirect()->route('albums.photos.index', compact('album'));
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Photo $photo)
+    {
+        return view('admin.photos.show', compact('photo'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Photo $photo)
+    {
+        return view('admin.photos.edit', compact('photo'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdateRequest $request, Photo $photo)
+    {
+        $data = $request->validated();
+
+        // Создание превью, если изменили фотографию
+        // Сохранение картинки и превью_картинки в хранилище
+        // Формирование $data для сохранения картинок в бд
+        if (isset($data['image'])) {
+
+            $previewName = 'prev_' . md5(Carbon::now()
+                    . '_' . $data['image']->getClientOriginalName())
+                . '.' .$data['image']->getClientOriginalExtension()
+            ;
+
+            $previewPath = storage_path() . '/app/public/images/' . $previewName;
+
+            // Сохраняем фото и превью (сделанное из фото) в хранилище Storage
+            Image::make($data['image'])->fit(150, 150)->save($previewPath);
+            $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+
+            $data['preview_image'] = 'images/' . $previewName;
+        }
+
+        $photo->update($data);
+
+        return redirect()->route('photos.show', compact('photo'));
     }
 
     /**
      * Remove the specified resource from storage.
-     * @param Jury $jury
-     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Jury $jury)
+    public function destroy(Photo $photo)
     {
-        $jury->delete();
-        return redirect()->route('jury.index');
+        $album = $photo->album()->get()[0];
+        // Отвязываем фото от альбома, сохраняем изменения и удаляем фото
+        $photo->album()->dissociate();
+        $photo->save();
+        $photo->delete();
+
+        return redirect()->route('albums.photos.index', compact('album'));
     }
 }

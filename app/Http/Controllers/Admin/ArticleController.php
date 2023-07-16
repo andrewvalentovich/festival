@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Article\StoreRequest;
-use App\Http\Requests\Article\UpdateRequest;
+use App\Http\Requests\Admin\Article\StoreRequest;
+use App\Http\Requests\Admin\Article\UpdateRequest;
 use App\Models\Article;
 use DateTime;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +17,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        return view('admin.article.index', compact('articles'));
+        return view('admin.articles.index', compact('articles'));
     }
 
     /**
@@ -25,11 +25,13 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.article.create');
+        return view('admin.articles.create');
     }
 
     /**
      * Store a newly created resource in storage.
+     * @param StoreRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreRequest $request)
     {
@@ -45,22 +47,29 @@ class ArticleController extends Controller
 
     /**
      * Display the specified resource.
+     * @param Article $article
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function show(Article $article)
     {
-        return view('admin.article.show', compact('article'));
+        return view('admin.articles.show', compact('article'));
     }
 
     /**
      * Show the form for editing the specified resource.
+     * @param Article $article
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function edit(Article $article)
     {
-        return view('admin.article.edit', compact('article'));
+        return view('admin.articles.edit', compact('article'));
     }
 
     /**
      * Update the specified resource in storage.
+     * @param UpdateRequest $request
+     * @param Article $article
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateRequest $request, Article $article)
     {
@@ -83,6 +92,8 @@ class ArticleController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @param Article $article
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Article $article)
     {

@@ -55,14 +55,14 @@
                                 <div class="form-group">
                                     <textarea name="content" class="form-control" placeholder="Контент" cols="30" rows="10">{{ $article->content }}</textarea>
                                     @error('content')
-                                    <label class="text-danger font-weight-normal" for="content">{{ $message }}</label>
+                                        <label class="text-danger font-weight-normal" for="content">{{ $message }}</label>
                                     @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label for="created_at">Дата создания</label>
                                     <div class="input-group date" id="article_edit_created_at">
-                                        <input type="text" name="created_at" value="{{ date('d-m-Y H:i:s', strtotime($article->created_at)) }}" class="form-control" required/>
+                                        <input type="text" name="created_at" value="{{ date('d-m-Y H:i:s', strtotime($article->created_at)) }}" class="form-control"/>
                                         <div class="input-group-addon input-group-append">
                                             <div class="input-group-text">
                                                 <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                     @error('created_at')
-                                    <label class="text-danger font-weight-normal" for="content">{{ $message }}</label>
+                                        <label class="text-danger font-weight-normal" for="created_at">{{ $message }}</label>
                                     @enderror
                                 </div>
 

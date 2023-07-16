@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Jury;
+namespace App\Http\Requests\Admin\Jury;
 
 use Illuminate\Foundation\Http\FormRequest;
 

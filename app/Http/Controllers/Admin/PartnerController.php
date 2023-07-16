@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Partner\StoreRequest;
-use App\Http\Requests\Partner\UpdateRequest;
+use App\Http\Requests\Admin\Partner\StoreRequest;
+use App\Http\Requests\Admin\Partner\UpdateRequest;
 use App\Models\Partner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +17,7 @@ class PartnerController extends Controller
     public function index()
     {
         $partners = Partner::all();
-        return view('admin.partner.index', compact('partners'));
+        return view('admin.partners.index', compact('partners'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        return view('admin.partner.create');
+        return view('admin.partners.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class PartnerController extends Controller
      */
     public function show(Partner $partner)
     {
-        return view('admin.partner.show', compact('partner'));
+        return view('admin.partners.show', compact('partner'));
     }
 
     /**
@@ -62,7 +62,7 @@ class PartnerController extends Controller
      */
     public function edit(Partner $partner)
     {
-        return view('admin.partner.edit', compact('partner'));
+        return view('admin.partners.edit', compact('partner'));
     }
 
     /**

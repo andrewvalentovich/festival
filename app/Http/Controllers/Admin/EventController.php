@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Event\StoreRequest;
-use App\Http\Requests\Event\UpdateRequest;
+use App\Http\Requests\Admin\Event\StoreRequest;
+use App\Http\Requests\Admin\Event\UpdateRequest;
 use App\Models\Event;
 
 class EventController extends Controller
@@ -15,7 +15,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all();
-        return view('admin.event.index', compact('events'));
+        return view('admin.events.index', compact('events'));
     }
 
     /**
@@ -23,11 +23,13 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('admin.event.create');
+        return view('admin.events.create');
     }
 
     /**
      * Store a newly created resource in storage.
+     * @param StoreRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreRequest $request)
     {
@@ -46,22 +48,29 @@ class EventController extends Controller
 
     /**
      * Display the specified resource.
+     * @param Event $event
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function show(Event $event)
     {
-        return view('admin.event.show', compact('event'));
+        return view('admin.events.show', compact('event'));
     }
 
     /**
      * Show the form for editing the specified resource.
+     * @param Event $event
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function edit(Event $event)
     {
-        return view('admin.event.edit', compact('event'));
+        return view('admin.events.edit', compact('event'));
     }
 
     /**
      * Update the specified resource in storage.
+     * @param UpdateRequest $request
+     * @param Event $event
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateRequest $request, Event $event)
     {
@@ -80,6 +89,8 @@ class EventController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @param Event $event
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Event $event)
     {

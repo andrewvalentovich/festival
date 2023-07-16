@@ -43,8 +43,8 @@
                                 <input type="text" id="title" class="form-control" value="{{ $article->title }}" readonly>
                             </div>
                             <div class="form-group">
-                                <label for="description">Контент</label>
-                                <textarea id="description" class="form-control" rows="8" readonly>{{ $article->content }}</textarea>
+                                <label for="content">Контент</label>
+                                <textarea id="content" class="form-control" rows="8" readonly>{{ $article->content }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="created_at">Дата создания</label>
