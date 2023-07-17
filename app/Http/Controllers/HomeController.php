@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('index');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+     */
+    public function home()
+    {
         return view('home');
     }
 
