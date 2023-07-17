@@ -54,13 +54,13 @@
                     <div class="nav__list">
                         <a href="{{ route('home') }}" class="nav__list-item active">Главная</a>
                         <a href="{{ route('about') }}" class="nav__list-item ">О фестивале</a>
-                        <a href="jury.html" class="nav__list-item ">Жюри</a>
-                        <a href="gallery.html" class="nav__list-item ">Фото</a>
-                        <a href="videos.html" class="nav__list-item ">Видео</a>
-                        <a href="partners.html" class="nav__list-item ">Партнеры</a>
-                        <a href="archive.html" class="nav__list-item ">Архив</a>
-                        <a href="events.html" class="nav__list-item ">События</a>
-                        <a href="contacts.html" class="nav__list-item ">Контакты</a>
+                        <a href="{{ route('jury') }}" class="nav__list-item ">Жюри</a>
+                        <a href="{{ route('gallery') }}" class="nav__list-item ">Фото</a>
+                        <a href="{{ route('video') }}" class="nav__list-item ">Видео</a>
+                        <a href="{{ route('partners') }}" class="nav__list-item ">Партнеры</a>
+                        <a href="{{ route('archive') }}" class="nav__list-item ">Архив</a>
+                        <a href="{{ route('events') }}" class="nav__list-item ">События</a>
+                        <a href="{{ route('contacts') }}" class="nav__list-item ">Контакты</a>
                         <!-- <a href="#" class="nav__list-item active">
                             Главная
                         </a>
@@ -100,13 +100,13 @@
         <nav class="header-m__list">
             <a href="{{ route('home') }}" class="nav__list-item active">Главная</a>
             <a href="{{ route('about') }}" class="nav__list-item ">О фестивале</a>
-            <a href="jury.html" class="nav__list-item ">Жюри</a>
-            <a href="gallery.html" class="nav__list-item ">Фото</a>
-            <a href="videos.html" class="nav__list-item ">Видео</a>
-            <a href="partners.html" class="nav__list-item ">Партнеры</a>
-            <a href="archive.html" class="nav__list-item ">Архив</a>
-            <a href="events.html" class="nav__list-item ">События</a>
-            <a href="contacts.html" class="nav__list-item ">Контакты</a>
+            <a href="{{ route('jury') }}" class="nav__list-item ">Жюри</a>
+            <a href="{{ route('gallery') }}" class="nav__list-item ">Фото</a>
+            <a href="{{ route('video') }}" class="nav__list-item ">Видео</a>
+            <a href="{{ route('partners') }}" class="nav__list-item ">Партнеры</a>
+            <a href="{{ route('archive') }}" class="nav__list-item ">Архив</a>
+            <a href="{{ route('events') }}" class="nav__list-item ">События</a>
+            <a href="{{ route('contacts') }}" class="nav__list-item ">Контакты</a>
         </nav>
     </div>
     <div class="type container">

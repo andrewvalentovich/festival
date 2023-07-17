@@ -26,19 +26,53 @@ class HomeController extends Controller
         return view('index');
     }
 
-    /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
-     */
     public function home()
     {
         return view('home');
     }
 
-    /**
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
-     */
     public function about()
     {
         return view('about');
+    }
+
+    public function jury()
+    {
+        return view('about');
+    }
+
+    public function gallery()
+    {
+        return view('about');
+    }
+
+    public function video()
+    {
+        return view('about');
+    }
+
+    public function partners()
+    {
+        return view('about');
+    }
+
+    public function archive()
+    {
+        return view('about');
+    }
+
+    public function events()
+    {
+        return view('about');
+    }
+
+    public function contacts()
+    {
+        return view('about');
+    }
+
+    public function auth_abort()
+    {
+        return view('auth_abort');
     }
 }
