@@ -177,7 +177,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/kanban.html" class="nav-link">
+                        <a href="{{ route('decrees.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Положения
