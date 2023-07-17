@@ -184,6 +184,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('options.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Опции
+                            </p>
+                        </a>
+                    </li>
 
                     <li class="nav-header">Страницы</li>
                     <li class="nav-item">

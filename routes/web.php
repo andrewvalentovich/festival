@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('albums', \App\Http\Controllers\Admin\AlbumController::class); // CRUD model Album
     Route::resource('documents', \App\Http\Controllers\Admin\DocumentController::class); // CRUD model Document
     Route::resource('decrees', \App\Http\Controllers\Admin\DecreeController::class); // CRUD model Decree
+    Route::resource('options', \App\Http\Controllers\Admin\OptionController::class); // CRUD model Option
 
     // docs: https://laravel.com/docs/10.x/controllers
     Route::resource('albums.photos', \App\Http\Controllers\Admin\PhotoController::class)->shallow(); // CRUD model Photo
