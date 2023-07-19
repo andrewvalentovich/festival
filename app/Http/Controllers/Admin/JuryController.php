@@ -51,7 +51,7 @@ class JuryController extends Controller
             $previewPath = storage_path() . '/app/public/images/' . $previewName;
 
             // Сохраняем фото и превью (сделанное из фото) в хранилище Storage
-            Image::make($data['image'])->fit(150, 150)->save($previewPath);
+            Image::make($data['image'])->fit(90, null)->save($previewPath);
             $data['image'] = Storage::disk('public')->put('/images', $data['image']);
 
             $data['preview_image'] = 'images/' . $previewName;
@@ -103,7 +103,7 @@ class JuryController extends Controller
             $previewPath = storage_path() . '/app/public/images/' . $previewName;
 
             // Сохраняем фото и превью (сделанное из фото) в хранилище Storage
-            Image::make($data['image'])->fit(150, 150)->save($previewPath);
+            Image::make($data['image'])->fit(90, null)->save($previewPath);
             $data['image'] = Storage::disk('public')->put('/images', $data['image']);
 
             $data['preview_image'] = 'images/' . $previewName;

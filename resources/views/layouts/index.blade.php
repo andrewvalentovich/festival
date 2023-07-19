@@ -218,7 +218,7 @@
 
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2023-{{ now()->year }} <a href="{{ route('home') }}">Rachmaninoff Festival</a>.</strong>
+        <strong>Copyright &copy; 2023-{{ now()->year }} <a href="{{ route('index') }}">Rachmaninoff Festival</a>.</strong>
         All rights reserved.
     </footer>
 

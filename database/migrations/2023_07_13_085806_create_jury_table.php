@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('patronymic');
             $table->text('description');
-            $table->string('preview_image');
+            $table->string('image');
             $table->timestamps();
         });
     }

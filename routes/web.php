@@ -22,7 +22,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/jury', [App\Http\Controllers\HomeController::class, 'jury'])->name('jury');
 Route::get('/photos', [App\Http\Controllers\HomeController::class, 'gallery'])->name('gallery');
