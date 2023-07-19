@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('decrees', function (Blueprint $table) {
-            $table->id();
-            $table->string('title')->nullable();
-            $table->string('link');
-            $table->string('description')->nullable();
-            $table->timestamps();
+        Schema::table('jury', function (Blueprint $table) {
+            //
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('decrees');
+        Schema::table('jury', function (Blueprint $table) {
+            //
+        });
     }
 };

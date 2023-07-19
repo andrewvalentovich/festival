@@ -27,6 +27,7 @@ class UpdateRequest extends FormRequest
             'name' => 'nullable|string|max:255',
             'last_name' => 'nullable|string|max:255',
             'patronymic' => 'nullable|string|max:255',
+            'merits' => 'nullable|string|max:4096',
             'description' => 'nullable|string|max:4096',
             'image' => ['nullable', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
         ];
@@ -44,6 +45,8 @@ class UpdateRequest extends FormRequest
             'last_name.max' => 'Превышено максимальное количество символов (255)',
             'patronymic.string' => 'Данное поле должно быть строкой',
             'patronymic.max' => 'Превышено максимальное количество символов (255)',
+            'merits.string' => 'Данное поле должно быть строкой',
+            'merits.max' => 'Превышено максимальное количество символов (4096)',
             'description.string' => 'Данное поле должно быть строкой',
             'description.max' => 'Превышено максимальное количество символов (4096)',
             'image.mimes' => 'Прикреплённый файл должен быть: jpeg,jpg,bmp или png',

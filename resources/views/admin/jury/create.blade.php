@@ -60,6 +60,19 @@
 
                         <div class="form-group">
                             <textarea
+                                name="merits"
+                                id="admin_jury_create_merits"
+                                class="form-control"
+                                placeholder="Заслуги/Награды/Достижения"
+                                cols="30" rows="5"
+                            >{{ old('merits') }}</textarea>
+                            @error('merits')
+                                <label class="text-danger font-weight-normal" for="merits">{{ $message }}</label>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <textarea
                                 name="description"
                                 id="admin_jury_create_textarea"
                                 class="form-control"

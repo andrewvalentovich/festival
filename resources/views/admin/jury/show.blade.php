@@ -51,6 +51,10 @@
                                 <input type="text" id="patronymic" class="form-control" value="{{ $jury->patronymic }}" readonly>
                             </div>
                             <div class="form-group">
+                                <label for="merits">Заслуги/Награды/Достижения</label>
+                                <textarea id="description" class="form-control" rows="8" readonly>{{ $jury->merits }}</textarea>
+                            </div>
+                            <div class="form-group">
                                 <label for="description">Описание</label>
                                 <textarea id="description" class="form-control" rows="8" readonly>{{ $jury->description }}</textarea>
                             </div>

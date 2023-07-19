@@ -5,6 +5,8 @@
         О нашем фестивале
     </div>
     <div class="type__about-list">
+
+
         <div class="type__about-item border">
             <div class="type__about-item-body block">
                 <div class="type__about-item-pic">
@@ -28,6 +30,7 @@
                 </div>
             </div>
         </div>
+
         <div class="type__about-item border">
             <div class="type__about-item-body block">
                 <div class="type__about-item-pic">
