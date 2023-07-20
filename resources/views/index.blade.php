@@ -10,7 +10,7 @@
             <div class="type__about-item border">
                 <div class="type__about-item-body block">
                     <div class="type__about-item-pic">
-                        <img src="{{ $person->preview_image_url }}">
+                        <img src="{{ $person->image_url }}">
                     </div>
                     <div class="type__about-item-text">
                         <div class="type__about-item-info">

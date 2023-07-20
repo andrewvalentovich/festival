@@ -52,15 +52,15 @@
             <div class="border nav">
                 <nav class="nav__body block ">
                     <div class="nav__list">
-                        <a href="{{ route('index') }}" class="nav__list-item active">Главная</a>
-                        <a href="{{ route('about') }}" class="nav__list-item ">О фестивале</a>
-                        <a href="{{ route('jury') }}" class="nav__list-item ">Жюри</a>
-                        <a href="{{ route('gallery') }}" class="nav__list-item ">Фото</a>
-                        <a href="{{ route('video') }}" class="nav__list-item ">Видео</a>
-                        <a href="{{ route('partners') }}" class="nav__list-item ">Партнеры</a>
-                        <a href="{{ route('archive') }}" class="nav__list-item ">Архив</a>
-                        <a href="{{ route('events') }}" class="nav__list-item ">События</a>
-                        <a href="{{ route('contacts') }}" class="nav__list-item ">Контакты</a>
+                        <a href="{{ route('index') }}" class="nav__list-item {{ request()->routeIs('index') ? 'active' : '' }}">Главная</a>
+                        <a href="{{ route('about') }}" class="nav__list-item {{ request()->routeIs('about') ? 'active' : '' }}">О фестивале</a>
+                        <a href="{{ route('jury') }}" class="nav__list-item {{ request()->routeIs('jury') ? 'active' : '' }}">Жюри</a>
+                        <a href="{{ route('gallery') }}" class="nav__list-item {{ request()->routeIs('gallery') ? 'active' : '' }}">Фото</a>
+                        <a href="{{ route('video') }}" class="nav__list-item {{ request()->routeIs('video') ? 'active' : '' }}">Видео</a>
+                        <a href="{{ route('partners') }}" class="nav__list-item {{ request()->routeIs('partners') ? 'active' : '' }}">Партнеры</a>
+                        <a href="{{ route('archive') }}" class="nav__list-item {{ request()->routeIs('archive') ? 'active' : '' }}">Архив</a>
+                        <a href="{{ route('events') }}" class="nav__list-item {{ request()->routeIs('events') ? 'active' : '' }}">События</a>
+                        <a href="{{ route('contacts') }}" class="nav__list-item {{ request()->routeIs('contacts') ? 'active' : '' }}">Контакты</a>
                         <!-- <a href="#" class="nav__list-item active">
                             Главная
                         </a>
@@ -98,15 +98,15 @@
 
     <div class="header-m">
         <nav class="header-m__list">
-            <a href="{{ route('index') }}" class="nav__list-item active">Главная</a>
-            <a href="{{ route('about') }}" class="nav__list-item ">О фестивале</a>
-            <a href="{{ route('jury') }}" class="nav__list-item ">Жюри</a>
-            <a href="{{ route('gallery') }}" class="nav__list-item ">Фото</a>
-            <a href="{{ route('video') }}" class="nav__list-item ">Видео</a>
-            <a href="{{ route('partners') }}" class="nav__list-item ">Партнеры</a>
-            <a href="{{ route('archive') }}" class="nav__list-item ">Архив</a>
-            <a href="{{ route('events') }}" class="nav__list-item ">События</a>
-            <a href="{{ route('contacts') }}" class="nav__list-item ">Контакты</a>
+            <a href="{{ route('index') }}" class="nav__list-item {{ request()->routeIs('index') ? 'active' : '' }}">Главная</a>
+            <a href="{{ route('about') }}" class="nav__list-item {{ request()->routeIs('about') ? 'active' : '' }}">О фестивале</a>
+            <a href="{{ route('jury') }}" class="nav__list-item {{ request()->routeIs('jury') ? 'active' : '' }}">Жюри</a>
+            <a href="{{ route('gallery') }}" class="nav__list-item {{ request()->routeIs('gallery') ? 'active' : '' }}">Фото</a>
+            <a href="{{ route('video') }}" class="nav__list-item {{ request()->routeIs('video') ? 'active' : '' }}">Видео</a>
+            <a href="{{ route('partners') }}" class="nav__list-item {{ request()->routeIs('partners') ? 'active' : '' }}">Партнеры</a>
+            <a href="{{ route('archive') }}" class="nav__list-item {{ request()->routeIs('archive') ? 'active' : '' }}">Архив</a>
+            <a href="{{ route('events') }}" class="nav__list-item {{ request()->routeIs('events') ? 'active' : '' }}">События</a>
+            <a href="{{ route('contacts') }}" class="nav__list-item {{ request()->routeIs('contacts') ? 'active' : '' }}">Контакты</a>
         </nav>
     </div>
     <div class="type container">

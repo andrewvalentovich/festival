@@ -42,7 +42,7 @@
                                     <tr>
                                         <td>{{ $person->id }}</td>
                                         <td>
-                                            <img src="{{ asset('storage/' . $person->preview_image) }}" alt="Фото жюри">
+                                            <img src="{{ $person->image_url }}" alt="Фото жюри">
                                         </td>
                                         <td>{{ $person->name }}</td>
                                         <td>{{ $person->last_name }}</td>

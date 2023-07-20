@@ -8,7 +8,6 @@ use App\Http\Requests\Admin\Jury\UpdateRequest;
 use App\Models\Jury;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
 
 class JuryController extends Controller
 {
@@ -40,23 +39,7 @@ class JuryController extends Controller
     {
         $data = $request->validated();
 
-        // Создание превью
-        if (isset($data['image'])) {
-
-            $previewName = 'prev_' . md5(Carbon::now()
-                . '_' . $data['image']->getClientOriginalName())
-                . '.' .$data['image']->getClientOriginalExtension()
-            ;
-
-            $previewPath = storage_path() . '/app/public/images/' . $previewName;
-
-            // Сохраняем фото и превью (сделанное из фото) в хранилище Storage
-            Image::make($data['image'])->fit(90, null)->save($previewPath);
-            $data['image'] = Storage::disk('public')->put('/images', $data['image']);
-
-            $data['preview_image'] = 'images/' . $previewName;
-        }
-
+        $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         Jury::create($data);
 
         return redirect()->route('jury.index');
@@ -92,23 +75,7 @@ class JuryController extends Controller
     {
         $data = $request->validated();
 
-        // Создание превью, если изменили фотографию
-        if (isset($data['image'])) {
-
-            $previewName = 'prev_' . md5(Carbon::now()
-                    . '_' . $data['image']->getClientOriginalName())
-                . '.' .$data['image']->getClientOriginalExtension()
-            ;
-
-            $previewPath = storage_path() . '/app/public/images/' . $previewName;
-
-            // Сохраняем фото и превью (сделанное из фото) в хранилище Storage
-            Image::make($data['image'])->fit(90, null)->save($previewPath);
-            $data['image'] = Storage::disk('public')->put('/images', $data['image']);
-
-            $data['preview_image'] = 'images/' . $previewName;
-        }
-
+        $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         $jury->update($data);
 
         return redirect()->route('jury.show', compact('jury'));
