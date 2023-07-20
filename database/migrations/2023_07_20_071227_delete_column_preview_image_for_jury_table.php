@@ -21,7 +21,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('jury', function (Blueprint $table) {
-            $table->string('preview_image');
+            $table->string('preview_image')->nullable();
         });
     }
 };

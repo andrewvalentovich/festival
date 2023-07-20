@@ -42,7 +42,7 @@
                                     <tr>
                                         <td>{{ $person->id }}</td>
                                         <td>
-                                            <img src="{{ $person->image_url }}" alt="Фото жюри">
+                                            <img style="max-width: 90px;" src="{{ $person->image_url }}" alt="Фото жюри">
                                         </td>
                                         <td>{{ $person->name }}</td>
                                         <td>{{ $person->last_name }}</td>

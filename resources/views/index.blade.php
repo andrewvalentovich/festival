@@ -24,9 +24,6 @@
                                 {{ $person['description'] }}
                             </p>
                         </div>
-                        <a class="type__about-item-more type__link" href="#">
-                            Далее...
-                        </a>
                     </div>
                 </div>
             </div>
