@@ -219,8 +219,8 @@ body {
 }
 
 .header__title {
+  color: #9f248f;
   text-align: center;
-  color: rgba(255, 255, 255, 0.96);
   font-family: Bebas Neue;
   font-style: normal;
   font-weight: 400;
@@ -231,7 +231,12 @@ body {
   flex: 0 0 500px;
 }
 
+.header__title svg path {
+  fill: #9f248f;
+}
+
 .header__title span {
+  color: rgba(255, 255, 255, 0.96);
   display: block;
   font-size: 56.683px;
   font-weight: 400;
@@ -395,6 +400,49 @@ body {
   max-width: none;
 }
 
+.type__about_event .type__about-video {
+  max-width: 250px;
+  margin: 0 auto 10px;
+}
+
+.type__about_event .type__date {
+  font-size: 14px;
+  text-align: right;
+}
+
+.type__about_jury .type__about-body {
+  padding: 26px 10px 30px 10px;
+}
+
+.type__about_jury .type__news-item-text {
+  justify-content: flex-start;
+}
+
+.type__about_jury .type__about-item-lead {
+  max-width: none;
+}
+
+.type__about_jury .type__subtitle {
+  margin-bottom: 5px;
+}
+
+.type__about_events .type__news-item {
+  align-items: flex-start;
+}
+
+.type__about_events .type__news-item:not(:last-child) {
+  margin-bottom: 0px;
+}
+
+.type__about_events .type__news-item-text {
+  justify-content: flex-start;
+  gap: 3px;
+}
+
+.type__about_contacts .type__about-body {
+  padding: 26px 10px 30px 10px;
+}
+
 .type__about-body {
   padding: 26px 20px 30px 20px;
 }
@@ -441,14 +489,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  padding-top: 10px;
 }
 
 .type__about-item-name {
   margin-bottom: 8px;
-}
-
-.type__about-item-name span {
-  display: block;
 }
 
 .type__about-item-more {
@@ -511,6 +556,22 @@ body {
   position: relative;
 }
 
+.type__galler-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.type__galler-item .type__subtitle {
+  font-size: 20px;
+  margin-bottom: 7px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: underline;
+}
+
+.type__galler-item .type__lead {
+  font-size: 15px;
+}
+
 .type__news {
   flex: 0 0 360px;
 }
@@ -534,6 +595,18 @@ body {
   margin-bottom: 20px;
 }
 
+.type__news-item-pic {
+  flex: 0 0 90px;
+  height: 90px;
+}
+
+.type__news-item-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 .type__news-item-text {
   padding-top: 7px;
   display: flex;
@@ -542,9 +615,44 @@ body {
   flex: 1;
 }
 
+.type__news-item-text .type__lead {
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .type__news-item-more {
   margin-left: auto;
   margin-right: 0;
+  width: fit-content;
+}
+
+.type__partners-item {
+  display: flex;
+  gap: 14px;
+  padding: 10px 10px 10px 13px;
+  position: relative;
+  align-items: center;
+}
+
+.type__partners-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.type__partners-item .type__news-item-text {
+  justify-content: flex-start;
+}
+
+.type__partners-item .type__subtitle {
+  margin-bottom: 4px;
+}
+
+.type__partners-item .type__lead {
+  margin-bottom: 5px;
+}
+
+.type__partners-item .type__link {
   width: fit-content;
 }
 
@@ -705,6 +813,11 @@ body {
     order: 0;
   }
 
+  .type__about_events .type__news-item-more {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
   .type__about-item-lead {
     max-width: 350px;
   }
@@ -814,6 +927,22 @@ body {
     padding: 24px 20px 25px 20px;
   }
 
+  .type__about_jury .type__about-body {
+    padding: 24px 20px 25px 20px;
+  }
+
+  .type__about_jury .type__news-item {
+    padding: 10px 0 10px 0;
+  }
+
+  .type__about_partners .type__about-body {
+    padding: 24px 4px 25px 4px;
+  }
+
+  .type__about_contacts .type__about-body {
+    padding: 24px 20px 25px 20px;
+  }
+
   .type__about-body {
     padding: 24px 15px 25px 15px;
   }
@@ -874,6 +1003,10 @@ body {
     margin-right: auto;
   }
 
+  .type__partners-item:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
   .type__content {
     gap: 30px;
   }
@@ -909,20 +1042,4 @@ body {
   .header__logo img {
     height: 30px;
   }
-}
-.type__news-item-text .type__lead {
-  -webkit-line-clamp: 5;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.type__news-item-pic {
-  flex: 0 0 90px;
-  height: 90px;
-}
-.type__news-item-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
 }

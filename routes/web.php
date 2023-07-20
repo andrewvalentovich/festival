@@ -29,6 +29,7 @@ Route::get('/video', [App\Http\Controllers\HomeController::class, 'video'])->nam
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/archive', [App\Http\Controllers\HomeController::class, 'archive'])->name('archive');
 Route::get('/events', [App\Http\Controllers\HomeController::class, 'events'])->name('events');
+Route::get('/events/detail', [App\Http\Controllers\HomeController::class, 'events_detail'])->name('events.detail');
 Route::get('/contacts', [App\Http\Controllers\HomeController::class, 'contacts'])->name('contacts');
 
 // Страница, на которую перенаправляются пользователи не имеющие роли администратора

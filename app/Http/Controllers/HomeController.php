@@ -40,12 +40,12 @@ class HomeController extends Controller
 
     public function jury()
     {
-        return view('about');
+        return view('jury');
     }
 
     public function gallery()
     {
-        return view('about');
+        return view('gallery');
     }
 
     public function video()
@@ -55,7 +55,7 @@ class HomeController extends Controller
 
     public function partners()
     {
-        return view('about');
+        return view('partners');
     }
 
     public function archive()
@@ -65,12 +65,17 @@ class HomeController extends Controller
 
     public function events()
     {
-        return view('about');
+        return view('events.index');
+    }
+
+    public function events_detail()
+    {
+        return view('events.detail');
     }
 
     public function contacts()
     {
-        return view('about');
+        return view('contacts');
     }
 
     public function auth_abort()
