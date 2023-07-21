@@ -28,7 +28,8 @@ Route::get('/video', [App\Http\Controllers\HomeController::class, 'video'])->nam
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/contacts', [App\Http\Controllers\HomeController::class, 'contacts'])->name('contacts');
 
-Route::get('/photos', [App\Http\Controllers\HomeController::class, 'gallery'])->name('gallery');
+Route::get('/galleries', [App\Http\Controllers\Galleries\IndexController::class, 'index'])->name('galleries.index');
+Route::get('/galleries/{slug}', [App\Http\Controllers\Galleries\IndexController::class, 'detail'])->name('galleries.detail');
 
 Route::get('/archive', [App\Http\Controllers\Articles\IndexController::class, 'index'])->name('articles.index');
 Route::get('/archive/{slug}', [App\Http\Controllers\Articles\IndexController::class, 'detail'])->name('articles.detail');
@@ -57,5 +58,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
         // docs: https://laravel.com/docs/10.x/controllers
         Route::resource('albums.photos', \App\Http\Controllers\Admin\PhotoController::class)->shallow(); // CRUD model Photo
+
+        Route::get('/about', [\App\Http\Controllers\Admin\AboutController::class, 'index'])->name('about.index');
+        Route::patch('/about', [\App\Http\Controllers\Admin\AboutController::class, 'update'])->name('about.update');
     });
 });

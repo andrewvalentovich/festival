@@ -39,7 +39,7 @@ class HomeController extends Controller
 
     public function video()
     {
-        return view('about');
+        return view('video');
     }
 
     public function partners()

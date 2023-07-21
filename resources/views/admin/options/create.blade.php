@@ -37,9 +37,15 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="text" value="{{ old('value') }}" name="value" class="form-control" placeholder="Значение опции">
+                            <textarea
+                                name="value"
+                                id="admin_option_value_create_textarea"
+                                class="form-control"
+                                placeholder="Значение"
+                                cols="30" rows="10"
+                            >{{ old('value') }}</textarea>
                             @error('value')
-                                <label class="text-danger font-weight-normal" for="value">{{ $message }}</label>
+                            <label class="text-danger font-weight-normal" for="value">{{ $message }}</label>
                             @enderror
                         </div>
 
@@ -53,7 +59,7 @@
                         <div class="form-group">
                             <textarea
                                 name="description"
-                                id="admin_option_create_textarea"
+                                id="admin_option_description_create_textarea"
                                 class="form-control"
                                 placeholder="Описание"
                                 cols="30" rows="10"

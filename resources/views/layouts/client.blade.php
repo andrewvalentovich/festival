@@ -55,7 +55,7 @@
                         <a href="{{ route('index') }}" class="nav__list-item {{ request()->routeIs('index') ? 'active' : '' }}">Главная</a>
                         <a href="{{ route('about') }}" class="nav__list-item {{ request()->routeIs('about') ? 'active' : '' }}">О фестивале</a>
                         <a href="{{ route('jury') }}" class="nav__list-item {{ request()->routeIs('jury') ? 'active' : '' }}">Жюри</a>
-                        <a href="{{ route('gallery') }}" class="nav__list-item {{ request()->routeIs('gallery') ? 'active' : '' }}">Фото</a>
+                        <a href="{{ route('galleries.index') }}" class="nav__list-item {{ request()->routeIs('galleries.index') ? 'active' : '' }}">Фото</a>
                         <a href="{{ route('video') }}" class="nav__list-item {{ request()->routeIs('video') ? 'active' : '' }}">Видео</a>
                         <a href="{{ route('partners') }}" class="nav__list-item {{ request()->routeIs('partners') ? 'active' : '' }}">Партнеры</a>
                         <a href="{{ route('articles.index') }}" class="nav__list-item {{ request()->routeIs('articles.index') ? 'active' : '' }}">Архив</a>
@@ -101,7 +101,7 @@
             <a href="{{ route('index') }}" class="nav__list-item {{ request()->routeIs('index') ? 'active' : '' }}">Главная</a>
             <a href="{{ route('about') }}" class="nav__list-item {{ request()->routeIs('about') ? 'active' : '' }}">О фестивале</a>
             <a href="{{ route('jury') }}" class="nav__list-item {{ request()->routeIs('jury') ? 'active' : '' }}">Жюри</a>
-            <a href="{{ route('gallery') }}" class="nav__list-item {{ request()->routeIs('gallery') ? 'active' : '' }}">Фото</a>
+            <a href="{{ route('galleries.index') }}" class="nav__list-item {{ request()->routeIs('galleries.index') ? 'active' : '' }}">Фото</a>
             <a href="{{ route('video') }}" class="nav__list-item {{ request()->routeIs('video') ? 'active' : '' }}">Видео</a>
             <a href="{{ route('partners') }}" class="nav__list-item {{ request()->routeIs('partners') ? 'active' : '' }}">Партнеры</a>
             <a href="{{ route('articles.index') }}" class="nav__list-item {{ request()->routeIs('articles.index') ? 'active' : '' }}">Архив</a>

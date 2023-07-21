@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="type__about-title type__title">
-        Новость о фестивале
+        О фестивале
     </div>
     <div class="type__about-video">
         <img src="{{ asset('dist/img/pic/video.png') }}" alt="news">

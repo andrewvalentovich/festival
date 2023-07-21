@@ -12,10 +12,12 @@
             </div>
             <div class="type__news-item-text">
                 <p class="type__subtitle">
-                    {{ $person->last_name }} {{ $person->name }} {{ $person->patronymic }}
+                    {{ $person->last_name }} {{ $person->name }} {{ !is_null($person->patronymic) ? $person->patronymic : '' }}
                 </p>
                 <p class="type__lead">
-                    {{ $person->merits }}
+                    @if(!is_null($person->merits))
+                        {{ $person->merits }}
+                    @endif
                 </p>
             </div>
         </div>

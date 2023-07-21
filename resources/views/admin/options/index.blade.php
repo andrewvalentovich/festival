@@ -31,7 +31,6 @@
                                         <td>ID</td>
                                         <td>Название</td>
                                         <td>Ключ</td>
-                                        <td>Значение</td>
                                         <td>Тип</td>
                                         <td>Действия</td>
                                     </tr>
@@ -46,7 +45,6 @@
                                             <td>Без названия</td>
                                         @endif
                                         <td>{{ $option->key }}</td>
-                                        <td>{{ $option->value }}</td>
                                         <td>{{ $option->type }}</td>
                                         <td class="project-actions">
                                             <a class="btn btn-primary btn-sm" href="{{ route('admin.options.show', $option->id) }}">
