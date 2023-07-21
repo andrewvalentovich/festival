@@ -59,7 +59,7 @@
                         <a href="{{ route('video') }}" class="nav__list-item {{ request()->routeIs('video') ? 'active' : '' }}">Видео</a>
                         <a href="{{ route('partners') }}" class="nav__list-item {{ request()->routeIs('partners') ? 'active' : '' }}">Партнеры</a>
                         <a href="{{ route('articles.index') }}" class="nav__list-item {{ request()->routeIs('articles.index') ? 'active' : '' }}">Архив</a>
-                        <a href="{{ route('events') }}" class="nav__list-item {{ request()->routeIs('events') ? 'active' : '' }}">События</a>
+                        <a href="{{ route('events.index') }}" class="nav__list-item {{ request()->routeIs('events.index') ? 'active' : '' }}">События</a>
                         <a href="{{ route('contacts') }}" class="nav__list-item {{ request()->routeIs('contacts') ? 'active' : '' }}">Контакты</a>
                         <!-- <a href="#" class="nav__list-item active">
                             Главная
@@ -105,7 +105,7 @@
             <a href="{{ route('video') }}" class="nav__list-item {{ request()->routeIs('video') ? 'active' : '' }}">Видео</a>
             <a href="{{ route('partners') }}" class="nav__list-item {{ request()->routeIs('partners') ? 'active' : '' }}">Партнеры</a>
             <a href="{{ route('articles.index') }}" class="nav__list-item {{ request()->routeIs('articles.index') ? 'active' : '' }}">Архив</a>
-            <a href="{{ route('events') }}" class="nav__list-item {{ request()->routeIs('events') ? 'active' : '' }}">События</a>
+            <a href="{{ route('events.index') }}" class="nav__list-item {{ request()->routeIs('events.index') ? 'active' : '' }}">События</a>
             <a href="{{ route('contacts') }}" class="nav__list-item {{ request()->routeIs('contacts') ? 'active' : '' }}">Контакты</a>
         </nav>
     </div>

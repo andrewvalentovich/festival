@@ -5,57 +5,20 @@
         Жюри
     </div>
     <div class="type__news-list">
+        @foreach($jury as $person)
         <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/sotrudnik-3.png') }}" alt="jury">
+            <div class="type__about-item-pic">
+                <img src="{{ $person->image_url }}">
             </div>
             <div class="type__news-item-text">
                 <p class="type__subtitle">
-                    Дмитрий Певцов
+                    {{ $person->last_name }} {{ $person->name }} {{ $person->patronymic }}
                 </p>
                 <p class="type__lead">
-                    Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает...
+                    {{ $person->merits }}
                 </p>
             </div>
         </div>
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/sotrudnik-3.png') }}" alt="jury">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Дмитрий Певцов
-                </p>
-                <p class="type__lead">
-                    Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает...
-                </p>
-            </div>
-        </div>
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/sotrudnik-3.png') }}" alt="jury">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Дмитрий Певцов
-                </p>
-                <p class="type__lead">
-                    Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает...
-                </p>
-            </div>
-        </div>
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/sotrudnik-3.png') }}" alt="jury">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Дмитрий Певцов
-                </p>
-                <p class="type__lead">
-                    Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает...
-                </p>
-            </div>
-        </div>
+        @endforeach
     </div>
 @endsection

@@ -2,92 +2,29 @@
 
 @section('content')
     <div class="type__about-title type__title">
-        События
+        Архив новостей
     </div>
     <div class="type__news-list">
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/news-4.png') }}" alt="news">
+        @foreach($articles as $article)
+            <div class="type__news-item ">
+                <div class="type__news-item-pic">
+                    <img src="{{ $article->image_url }}" alt="article">
+                </div>
+                <div class="type__news-item-text">
+                    <p class="type__subtitle">
+                        {{ $article->title }}
+                    </p>
+                    <p class="type__lead">
+                        {{ $article->content }}
+                    </p>
+                    <a class="type__news-item-more type__link" href="{{ route('articles.detail', $article->slug) }}">
+                        Далее...
+                    </a>
+                </div>
             </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Всероссийский фестиваль народный Рахманинов
-                </p>
-                <p class="type__date">
-										<span>
-											22.07.2023
-										</span>
-                </p>
-                <p class="type__lead">
-                    Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает...
-                </p>
-                <a class="type__news-item-more type__link" href="{{ route('events.detail') }}">
-                    Далее...
-                </a>
-            </div>
-        </div>
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/news-2.png') }}" alt="news">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Всероссийский фестиваль народный Рахманинов
-                </p>
-                <p class="type__date">
-										<span>
-											22.07.2023
-										</span>
-                </p>
-                <p class="type__lead">
-                    Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает...
-                </p>
-                <a class="type__news-item-more type__link" href="{{ route('events.detail') }}">
-                    Далее...
-                </a>
-            </div>
-        </div>
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/news-3.png') }}" alt="news">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Всероссийский фестиваль народный Рахманинов
-                </p>
-                <p class="type__date">
-										<span>
-											22.07.2023
-										</span>
-                </p>
-                <p class="type__lead">
-                    Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает...
-                </p>
-                <a class="type__news-item-more type__link" href="{{ route('events.detail') }}">
-                    Далее...
-                </a>
-            </div>
-        </div>
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/news-1.png') }}" alt="news">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Всероссийский фестиваль народный Рахманинов
-                </p>
-                <p class="type__date">
-										<span>
-											22.07.2023
-										</span>
-                </p>
-                <p class="type__lead">
-                    Повседневная практика показывает, что реализация намеченных плановых заданий в значительной степени обуславливает...
-                </p>
-                <a class="type__news-item-more type__link" href="{{ route('events.detail') }}">
-                    Далее...
-                </a>
-            </div>
-        </div>
+        @endforeach
+    </div>
+    <div>
+        {{ $articles->links() }}
     </div>
 @endsection

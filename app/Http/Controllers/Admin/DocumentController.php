@@ -15,7 +15,7 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        $documents = Document::all();
+        $documents = Document::orderBy('id', 'desc')->get();
         return view('admin.documents.index', compact('documents'));
     }
 

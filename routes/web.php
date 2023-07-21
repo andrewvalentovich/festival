@@ -24,16 +24,18 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/jury', [App\Http\Controllers\HomeController::class, 'jury'])->name('jury');
-Route::get('/photos', [App\Http\Controllers\HomeController::class, 'gallery'])->name('gallery');
 Route::get('/video', [App\Http\Controllers\HomeController::class, 'video'])->name('video');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
+Route::get('/contacts', [App\Http\Controllers\HomeController::class, 'contacts'])->name('contacts');
+
+Route::get('/photos', [App\Http\Controllers\HomeController::class, 'gallery'])->name('gallery');
 
 Route::get('/archive', [App\Http\Controllers\Articles\IndexController::class, 'index'])->name('articles.index');
 Route::get('/archive/{slug}', [App\Http\Controllers\Articles\IndexController::class, 'detail'])->name('articles.detail');
 
-Route::get('/events', [App\Http\Controllers\HomeController::class, 'events'])->name('events');
-Route::get('/events/detail', [App\Http\Controllers\HomeController::class, 'events_detail'])->name('events.detail');
-Route::get('/contacts', [App\Http\Controllers\HomeController::class, 'contacts'])->name('contacts');
+Route::get('/events', [App\Http\Controllers\Events\IndexController::class, 'index'])->name('events.index');
+Route::get('/events/{slug}', [App\Http\Controllers\Events\IndexController::class, 'detail'])->name('events.detail');
+
 
 // Страница, на которую перенаправляются пользователи не имеющие роли администратора
 // Но которые пытались попасть в админку
@@ -44,6 +46,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::group(['as' => 'admin.'], function() {
         Route::resource('jury', \App\Http\Controllers\Admin\JuryController::class); // CRUD model Jury
+        Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class); // CRUD model Contact
         Route::resource('partners', \App\Http\Controllers\Admin\PartnerController::class); // CRUD model Partner
         Route::resource('articles', \App\Http\Controllers\Admin\ArticleController::class); // CRUD model Article
         Route::resource('events', \App\Http\Controllers\Admin\EventController::class); // CRUD model Event

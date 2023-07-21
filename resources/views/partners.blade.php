@@ -5,85 +5,23 @@
         Партнеры
     </div>
     <div class="type__partners-list">
+        @foreach($partners as $partner)
         <div class="type__partners-item">
             <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/partner.png') }}" alt="partner">
+                <img src="{{ $partner->logo_image_url }}" alt="partner">
             </div>
             <div class="type__news-item-text">
                 <p class="type__subtitle">
-                    Сетелем
+                    {{ $partner->title }}
                 </p>
                 <p class="type__lead">
-                    это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"
+                    {{ $partner->description }}
                 </p>
-                <a class="type__link" href="https://driveclickbank.ru/">
-                    https://driveclickbank.ru/
+                <a class="type__link" href="{{ $partner->link }}">
+                    {{ $partner->link }}
                 </a>
             </div>
         </div>
-        <div class="type__partners-item">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/partner.png') }}" alt="partner">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Сетелем
-                </p>
-                <p class="type__lead">
-                    это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"
-                </p>
-                <a class="type__link" href="https://driveclickbank.ru/">
-                    https://driveclickbank.ru/
-                </a>
-            </div>
-        </div>
-        <div class="type__partners-item">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/partner.png') }}" alt="partner">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Сетелем
-                </p>
-                <p class="type__lead">
-                    это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"
-                </p>
-                <a class="type__link" href="https://driveclickbank.ru/">
-                    https://driveclickbank.ru/
-                </a>
-            </div>
-        </div>
-        <div class="type__partners-item">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/partner.png') }}" alt="partner">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Сетелем
-                </p>
-                <p class="type__lead">
-                    это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"
-                </p>
-                <a class="type__link" href="https://driveclickbank.ru/">
-                    https://driveclickbank.ru/
-                </a>
-            </div>
-        </div>
-        <div class="type__partners-item">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/partner.png') }}" alt="partner">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Сетелем
-                </p>
-                <p class="type__lead">
-                    это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой"
-                </p>
-                <a class="type__link" href="https://driveclickbank.ru/">
-                    https://driveclickbank.ru/
-                </a>
-            </div>
-        </div>
+        @endforeach
     </div>
 @endsection

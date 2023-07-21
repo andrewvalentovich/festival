@@ -28,6 +28,24 @@
                                 @method('patch')
 
                                 <div class="form-group">
+                                    @if(isset($article->image))
+                                        <img style="max-width: 100%" class="mb-3" src="{{ asset($event->image_url) }}" alt="Картинка новости">
+                                    @endif
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input" id="image">
+                                            <label class="custom-file-label" for="image">Выберите картинку для замены</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Загрузить</span>
+                                        </div>
+                                    </div>
+                                    @error('image')
+                                    <label class="text-danger font-weight-normal" for="image">{{ $message }}</label>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
                                     <label class="font-weight-normal" for="title">Название</label>
                                     <input type="text" value="{{ $event->title }}" name="title" class="form-control" placeholder="Название">
                                 </div>

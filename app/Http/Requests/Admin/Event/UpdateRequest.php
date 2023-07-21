@@ -28,6 +28,7 @@ class UpdateRequest extends FormRequest
             'date' => 'nullable|string',
             'location' => 'nullable|string',
             'description' => 'nullable|string',
+            'image' => ['nullable', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
         ];
     }
 
@@ -41,6 +42,7 @@ class UpdateRequest extends FormRequest
             'description.string' => 'Данное поле должно быть строкой',
             'date.string' => 'Данное поле должно быть строкой',
             'location.string' => 'Данное поле должно быть строкой',
+            'image.mimes' => 'Прикреплённый файл должен быть: jpeg,jpg,bmp или png',
         ];
     }
 }

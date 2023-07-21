@@ -14,7 +14,7 @@ class OptionController extends Controller
      */
     public function index()
     {
-        $options = Option::all();
+        $options = Option::orderBy('id', 'desc')->get();
         return view('admin.options.index', compact('options'));
     }
 

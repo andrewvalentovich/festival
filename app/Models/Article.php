@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    use HasFactory;
-    use Sluggable;
+    use HasFactory, Sluggable;
 
     protected $table = 'articles';
     protected $guarded = [];
@@ -23,6 +22,11 @@ class Article extends Model
     protected $casts = [
         'created_at' => 'datetime:d-m-Y H:i:s',
     ];
+
+    public function getCreatedDateDayMonthYearFormatAttribute()
+    {
+        return Date('d.m.Y', strtotime($this->created_at));
+    }
 
     public function getImageUrlAttribute()
     {

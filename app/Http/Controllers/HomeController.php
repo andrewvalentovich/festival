@@ -2,23 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\Contact;
 use App\Models\Jury;
-use Illuminate\Http\Request;
+use App\Models\Partner;
 
 class HomeController extends Controller
 {
-    private $articles;
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -26,15 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $jury = Jury::all();
-        $articles = $this->articles;
+        $jury = Jury::orderBy('id', 'desc')->get();
 
-        return view('index', compact('jury', 'articles'));
-    }
-
-    public function home()
-    {
-        return view('home');
+        return view('index', compact('jury'));
     }
 
     public function about()
@@ -44,7 +27,9 @@ class HomeController extends Controller
 
     public function jury()
     {
-        return view('jury');
+        $jury = Jury::orderBy('id', 'desc')->get();
+
+        return view('jury', compact('jury'));
     }
 
     public function gallery()
@@ -59,27 +44,16 @@ class HomeController extends Controller
 
     public function partners()
     {
-        return view('partners');
-    }
+        $partners = Partner::orderBy('id', 'desc')->get();
 
-    public function archive()
-    {
-        return view('about');
-    }
-
-    public function events()
-    {
-        return view('events.index');
-    }
-
-    public function events_detail()
-    {
-        return view('events.detail');
+        return view('partners', compact('partners'));
     }
 
     public function contacts()
     {
-        return view('contacts');
+        $contacts = Contact::orderBy('id', 'desc')->get();
+
+        return view('contacts', compact('contacts'));
     }
 
     public function auth_abort()

@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Мероприятия/События</h1>
+                    <h1 class="m-0">Контакты</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -21,47 +21,51 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('admin.events.create') }}" class="btn btn-primary">Создать мероприятие</a>
+                            <a href="{{ route('admin.contacts.create') }}" class="btn btn-primary">Добавть контакт</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
                             <table class="table table-hover text-nowrap">
                                 <thead>
-                                    <tr>
-                                        <td>ID</td>
-                                        <td>Картинка</td>
-                                        <td>Название</td>
-                                        <td>Место проведения</td>
-                                        <td>Дата проведения</td>
-                                        <td>Действия</td>
-                                    </tr>
+                                <tr>
+                                    <td>ID</td>
+                                    <td style="max-width: 160px;">Фото</td>
+                                    <td>ФИО</td>
+                                    <td>Должность</td>
+                                    <td>Номер телефона</td>
+                                    <td>Email</td>
+                                    <td>Действие</td>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($events as $event)
+                                @foreach($contacts as $person)
                                     <tr>
-                                        <td>{{ $event->id }}</td>
+                                        <td>{{ $person->id }}</td>
                                         <td>
-                                            @if(isset($event->image))
-                                                <img style="max-width: 150px;" src="{{ $event->image_url }}" alt="Картинка события">
-                                            @endif
+                                            <img style="max-width: 90px;" src="{{ $person->image_url }}" alt="Фото жюри">
                                         </td>
-                                        <td>{{ $event->title }}</td>
-                                        <td>{{ $event->location }}</td>
-                                        <td>{{ $event->date }}</td>
+                                        <td>
+                                            {{ $person->name }}
+                                            {{ $person->last_name }}
+                                            {{ !is_null($person->patronymic) ? $person->patronymic : '' }}
+                                        </td>
+                                        <td>{{ $person->position }}</td>
+                                        <td>{{ $person->phone }}</td>
+                                        <td>{{ $person->email }}</td>
                                         <td class="project-actions">
-                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.events.show', $event->id) }}">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.contacts.show', $person->id) }}">
                                                 <i class="fas fa-folder"></i>
                                                 Открыть
                                             </a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('admin.events.edit', $event->id) }}">
+                                            <a class="btn btn-info btn-sm" href="{{ route('admin.contacts.edit', $person->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 Редактировать
                                             </a>
-                                            <form id="delete_event_form-{{ $event->id }}" style="display: none;" action="{{ route('admin.events.destroy', $event->id) }}" method="post">
+                                            <form id="delete_contacts_form-{{ $person->id }}" style="display: none;" action="{{ route('admin.contacts.destroy', $person->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                             </form>
-                                            <a class="btn btn-danger btn-sm" onclick="document.getElementById('delete_event_form-{{ $event->id }}').submit(); return false;">
+                                            <a class="btn btn-danger btn-sm" onclick="document.getElementById('delete_contacts_form-{{ $person->id }}').submit(); return false;">
                                                 <i class="fas fa-trash"></i>
                                                 Удалить
                                             </a>

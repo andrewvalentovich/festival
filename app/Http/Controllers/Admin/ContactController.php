@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Jury\StoreRequest;
-use App\Http\Requests\Admin\Jury\UpdateRequest;
-use App\Models\Jury;
+use App\Http\Requests\Admin\Contact\StoreRequest;
+use App\Http\Requests\Admin\Contact\UpdateRequest;
+use App\Models\Contact;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
-class JuryController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class JuryController extends Controller
      */
     public function index()
     {
-        $jury = Jury::orderBy('id', 'desc')->get();
-        return view('admin.jury.index', compact('jury'));
+        $contacts = Contact::orderBy('id', 'desc')->get();
+        return view('admin.contacts.index', compact('contacts'));
     }
 
     /**
@@ -27,7 +27,7 @@ class JuryController extends Controller
      */
     public function create()
     {
-        return view('admin.jury.create');
+        return view('admin.contacts.create');
     }
 
     /**
@@ -40,57 +40,57 @@ class JuryController extends Controller
         $data = $request->validated();
 
         $data['image'] = Storage::disk('public')->put('/images', $data['image']);
-        Jury::create($data);
+        Contact::create($data);
 
-        return redirect()->route('admin.jury.index');
+        return redirect()->route('admin.contacts.index');
     }
 
     /**
      * Display the specified resource.
-     * @param Jury $jury
+     * @param Contact $contact
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
-    public function show(Jury $jury)
+    public function show(Contact $contact)
     {
-        return view('admin.jury.show', compact('jury'));
+        return view('admin.contacts.show', compact('contact'));
     }
 
     /**
      * Edit the specified resource.
-     * @param Jury $jury
+     * @param Contact $contact
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
-    public function edit(Jury $jury)
+    public function edit(Contact $contact)
     {
-        return view('admin.jury.edit', compact('jury'));
+        return view('admin.contacts.edit', compact('contact'));
     }
 
     /**
      * Update the specified resource in storage.
      * @param UpdateRequest $request
-     * @param Jury $jury
+     * @param Contact $contact
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateRequest $request, Jury $jury)
+    public function update(UpdateRequest $request, Contact $contact)
     {
         $data = $request->validated();
 
         if(isset($data['image'])) {
             $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         }
-        $jury->update($data);
+        $contact->update($data);
 
-        return redirect()->route('admin.jury.show', compact('jury'));
+        return redirect()->route('admin.contacts.show', compact('contact'));
     }
 
     /**
      * Remove the specified resource from storage.
-     * @param Jury $jury
+     * @param Contact $contact
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Jury $jury)
+    public function destroy(Contact $contact)
     {
-        $jury->delete();
-        return redirect()->route('admin.jury.index');
+        $contact->delete();
+        return redirect()->route('admin.contacts.index');
     }
 }

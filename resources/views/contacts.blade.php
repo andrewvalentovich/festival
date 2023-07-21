@@ -5,97 +5,32 @@
         Контакты
     </div>
     <div class="type__news-list">
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/sotrudnik-3.png') }}" alt="jury">
+        @foreach($contacts as $contact)
+        <div class="type__news-item">
+            <div class="type__about-item-pic">
+                <img src="{{ $contact->image_url }}" alt="contact">
             </div>
             <div class="type__news-item-text">
                 <p class="type__subtitle">
-                    Дмитрий Александрович Певцов
+                    {{ $contact->last_name }}
+                    {{ $contact->name }}
+                    {{ !is_null($contact->patronymic) ? $contact->patronymic : '' }}
                 </p>
                 <p class="type__lead">
-                    Директор
+                    {{ $contact->position }}
                 </p>
                 <p class="type__lead">
-                    <a href="mailto:test@mail.ru">
-                        test@mail.ru
+                    <a href="mailto:{{ $contact->email }}">
+                        {{ $contact->email }}
                     </a>
                 </p>
                 <p class="type__lead">
-                    <a href="tel:7123123123">
-                        +7123123123
+                    <a href="tel:{{ $contact->phone }}">
+                        {{ $contact->phone }}
                     </a>
                 </p>
             </div>
         </div>
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/sotrudnik-3.png') }}" alt="jury">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Дмитрий Александрович Певцов
-                </p>
-                <p class="type__lead">
-                    Директор
-                </p>
-                <p class="type__lead">
-                    <a href="mailto:test@mail.ru">
-                        test@mail.ru
-                    </a>
-                </p>
-                <p class="type__lead">
-                    <a href="tel:7123123123">
-                        +7123123123
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/sotrudnik-3.png') }}" alt="jury">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Дмитрий Александрович Певцов
-                </p>
-                <p class="type__lead">
-                    Директор
-                </p>
-                <p class="type__lead">
-                    <a href="mailto:test@mail.ru">
-                        test@mail.ru
-                    </a>
-                </p>
-                <p class="type__lead">
-                    <a href="tel:7123123123">
-                        +7123123123
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="type__news-item ">
-            <div class="type__news-item-pic">
-                <img src="{{ asset('dist/img/pic/sotrudnik-3.png') }}" alt="jury">
-            </div>
-            <div class="type__news-item-text">
-                <p class="type__subtitle">
-                    Дмитрий Александрович Певцов
-                </p>
-                <p class="type__lead">
-                    Директор
-                </p>
-                <p class="type__lead">
-                    <a href="mailto:test@mail.ru">
-                        test@mail.ru
-                    </a>
-                </p>
-                <p class="type__lead">
-                    <a href="tel:7123123123">
-                        +7123123123
-                    </a>
-                </p>
-            </div>
-        </div>
+        @endforeach
     </div>
 @endsection

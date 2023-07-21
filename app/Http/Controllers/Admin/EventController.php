@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Event\StoreRequest;
 use App\Http\Requests\Admin\Event\UpdateRequest;
 use App\Models\Event;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -14,7 +15,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $events = Event::orderBy('id', 'desc')->get();
         return view('admin.events.index', compact('events'));
     }
 
@@ -40,6 +41,9 @@ class EventController extends Controller
         if(isset($data['date'])) {
             $data['date'] = preg_replace('/^(\d{2})\/(\d{2})\/(\d{4})/','$3/$2/$1', $data['date']);
         }
+
+        // Кладём картинку в Storage
+        $data['image'] = Storage::disk('public')->put('/images', $data['image']);
 
         Event::create($data);
 
@@ -80,6 +84,11 @@ class EventController extends Controller
         // Получаем из формы "DD/MM/YYYY HH:mm:ss", преобразуем в "YYYY/MM/DD HH:mm:ss"
         if(isset($data['date'])) {
             $data['date'] = preg_replace('/^(\d{2})\/(\d{2})\/(\d{4})/','$3/$2/$1', $data['date']);
+        }
+
+        // Кладём картинку в хранилище, если изменили её
+        if(isset($data['image'])) {
+            $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         }
 
         $event->update($data);

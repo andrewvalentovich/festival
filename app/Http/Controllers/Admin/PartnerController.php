@@ -16,7 +16,7 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        $partners = Partner::all();
+        $partners = Partner::orderBy('id', 'desc')->get();
         return view('admin.partners.index', compact('partners'));
     }
 

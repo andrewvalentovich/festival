@@ -1,34 +1,34 @@
 <?php
 
-namespace App\Http\Controllers\Articles;
+namespace App\Http\Controllers\Events;
 
 use App\Http\Controllers\Controller;
-use App\Models\Article;
+use App\Models\Event;
 
 class IndexController extends Controller
 {
     /**
-     * List articles.
+     * List events.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        $articles = Article::orderBy('created_at', 'desc')->paginate(10);
+        $events = Event::orderBy('date', 'desc')->paginate(10);
 
-        return view('articles.index', compact( 'articles'));
+        return view('events.index', compact( 'events'));
     }
 
     /**
-     * Show detail article.
+     * Show detail event.
      *
      * @param string $slug
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function detail(string $slug)
     {
-        $article = Article::where('slug', $slug)->first();
+        $event = Event::where('slug', $slug)->first();
 
-        return view('articles.detail', compact('article'));
+        return view('events.detail', compact( 'event'));
     }
 }

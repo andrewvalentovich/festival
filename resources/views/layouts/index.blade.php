@@ -145,6 +145,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('admin.contacts.index') }}" class="nav-link">
+                            <i class="nav-icon far fa-calendar-alt"></i>
+                            <p>
+                                Контакты
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="pages/kanban.html" class="nav-link">
                             <i class="nav-icon far fa-envelope"></i>
                             <p>

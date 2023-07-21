@@ -28,6 +28,7 @@ class StoreRequest extends FormRequest
             'date' => 'required|string',
             'location' => 'required|string',
             'description' => 'required|string',
+            'image' => ['required', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
         ];
     }
 
@@ -45,6 +46,8 @@ class StoreRequest extends FormRequest
             'date.string' => 'Данное поле должно быть строкой',
             'location.required' => 'Данное поле является обязательным для заполнения',
             'location.string' => 'Данное поле должно быть строкой',
+            'image.required' => 'Данное поле является обязательным для заполнения',
+            'image.mimes' => 'Прикреплённый файл должен быть: jpeg,jpg,bmp или png',
         ];
     }
 }

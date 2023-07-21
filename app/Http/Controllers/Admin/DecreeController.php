@@ -14,7 +14,7 @@ class DecreeController extends Controller
      */
     public function index()
     {
-        $decrees = Decree::all();
+        $decrees = Decree::orderBy('id', 'desc')->get();
         return view('admin.decrees.index', compact('decrees'));
     }
 

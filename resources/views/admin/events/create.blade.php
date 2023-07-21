@@ -23,6 +23,21 @@
                         @csrf
 
                         <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="image" class="custom-file-input" id="image">
+                                    <label class="custom-file-label" for="image">Выберите фотографию</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Загрузить</span>
+                                </div>
+                            </div>
+                            @error('image')
+                            <label class="text-danger font-weight-normal" for="image">{{ $message }}</label>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <input type="text" value="{{ old('title') }}" name="title" class="form-control" placeholder="Название">
                             @error('title')
                                 <label class="text-danger font-weight-normal" for="title">{{ $message }}</label>

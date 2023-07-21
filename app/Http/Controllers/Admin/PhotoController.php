@@ -19,7 +19,7 @@ class PhotoController extends Controller
      */
     public function index(Album $album)
     {
-        $photos = $album->photos()->get();
+        $photos = $album->photos()->orderBy('id', 'desc')->get();
 
         return view('admin.photos.index', compact('album', 'photos'));
     }
