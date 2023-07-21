@@ -36,7 +36,7 @@ class AlbumController extends Controller
 
         Album::create($data);
 
-        return redirect()->route('albums.index');
+        return redirect()->route('admin.albums.index');
     }
 
     /**
@@ -69,7 +69,7 @@ class AlbumController extends Controller
 
         $album->update($data);
 
-        return redirect()->route('albums.show', compact('album'));
+        return redirect()->route('admin.albums.show', compact('album'));
     }
 
     /**
@@ -83,6 +83,6 @@ class AlbumController extends Controller
         }
 
         $album->delete();
-        return redirect()->route('albums.index');
+        return redirect()->route('admin.albums.index');
     }
 }

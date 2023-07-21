@@ -58,7 +58,7 @@
                         <a href="{{ route('gallery') }}" class="nav__list-item {{ request()->routeIs('gallery') ? 'active' : '' }}">Фото</a>
                         <a href="{{ route('video') }}" class="nav__list-item {{ request()->routeIs('video') ? 'active' : '' }}">Видео</a>
                         <a href="{{ route('partners') }}" class="nav__list-item {{ request()->routeIs('partners') ? 'active' : '' }}">Партнеры</a>
-                        <a href="{{ route('archive') }}" class="nav__list-item {{ request()->routeIs('archive') ? 'active' : '' }}">Архив</a>
+                        <a href="{{ route('articles.index') }}" class="nav__list-item {{ request()->routeIs('articles.index') ? 'active' : '' }}">Архив</a>
                         <a href="{{ route('events') }}" class="nav__list-item {{ request()->routeIs('events') ? 'active' : '' }}">События</a>
                         <a href="{{ route('contacts') }}" class="nav__list-item {{ request()->routeIs('contacts') ? 'active' : '' }}">Контакты</a>
                         <!-- <a href="#" class="nav__list-item active">
@@ -104,7 +104,7 @@
             <a href="{{ route('gallery') }}" class="nav__list-item {{ request()->routeIs('gallery') ? 'active' : '' }}">Фото</a>
             <a href="{{ route('video') }}" class="nav__list-item {{ request()->routeIs('video') ? 'active' : '' }}">Видео</a>
             <a href="{{ route('partners') }}" class="nav__list-item {{ request()->routeIs('partners') ? 'active' : '' }}">Партнеры</a>
-            <a href="{{ route('archive') }}" class="nav__list-item {{ request()->routeIs('archive') ? 'active' : '' }}">Архив</a>
+            <a href="{{ route('articles.index') }}" class="nav__list-item {{ request()->routeIs('articles.index') ? 'active' : '' }}">Архив</a>
             <a href="{{ route('events') }}" class="nav__list-item {{ request()->routeIs('events') ? 'active' : '' }}">События</a>
             <a href="{{ route('contacts') }}" class="nav__list-item {{ request()->routeIs('contacts') ? 'active' : '' }}">Контакты</a>
         </nav>
@@ -171,28 +171,23 @@
                         Новости
                     </div>
                     <div class="type__news-list">
-                        <div class="type__news-item ">
-                            <div class="type__news-item-pic">
-                                <img src="{{ asset('dist/img/pic/rahmanov.png') }}" alt="news">
-                            </div>
-                            <div class="type__news-item-text">
-                                <p class="type__lead">
-                                Дорогие друзья!
-                                С радостью сообщаем вам о проведении Первого всероссийского фестиваля «Народный Рахманинов»!
-                                Фестиваль приурочен к 150-летию со дня рождения великого русского композитора, дирижера и пианиста Сергея Васильевича Рахманинова, и пройдёт в Москве с 9 по 15 октября 2023 года.
-                                В рамках фестиваля вас ждет множество интересных мероприятий.
-                                Одним из ключевых событий станет всероссийский онлайн-конкурс, в котором смогут принять участие музыканты, поэты, художники – как профессионалы, так и любители. Цель конкурса – привлечь внимание россиян к творческому наследию великого русского композитора.
-                                Члены жюри – известные российские музыканты, артисты и художники – выберут 30 победителей, которые смогут принять участие в очных мероприятиях фестиваля в Москве.
-                                Фестиваль будет проходить на базе Московского музея С.В. Рахманинова и Дома русского зарубежья имени А. И. Солженицына. Здесь состоятся научно-практические конференции, лекции, мастер-классы, выставки, творческие встречи с известными артистами, музыкантами и исследователями творческого наследия композитора, а также показ фильмов о жизни и творчестве С.В. Рахманинова.
-                                В Доме русского зарубежья при поддержке Российской Академии Художеств будет организована выставка художественных работ, посвященных жизни и творчеству композитора. Музыканты-победители конкурса смогут выступить на Гала-концертах вместе с Государственной  академической симфонической капеллой России и Академическим оркестром русских народных инструментов им. Н.Н. Некрасова. Гостями концертов станут известные деятели культуры РФ: Валерий Полянский, Валерий Баринов, Роман Муравицкий, Сергей Поспелов, Михаил Гужов, Валерий Попов, Владимир Тропп, Оксана Федорова и др.
-                                Мы приглашаем вас принять участие в нашем фестивале и окунуться в мир великого русского композитора. Участвуйте в творческом конкурсе, приходите на наши мероприятия, общайтесь с талантливыми людьми и наслаждайтесь прекрасными музыкальными произведениями.
-                                Ждём вас на Первом всероссийском фестивале «Народный Рахманинов»!
-                                </p>
-                                <a class="type__news-item-more type__link" href="#">
-                                    Далее...
-                                </a>
-                            </div>
-                        </div>
+                        @if(isset($sidebar_articles))
+                            @foreach($sidebar_articles as $article)
+                                <div class="type__news-item">
+                                    <div class="type__news-item-pic">
+                                        <img src="{{ $article->image_url }}" alt="news">
+                                    </div>
+                                    <div class="type__news-item-text">
+                                        <p class="type__lead">
+                                            {{ $article->content }}
+                                        </p>
+                                        <a class="type__news-item-more type__link" href="{{ route('articles.detail', $article->slug) }}">
+                                            Далее...
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('articles.create') }}" class="btn btn-primary">Создать новость</a>
+                            <a href="{{ route('admin.articles.create') }}" class="btn btn-primary">Создать новость</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
@@ -47,15 +47,15 @@
                                         <td>{{ $article->title }}</td>
                                         <td>{{ $article->created_at }}</td>
                                         <td class="project-actions">
-                                            <a class="btn btn-primary btn-sm" href="{{ route('articles.show', $article->id) }}">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.articles.show', $article->id) }}">
                                                 <i class="fas fa-folder"></i>
                                                 Открыть
                                             </a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('articles.edit', $article->id) }}">
+                                            <a class="btn btn-info btn-sm" href="{{ route('admin.articles.edit', $article->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 Редактировать
                                             </a>
-                                            <form id="delete_article_form-{{ $article->id }}" style="display: none;" action="{{ route('articles.destroy', $article->id) }}" method="post">
+                                            <form id="delete_article_form-{{ $article->id }}" style="display: none;" action="{{ route('admin.articles.destroy', $article->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                             </form>

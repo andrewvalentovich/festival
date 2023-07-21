@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('events.create') }}" class="btn btn-primary">Создать мероприятие</a>
+                            <a href="{{ route('admin.events.create') }}" class="btn btn-primary">Создать мероприятие</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
@@ -43,15 +43,15 @@
                                         <td>{{ $event->location }}</td>
                                         <td>{{ $event->date }}</td>
                                         <td class="project-actions">
-                                            <a class="btn btn-primary btn-sm" href="{{ route('events.show', $event->id) }}">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.events.show', $event->id) }}">
                                                 <i class="fas fa-folder"></i>
                                                 Открыть
                                             </a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('events.edit', $event->id) }}">
+                                            <a class="btn btn-info btn-sm" href="{{ route('admin.events.edit', $event->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 Редактировать
                                             </a>
-                                            <form id="delete_event_form-{{ $event->id }}" style="display: none;" action="{{ route('events.destroy', $event->id) }}" method="post">
+                                            <form id="delete_event_form-{{ $event->id }}" style="display: none;" action="{{ route('admin.events.destroy', $event->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                             </form>

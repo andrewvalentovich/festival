@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Jury;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private $articles;
     /**
      * Create a new controller instance.
      *
@@ -14,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+
     }
 
     /**
@@ -25,7 +27,9 @@ class HomeController extends Controller
     public function index()
     {
         $jury = Jury::all();
-        return view('index', compact('jury'));
+        $articles = $this->articles;
+
+        return view('index', compact('jury', 'articles'));
     }
 
     public function home()

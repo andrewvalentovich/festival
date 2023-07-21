@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('albums.photos.create', $album->id) }}" class="btn btn-primary">Добавить фотографии</a>
+                            <a href="{{ route('admin.albums.photos.create', $album->id) }}" class="btn btn-primary">Добавить фотографии</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
@@ -45,18 +45,18 @@
                                         </td>
                                         <td>{{ $photo->created_at }}</td>
                                         <td class="project-actions">
-                                            <a class="btn btn-primary btn-sm" href="{{ route('photos.show', $photo->id) }}">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.photos.show', $photo->id) }}">
                                                 <i class="fas fa-folder"></i>
                                                 Открыть
                                             </a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('photos.edit', $photo->id) }}">
+                                            <a class="btn btn-info btn-sm" href="{{ route('admin.photos.edit', $photo->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 Редактировать
                                             </a>
                                             <form
                                                 id="delete_photo_form-{{ $photo->id }}"
                                                 style="display: none;"
-                                                action="{{ route('photos.destroy', $photo->id) }}"
+                                                action="{{ route('admin.photos.destroy', $photo->id) }}"
                                                 method="post"
                                             >
                                                 @csrf

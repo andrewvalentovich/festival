@@ -42,7 +42,7 @@ class JuryController extends Controller
         $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         Jury::create($data);
 
-        return redirect()->route('jury.index');
+        return redirect()->route('admin.jury.index');
     }
 
     /**
@@ -78,7 +78,7 @@ class JuryController extends Controller
         $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         $jury->update($data);
 
-        return redirect()->route('jury.show', compact('jury'));
+        return redirect()->route('admin.jury.show', compact('jury'));
     }
 
     /**
@@ -89,6 +89,6 @@ class JuryController extends Controller
     public function destroy(Jury $jury)
     {
         $jury->delete();
-        return redirect()->route('jury.index');
+        return redirect()->route('admin.jury.index');
     }
 }

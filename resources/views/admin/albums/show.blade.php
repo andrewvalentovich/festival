@@ -21,9 +21,9 @@
                     <div class="card">
                         <div class="card-header d-flex p-3">
                             <div class="mr-3">
-                                <a href="{{ route('albums.edit', $album->id) }}" class="btn btn-primary">Редактировать</a>
+                                <a href="{{ route('admin.albums.edit', $album->id) }}" class="btn btn-primary">Редактировать</a>
                             </div>
-                            <form action="{{ route('albums.destroy', $album->id) }}" method="post">
+                            <form action="{{ route('admin.albums.destroy', $album->id) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" class="btn btn-danger" value="Удалить">

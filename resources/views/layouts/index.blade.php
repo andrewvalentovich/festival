@@ -105,7 +105,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Действия</li>
                     <li class="nav-item">
-                        <a href="{{ route('jury.index') }}" class="nav-link">
+                        <a href="{{ route('admin.jury.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>
                                 Жюри
@@ -113,7 +113,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('albums.index') }}" class="nav-link">
+                        <a href="{{ route('admin.albums.index') }}" class="nav-link">
                             <i class="nav-icon far fa-image"></i>
                             <p>
                                 Фотогалерея
@@ -121,7 +121,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('partners.index') }}" class="nav-link">
+                        <a href="{{ route('admin.partners.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-columns"></i>
                             <p>
                                 Партнёры
@@ -129,7 +129,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('articles.index') }}" class="nav-link">
+                        <a href="{{ route('admin.articles.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-book"></i>
                             <p>
                                 Новости
@@ -137,7 +137,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('events.index') }}" class="nav-link">
+                        <a href="{{ route('admin.events.index') }}" class="nav-link">
                             <i class="nav-icon far fa-calendar-alt"></i>
                             <p>
                                 События
@@ -169,7 +169,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('documents.index') }}" class="nav-link">
+                        <a href="{{ route('admin.documents.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
                             <p>
                                 Документы
@@ -177,7 +177,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('decrees.index') }}" class="nav-link">
+                        <a href="{{ route('admin.decrees.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Положения
@@ -185,7 +185,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('options.index') }}" class="nav-link">
+                        <a href="{{ route('admin.options.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Опции

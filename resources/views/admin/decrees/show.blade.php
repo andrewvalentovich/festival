@@ -21,9 +21,9 @@
                     <div class="card">
                         <div class="card-header d-flex p-3">
                             <div class="mr-3">
-                                <a href="{{ route('decrees.edit', $decree->id) }}" class="btn btn-primary">Редактировать</a>
+                                <a href="{{ route('admin.decrees.edit', $decree->id) }}" class="btn btn-primary">Редактировать</a>
                             </div>
-                            <form action="{{ route('decrees.destroy', $decree->id) }}" method="post">
+                            <form action="{{ route('admin.decrees.destroy', $decree->id) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" class="btn btn-danger" value="Удалить">

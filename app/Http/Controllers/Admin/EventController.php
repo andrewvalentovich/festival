@@ -43,7 +43,7 @@ class EventController extends Controller
 
         Event::create($data);
 
-        return redirect()->route('events.index');
+        return redirect()->route('admin.events.index');
     }
 
     /**
@@ -84,7 +84,7 @@ class EventController extends Controller
 
         $event->update($data);
 
-        return redirect()->route('events.show', compact('event'));
+        return redirect()->route('admin.events.show', compact('event'));
     }
 
     /**
@@ -95,6 +95,6 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         $event->delete();
-        return redirect()->route('events.index');
+        return redirect()->route('admin.events.index');
     }
 }

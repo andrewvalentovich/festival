@@ -42,7 +42,7 @@ class PartnerController extends Controller
 
         Partner::create($data);
 
-        return redirect()->route('partners.index');
+        return redirect()->route('admin.partners.index');
     }
 
     /**
@@ -82,7 +82,7 @@ class PartnerController extends Controller
 
         $partner->update($data);
 
-        return redirect()->route('partners.show', compact('partner'));
+        return redirect()->route('admin.partners.show', compact('partner'));
     }
 
     /**
@@ -93,6 +93,6 @@ class PartnerController extends Controller
     public function destroy(Partner $partner)
     {
         $partner->delete();
-        return redirect()->route('partners.index');
+        return redirect()->route('admin.partners.index');
     }
 }

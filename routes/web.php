@@ -27,7 +27,10 @@ Route::get('/jury', [App\Http\Controllers\HomeController::class, 'jury'])->name(
 Route::get('/photos', [App\Http\Controllers\HomeController::class, 'gallery'])->name('gallery');
 Route::get('/video', [App\Http\Controllers\HomeController::class, 'video'])->name('video');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
-Route::get('/archive', [App\Http\Controllers\HomeController::class, 'archive'])->name('archive');
+
+Route::get('/archive', [App\Http\Controllers\Articles\IndexController::class, 'index'])->name('articles.index');
+Route::get('/archive/{slug}', [App\Http\Controllers\Articles\IndexController::class, 'detail'])->name('articles.detail');
+
 Route::get('/events', [App\Http\Controllers\HomeController::class, 'events'])->name('events');
 Route::get('/events/detail', [App\Http\Controllers\HomeController::class, 'events_detail'])->name('events.detail');
 Route::get('/contacts', [App\Http\Controllers\HomeController::class, 'contacts'])->name('contacts');
@@ -39,15 +42,17 @@ Route::get('/auth_abort', [App\Http\Controllers\HomeController::class, 'auth_abo
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/', IndexController::class)->name('admin.index');
 
-    Route::resource('jury', \App\Http\Controllers\Admin\JuryController::class); // CRUD model Jury
-    Route::resource('partners', \App\Http\Controllers\Admin\PartnerController::class); // CRUD model Partner
-    Route::resource('articles', \App\Http\Controllers\Admin\ArticleController::class); // CRUD model Article
-    Route::resource('events', \App\Http\Controllers\Admin\EventController::class); // CRUD model Event
-    Route::resource('albums', \App\Http\Controllers\Admin\AlbumController::class); // CRUD model Album
-    Route::resource('documents', \App\Http\Controllers\Admin\DocumentController::class); // CRUD model Document
-    Route::resource('decrees', \App\Http\Controllers\Admin\DecreeController::class); // CRUD model Decree
-    Route::resource('options', \App\Http\Controllers\Admin\OptionController::class); // CRUD model Option
+    Route::group(['as' => 'admin.'], function() {
+        Route::resource('jury', \App\Http\Controllers\Admin\JuryController::class); // CRUD model Jury
+        Route::resource('partners', \App\Http\Controllers\Admin\PartnerController::class); // CRUD model Partner
+        Route::resource('articles', \App\Http\Controllers\Admin\ArticleController::class); // CRUD model Article
+        Route::resource('events', \App\Http\Controllers\Admin\EventController::class); // CRUD model Event
+        Route::resource('albums', \App\Http\Controllers\Admin\AlbumController::class); // CRUD model Album
+        Route::resource('documents', \App\Http\Controllers\Admin\DocumentController::class); // CRUD model Document
+        Route::resource('decrees', \App\Http\Controllers\Admin\DecreeController::class); // CRUD model Decree
+        Route::resource('options', \App\Http\Controllers\Admin\OptionController::class); // CRUD model Option
 
-    // docs: https://laravel.com/docs/10.x/controllers
-    Route::resource('albums.photos', \App\Http\Controllers\Admin\PhotoController::class)->shallow(); // CRUD model Photo
+        // docs: https://laravel.com/docs/10.x/controllers
+        Route::resource('albums.photos', \App\Http\Controllers\Admin\PhotoController::class)->shallow(); // CRUD model Photo
+    });
 });

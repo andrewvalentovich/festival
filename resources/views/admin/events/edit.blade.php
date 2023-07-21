@@ -23,7 +23,7 @@
                         <!-- .card-body -->
                         <div class="card-body table-responsive p-3">
 
-                            <form action="{{ route('events.update', $event->id) }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('admin.events.update', $event->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('patch')
 

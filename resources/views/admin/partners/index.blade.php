@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('partners.create') }}" class="btn btn-primary">Добавть партнёра</a>
+                            <a href="{{ route('admin.partners.create') }}" class="btn btn-primary">Добавть партнёра</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
@@ -51,15 +51,15 @@
                                         </td>
                                         <td>{{ Str::limit($partner->description, 30) }}</td>
                                         <td class="project-actions">
-                                            <a class="btn btn-primary btn-sm" href="{{ route('partners.show', $partner->id) }}">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.partners.show', $partner->id) }}">
                                                 <i class="fas fa-folder"></i>
                                                 Открыть
                                             </a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('partners.edit', $partner->id) }}">
+                                            <a class="btn btn-info btn-sm" href="{{ route('admin.partners.edit', $partner->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 Редактировать
                                             </a>
-                                            <form id="delete_partner_form-{{ $partner->id }}" style="display: none;" action="{{ route('partners.destroy', $partner->id) }}" method="post">
+                                            <form id="delete_partner_form-{{ $partner->id }}" style="display: none;" action="{{ route('admin.partners.destroy', $partner->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                             </form>

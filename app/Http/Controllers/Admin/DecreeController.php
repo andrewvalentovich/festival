@@ -36,7 +36,7 @@ class DecreeController extends Controller
         $data = $request->validated();
         Decree::create($data);
 
-        return redirect()->route('decrees.index');
+        return redirect()->route('admin.decrees.index');
     }
 
     /**
@@ -70,7 +70,7 @@ class DecreeController extends Controller
         $data = $request->validated();
         $decree->update($data);
 
-        return redirect()->route('decrees.show', compact('decree'));
+        return redirect()->route('admin.decrees.show', compact('decree'));
     }
 
     /**
@@ -81,6 +81,6 @@ class DecreeController extends Controller
     public function destroy(Decree $decree)
     {
         $decree->delete();
-        return redirect()->route('decrees.index');
+        return redirect()->route('admin.decrees.index');
     }
 }

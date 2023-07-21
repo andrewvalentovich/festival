@@ -37,7 +37,7 @@ class DocumentController extends Controller
         $data = $request->validated();
         Document::create($data);
 
-        return redirect()->route('documents.index');
+        return redirect()->route('admin.documents.index');
     }
 
     /**
@@ -71,7 +71,7 @@ class DocumentController extends Controller
         $data = $request->validated();
         $document->update($data);
 
-        return redirect()->route('documents.show', compact('document'));
+        return redirect()->route('admin.documents.show', compact('document'));
     }
 
     /**
@@ -82,6 +82,6 @@ class DocumentController extends Controller
     public function destroy(Document $document)
     {
         $document->delete();
-        return redirect()->route('documents.index');
+        return redirect()->route('admin.documents.index');
     }
 }

@@ -42,7 +42,7 @@ class ArticleController extends Controller
 
         Article::create($data);
 
-        return redirect()->route('articles.index');
+        return redirect()->route('admin.articles.index');
     }
 
     /**
@@ -87,7 +87,7 @@ class ArticleController extends Controller
 
         $article->update($data);
 
-        return redirect()->route('articles.show', compact('article'));
+        return redirect()->route('admin.articles.show', compact('article'));
     }
 
     /**
@@ -98,6 +98,6 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         $article->delete();
-        return redirect()->route('articles.index');
+        return redirect()->route('admin.articles.index');
     }
 }

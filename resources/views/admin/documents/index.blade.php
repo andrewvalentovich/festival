@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('documents.create') }}" class="btn btn-primary">Добавить документ</a>
+                            <a href="{{ route('admin.documents.create') }}" class="btn btn-primary">Добавить документ</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
@@ -43,15 +43,15 @@
                                             <a target="_blank" href="{{ $document->link }}">{{ Str::limit($document->link, 40) }}</a>
                                         </td>
                                         <td class="project-actions">
-                                            <a class="btn btn-primary btn-sm" href="{{ route('documents.show', $document->id) }}">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.documents.show', $document->id) }}">
                                                 <i class="fas fa-folder"></i>
                                                 Открыть
                                             </a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('documents.edit', $document->id) }}">
+                                            <a class="btn btn-info btn-sm" href="{{ route('admin.documents.edit', $document->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 Редактировать
                                             </a>
-                                            <form id="delete_document_form-{{ $document->id }}" style="display: none;" action="{{ route('documents.destroy', $document->id) }}" method="post">
+                                            <form id="delete_document_form-{{ $document->id }}" style="display: none;" action="{{ route('admin.documents.destroy', $document->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                             </form>

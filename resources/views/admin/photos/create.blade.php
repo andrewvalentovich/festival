@@ -19,7 +19,7 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-6">
-                    <form action="{{ route('albums.photos.store', $album->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin.albums.photos.store', $album->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">

@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('options.create') }}" class="btn btn-primary">Добавить опцию</a>
+                            <a href="{{ route('admin.options.create') }}" class="btn btn-primary">Добавить опцию</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
@@ -49,15 +49,15 @@
                                         <td>{{ $option->value }}</td>
                                         <td>{{ $option->type }}</td>
                                         <td class="project-actions">
-                                            <a class="btn btn-primary btn-sm" href="{{ route('options.show', $option->id) }}">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.options.show', $option->id) }}">
                                                 <i class="fas fa-folder"></i>
                                                 Открыть
                                             </a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('options.edit', $option->id) }}">
+                                            <a class="btn btn-info btn-sm" href="{{ route('admin.options.edit', $option->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 Редактировать
                                             </a>
-                                            <form id="delete_option_form-{{ $option->id }}" style="display: none;" action="{{ route('options.destroy', $option->id) }}" method="post">
+                                            <form id="delete_option_form-{{ $option->id }}" style="display: none;" action="{{ route('admin.options.destroy', $option->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                             </form>

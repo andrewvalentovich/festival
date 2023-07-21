@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('decrees.create') }}" class="btn btn-primary">Добавить положение</a>
+                            <a href="{{ route('admin.decrees.create') }}" class="btn btn-primary">Добавить положение</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
@@ -43,15 +43,15 @@
                                             <a target="_blank" href="{{ $decree->link }}">{{ Str::limit($decree->link, 40) }}</a>
                                         </td>
                                         <td class="project-actions">
-                                            <a class="btn btn-primary btn-sm" href="{{ route('decrees.show', $decree->id) }}">
+                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.decrees.show', $decree->id) }}">
                                                 <i class="fas fa-folder"></i>
                                                 Открыть
                                             </a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('decrees.edit', $decree->id) }}">
+                                            <a class="btn btn-info btn-sm" href="{{ route('admin.decrees.edit', $decree->id) }}">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 Редактировать
                                             </a>
-                                            <form id="delete_decree_form-{{ $decree->id }}" style="display: none;" action="{{ route('decrees.destroy', $decree->id) }}" method="post">
+                                            <form id="delete_decree_form-{{ $decree->id }}" style="display: none;" action="{{ route('admin.decrees.destroy', $decree->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                             </form>

@@ -36,7 +36,7 @@ class OptionController extends Controller
         $data = $request->validated();
         Option::create($data);
 
-        return redirect()->route('options.index');
+        return redirect()->route('admin.options.index');
     }
 
     /**
@@ -70,7 +70,7 @@ class OptionController extends Controller
         $data = $request->validated();
         $option->update($data);
 
-        return redirect()->route('options.show', compact('option'));
+        return redirect()->route('admin.options.show', compact('option'));
     }
 
     /**
@@ -81,6 +81,6 @@ class OptionController extends Controller
     public function destroy(Option $option)
     {
         $option->delete();
-        return redirect()->route('options.index');
+        return redirect()->route('admin.options.index');
     }
 }

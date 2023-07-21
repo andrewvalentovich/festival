@@ -60,7 +60,7 @@ class PhotoController extends Controller
 
         $photo = $album->photos()->create($data);
 
-        return redirect()->route('albums.photos.index', compact('album'));
+        return redirect()->route('admin.albums.photos.index', compact('album'));
     }
 
     /**
@@ -107,7 +107,7 @@ class PhotoController extends Controller
 
         $photo->update($data);
 
-        return redirect()->route('photos.show', compact('photo'));
+        return redirect()->route('admin.photos.show', compact('photo'));
     }
 
     /**
@@ -121,6 +121,6 @@ class PhotoController extends Controller
         $photo->save();
         $photo->delete();
 
-        return redirect()->route('albums.photos.index', compact('album'));
+        return redirect()->route('admin.albums.photos.index', compact('album'));
     }
 }
