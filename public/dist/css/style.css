@@ -495,7 +495,9 @@ body {
 .type__about-item-name {
   margin-bottom: 8px;
 }
-
+.type__about-item-name span {
+  display: block;
+}
 .type__about-item-more {
   margin-left: auto;
   margin-right: 0;
