@@ -68,12 +68,7 @@ class HomeController extends Controller
 
     public function calendar()
     {
-        $events = Event::orderBy('id', 'desc')->get(['title', 'date', 'slug']);
-        foreach ($events as $event) {
-            $event->date = Date('d.m.Y', strtotime($event->date));
-        }
-
-        return view('calendar', ['events' => json_encode($events, JSON_UNESCAPED_UNICODE)]);
+        return view('calendar');
     }
 
     public function partners()

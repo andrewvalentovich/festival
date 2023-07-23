@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ asset('dist/files/fonts/stylesheet.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('dist/css/style.css') }}">
+    @yield('styles')
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/css/app.css'])
     <title>Festival</title>
 </head>
 <body>
@@ -207,10 +209,8 @@
         </div>
     </footer>
 </div>
-<script src="{{ asset('dist/js/jquery.js') }}"></script>
-<script src="{{ asset('dist/js/bodyScrollLock.min.js') }}"></script>
-<script src="{{ asset('dist/js/app.js') }}"></script>
 <script src="{{ asset('https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js') }}"></script>
-
+@vite(['resources/js/app.js'])
+@yield('scripts')
 </body>
 </html>
