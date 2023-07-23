@@ -31,6 +31,7 @@
                                         <td>ID</td>
                                         <td>Название</td>
                                         <td>Ссылка</td>
+                                        <td>Ссылка на файл</td>
                                         <td>Действия</td>
                                     </tr>
                                 </thead>
@@ -41,6 +42,9 @@
                                         <td>{{ $decree->title }}</td>
                                         <td>
                                             <a target="_blank" href="{{ $decree->link }}">{{ Str::limit($decree->link, 40) }}</a>
+                                        </td>
+                                        <td>
+                                            <a target="_blank" href="{{ $decree->file_url }}">{{ Str::limit($decree->file_url, 40) }}</a>
                                         </td>
                                         <td class="project-actions">
                                             <a class="btn btn-primary btn-sm" href="{{ route('admin.decrees.show', $decree->id) }}">

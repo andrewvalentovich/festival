@@ -36,16 +36,6 @@ class OptionController extends Controller
     {
         $data = $request->validated();
 
-        if ($data['type'] === "image" || $data['type'] === "img") {
-            $data['value'] = Storage::disk('public')->put('/images', $data['file']);
-        }
-
-        if ($data['type'] === "document" || $data['type'] === "docs") {
-            $data['value'] = Storage::disk('public')->put('/docs', $data['file']);
-        }
-
-        unset($data['file']);
-
         Option::create($data);
 
         return redirect()->route('admin.options.index');

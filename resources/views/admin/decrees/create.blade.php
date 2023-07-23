@@ -37,6 +37,18 @@
                         </div>
 
                         <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="file" class="custom-file-input" id="file">
+                                    <label class="custom-file-label" for="file">Выберите файл для загрузки</label>
+                                </div>
+                            </div>
+                            @error('file')
+                            <label class="text-danger font-weight-normal" for="file">{{ $message }}</label>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <textarea
                                 name="description"
                                 id="admin_article_create_textarea"

@@ -27,6 +27,7 @@ class UpdateRequest extends FormRequest
             'title' => 'nullable|string',
             'link' => 'nullable|string',
             'description' => 'nullable|string',
+            'file' => 'nullable|file',
         ];
     }
 
@@ -39,6 +40,7 @@ class UpdateRequest extends FormRequest
             'title.string' => 'Данное поле должно быть строкой',
             'description.string' => 'Данное поле должно быть строкой',
             'link.string' => 'Данное поле должно быть строкой',
+            'file.file' => 'Данное поле должно быть файлом',
         ];
     }
 }

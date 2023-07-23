@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('jury', function (Blueprint $table) {
-            $table->string('patronymic')->nullable(true)->change();
+        Schema::table('documents', function (Blueprint $table) {
+            $table->string('file')->nullable();
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('jury', function (Blueprint $table) {
-            $table->string('patronymic')->nullable(false)->change();
+        Schema::table('documents', function (Blueprint $table) {
+            $table->dropColumn('file');
         });
     }
 };

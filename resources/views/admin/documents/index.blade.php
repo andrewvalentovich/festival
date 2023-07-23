@@ -31,6 +31,7 @@
                                         <td>ID</td>
                                         <td>Название</td>
                                         <td>Ссылка на документ</td>
+                                        <td>Ссылка на файл</td>
                                         <td>Действия</td>
                                     </tr>
                                 </thead>
@@ -41,6 +42,9 @@
                                         <td>{{ $document->title }}</td>
                                         <td>
                                             <a target="_blank" href="{{ $document->link }}">{{ Str::limit($document->link, 40) }}</a>
+                                        </td>
+                                        <td>
+                                            <a target="_blank" href="{{ $document->file_url }}">{{ Str::limit($document->file_url, 40) }}</a>
                                         </td>
                                         <td class="project-actions">
                                             <a class="btn btn-primary btn-sm" href="{{ route('admin.documents.show', $document->id) }}">

@@ -25,8 +25,9 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'nullable|string',
-            'link' => 'required|string',
+            'link' => 'nullable|string',
             'description' => 'nullable|string',
+            'file' => 'nullable|file',
         ];
     }
 
@@ -39,7 +40,8 @@ class StoreRequest extends FormRequest
             'title.string' => 'Данное поле должно быть строкой',
             'link.required' => 'Данное поле является обязательным для заполнения',
             'link.string' => 'Данное поле должно быть строкой',
-            'content.string' => 'Данное поле должно быть строкой',
+            'description.string' => 'Данное поле должно быть строкой',
+            'file.file' => 'Данное поле должно быть файлом',
         ];
     }
 }

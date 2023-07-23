@@ -12,4 +12,9 @@ class Decree extends Model
     protected $table = 'decrees';
     protected $guarded = [];
     protected $fillable = [];
+
+    public function getFileUrlAttribute()
+    {
+        return url('storage/' . $this->file);
+    }
 }

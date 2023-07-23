@@ -8,7 +8,7 @@
         @if(count($documents) != 0)
             @foreach($documents as $document)
                 <div class="type__galler-item">
-                    <a target="_blank" href="{{ $document->link }}" class="type__subtitle">
+                    <a target="_blank" href="{{ !is_null($document->file_url) ? $document->file_url : $document->link }}" class="type__subtitle">
                         {{ $document->title }}
                     </a>
                 </div>

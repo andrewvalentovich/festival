@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Decree\StoreRequest;
 use App\Http\Requests\Admin\Decree\UpdateRequest;
 use App\Models\Decree;
+use Illuminate\Support\Facades\Storage;
 
 class DecreeController extends Controller
 {
@@ -34,6 +35,10 @@ class DecreeController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
+
+        // Кладём файл в Storage
+        $data['file'] = Storage::disk('public')->put('/docs', $data['file']);
+
         Decree::create($data);
 
         return redirect()->route('admin.decrees.index');
@@ -68,6 +73,11 @@ class DecreeController extends Controller
     public function update(UpdateRequest $request, Decree $decree)
     {
         $data = $request->validated();
+
+        // Кладём файл в хранилище, если изменили его
+        if(isset($data['file'])) {
+            $data['file'] = Storage::disk('public')->put('/docs', $data['file']);
+        }
         $decree->update($data);
 
         return redirect()->route('admin.decrees.show', compact('decree'));

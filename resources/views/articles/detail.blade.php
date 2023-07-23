@@ -7,7 +7,7 @@
     <div class="type__about-video">
         <img src="{{ $article->image_url }}" alt="article">
     </div>
-    <p class="type__about-item-lead  type__lead">
+    <p class="type__about-item-lead  type__lead" style="white-space: pre-line;">
         {{ $article->content }}
     </p>
     <p class="type__lead type__date">

@@ -8,7 +8,7 @@
         @if(count($decrees) != 0)
             @foreach($decrees as $decree)
                 <div class="type__galler-item">
-                    <a target="_blank" href="{{ $decree->link }}" class="type__subtitle">
+                    <a target="_blank" href="{{ !is_null($decree->file_url) ? $decree->file_url : $decree->link }}" class="type__subtitle">
                         {{ $decree->title }}
                     </a>
                 </div>

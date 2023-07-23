@@ -40,6 +40,10 @@
                                 <input type="text" id="title" class="form-control" value="{{ $document->title }}" readonly>
                             </div>
                             <div class="form-group">
+                                <label for="link">Относительная ссылка на загруженный файл</label>
+                                <a target="_blank" href="{{ $document->file_url }}">{{ $document->file }}</a>
+                            </div>
+                            <div class="form-group">
                                 <label for="link">Ссылка на документ</label>
                                 <a target="_blank" href="{{ $document->link }}">{{ $document->link }}</a>
                             </div>

@@ -44,6 +44,10 @@
                                 <a target="_blank" href="{{ $decree->link }}">{{ $decree->link }}</a>
                             </div>
                             <div class="form-group">
+                                <label for="link">Относительная ссылка на загруженный файл</label>
+                                <a target="_blank" href="{{ $decree->file_url }}">{{ $decree->file }}</a>
+                            </div>
+                            <div class="form-group">
                                 <label for="description">Описание</label>
                                 <textarea id="description" class="form-control" rows="8" readonly>{{ $decree->description }}</textarea>
                             </div>

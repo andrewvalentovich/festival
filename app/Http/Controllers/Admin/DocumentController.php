@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Document\StoreRequest;
 use App\Http\Requests\Admin\Document\UpdateRequest;
 use App\Models\Document;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
 {
@@ -35,6 +36,10 @@ class DocumentController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
+
+        // Кладём файл в Storage
+        $data['file'] = Storage::disk('public')->put('/docs', $data['file']);
+
         Document::create($data);
 
         return redirect()->route('admin.documents.index');
@@ -69,6 +74,12 @@ class DocumentController extends Controller
     public function update(UpdateRequest $request, Document $document)
     {
         $data = $request->validated();
+
+        // Кладём файл в хранилище, если изменили его
+        if(isset($data['file'])) {
+            $data['file'] = Storage::disk('public')->put('/docs', $data['file']);
+        }
+
         $document->update($data);
 
         return redirect()->route('admin.documents.show', compact('document'));

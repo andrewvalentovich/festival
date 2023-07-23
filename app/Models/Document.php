@@ -12,4 +12,9 @@ class Document extends Model
     protected $table = 'documents';
     protected $guarded = [];
     protected $fillable = [];
+
+    public function getFileUrlAttribute()
+    {
+        return url('storage/' . $this->file);
+    }
 }
