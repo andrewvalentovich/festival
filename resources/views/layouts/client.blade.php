@@ -114,23 +114,23 @@
             <div class="type__action">
                 <div class="type__action-nav border">
                     <div class="type__action-nav-body block">
-                        <a class="type__action-nav-item" href="#">
+                        <a class="type__action-nav-item" href="{{ route('contests') }}"">
                             <div class="pic">
                                 <img src="{{ asset('dist/img/icons/Pencil.svg') }}" alt="Подать заявку">
                             </div>
                             <span>
-									Подать заявку
-								</span>
+                                Подать заявку
+                            </span>
                         </a>
-                        <a class="type__action-nav-item" href="#">
+                        <a class="type__action-nav-item" href="{{ route('calendar') }}">
                             <div class="pic">
                                 <img src="{{ asset('dist/img/icons/Calendar.svg') }}" alt="Календарный план">
                             </div>
                             <span>
-									Календарный план
-								</span>
+                                Календарный план
+                            </span>
                         </a>
-                        <a class="type__action-nav-item" href="#">
+                        <a class="type__action-nav-item" href="{{ route('live') }}">
                             <div class="pic">
                                 <img src="{{ asset('dist/img/icons/Security.svg') }}" alt="Трансляция online">
                             </div>
@@ -138,7 +138,7 @@
 									Трансляция online
 								</span>
                         </a>
-                        <a class="type__action-nav-item" href="#">
+                        <a class="type__action-nav-item" href="{{ route('documents') }}">
                             <div class="pic">
                                 <img src="{{ asset('dist/img/icons/Messages.svg') }}" alt="Документы">
                             </div>
@@ -146,7 +146,7 @@
 									Документы
 								</span>
                         </a>
-                        <a class="type__action-nav-item" href="#">
+                        <a class="type__action-nav-item" href="{{ route('decrees') }}">
                             <div class="pic">
                                 <img src="{{ asset('dist/img/icons/Suitcase.svg') }}" alt="Положения">
                             </div>

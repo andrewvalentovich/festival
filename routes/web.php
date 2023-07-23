@@ -25,8 +25,13 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('in
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/jury', [App\Http\Controllers\HomeController::class, 'jury'])->name('jury');
 Route::get('/video', [App\Http\Controllers\HomeController::class, 'video'])->name('video');
+Route::get('/live', [App\Http\Controllers\HomeController::class, 'live'])->name('live');
 Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners'])->name('partners');
 Route::get('/contacts', [App\Http\Controllers\HomeController::class, 'contacts'])->name('contacts');
+Route::get('/decrees', [App\Http\Controllers\HomeController::class, 'decrees'])->name('decrees');
+Route::get('/documents', [App\Http\Controllers\HomeController::class, 'documents'])->name('documents');
+Route::get('/contests', [App\Http\Controllers\HomeController::class, 'contests'])->name('contests');
+Route::get('/calendar', [App\Http\Controllers\HomeController::class, 'calendar'])->name('calendar');
 
 Route::get('/galleries', [App\Http\Controllers\Galleries\IndexController::class, 'index'])->name('galleries.index');
 Route::get('/galleries/{slug}', [App\Http\Controllers\Galleries\IndexController::class, 'detail'])->name('galleries.detail');
@@ -54,12 +59,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::resource('albums', \App\Http\Controllers\Admin\AlbumController::class); // CRUD model Album
         Route::resource('documents', \App\Http\Controllers\Admin\DocumentController::class); // CRUD model Document
         Route::resource('decrees', \App\Http\Controllers\Admin\DecreeController::class); // CRUD model Decree
+
+        // Планировалось класть контент страниц в таблицу `options`, используется только для страницы "О фестивале"
         Route::resource('options', \App\Http\Controllers\Admin\OptionController::class); // CRUD model Option
 
         // docs: https://laravel.com/docs/10.x/controllers
         Route::resource('albums.photos', \App\Http\Controllers\Admin\PhotoController::class)->shallow(); // CRUD model Photo
 
-        Route::get('/about', [\App\Http\Controllers\Admin\AboutController::class, 'index'])->name('about.index');
+        Route::get('/about', [\App\Http\Controllers\Admin\AboutController::class, 'show'])->name('about.show');
+        Route::get('/about/edit', [\App\Http\Controllers\Admin\AboutController::class, 'edit'])->name('about.edit');
         Route::patch('/about', [\App\Http\Controllers\Admin\AboutController::class, 'update'])->name('about.update');
     });
 });

@@ -9,4 +9,7 @@
             <img src="{{ $photo->image_url }}" alt="photo">
         </div>
     @endforeach
+    <div>
+        {{ $photos->links() }}
+    </div>
 @endsection

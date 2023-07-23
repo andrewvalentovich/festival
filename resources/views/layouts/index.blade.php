@@ -203,13 +203,8 @@
 
                     <li class="nav-header">Страницы</li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.about.index') }}" class="nav-link">
+                        <a href="{{ route('admin.about.show') }}" class="nav-link">
                             <p>О фестивале</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="iframe.html" class="nav-link">
-                            <p>Контакты</p>
                         </a>
                     </li>
                 </ul>

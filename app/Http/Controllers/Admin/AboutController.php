@@ -4,16 +4,39 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\About\UpdateRequest;
+use App\Models\Option;
 use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Show page.
      */
-    public function index()
+    public function show()
     {
-        return view('admin.about.index');
+        $page = [];
+        $options = Option::where('key', 'LIKE', '%about_%')->get();
+
+        foreach ($options as $option) {
+            $page[$option['key']] = $option['value'];
+        }
+
+        return view('admin.about.show', compact('page'));
+    }
+
+    /**
+     * Edit page.
+     */
+    public function edit()
+    {
+        $page = [];
+        $options = Option::where('key', 'LIKE', '%about_%')->get();
+
+        foreach ($options as $option) {
+            $page[$option['key']] = $option['value'];
+        }
+
+        return view('admin.about.edit', compact('page'));
     }
 
     /**
@@ -25,9 +48,32 @@ class AboutController extends Controller
     public function update(UpdateRequest $request)
     {
         $data = $request->validated();
-        dd($data);
 
+        // Если есть картинка
+        if (isset($data['about_image'])) {
 
-        return redirect()->route('admin.about.index');
+            // Кладём картинку в Storage
+            $data['about_image'] = Storage::disk('public')->put('/images', $data['about_image']);
+        }
+
+        foreach ($data as $key => $value) {
+            $option = Option::where('key', '=', $key)->first();
+
+            if (isset($option)) {
+                // Если поле существует, то обновим его
+                $option->update(['value' => $value]);
+            } else {
+                // Если поля не существует, то создадим его
+                $row = [
+                    'key' => $key,
+                    'value' => $value,
+                    'type' => 'text',
+                ];
+
+                Option::create($row);
+            }
+        }
+
+        return redirect()->route('admin.about.show');
     }
 }

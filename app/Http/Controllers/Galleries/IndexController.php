@@ -28,7 +28,7 @@ class IndexController extends Controller
     public function detail(string $slug)
     {
         $album = Album::where('slug', $slug)->first();
-        $photos = $album->photos;
+        $photos = $album->photos()->paginate(20);
 
         return view('galleries.detail', compact('album', 'photos'));
     }

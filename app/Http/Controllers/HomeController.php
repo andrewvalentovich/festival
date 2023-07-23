@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Decree;
+use App\Models\Document;
+use App\Models\Event;
 use App\Models\Jury;
+use App\Models\Option;
 use App\Models\Partner;
 
 class HomeController extends Controller
@@ -22,7 +26,13 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('about');
+        $page = [];
+        $options = Option::where('key', 'LIKE', '%about_%')->get();
+
+        foreach ($options as $option) {
+            $page[$option['key']] = $option['value'];
+        }
+        return view('about', compact('page'));
     }
 
     public function jury()
@@ -32,14 +42,43 @@ class HomeController extends Controller
         return view('jury', compact('jury'));
     }
 
-    public function gallery()
+    public function contests()
     {
-        return view('gallery');
+        return view('contests');
     }
 
     public function video()
     {
         return view('video');
+    }
+
+    public function live()
+    {
+        return view('live');
+    }
+
+    public function decrees()
+    {
+        $decrees = Decree::orderBy('id', 'desc')->get();
+
+        return view('decrees', compact('decrees'));
+    }
+
+    public function documents()
+    {
+        $documents = Document::orderBy('id', 'desc')->get();
+
+        return view('documents', compact('documents'));
+    }
+
+    public function calendar()
+    {
+        $events = Event::orderBy('id', 'desc')->get(['title', 'date', 'slug']);
+        foreach ($events as $event) {
+            $event->date = Date('d.m.Y', strtotime($event->date));
+        }
+
+        return view('calendar', ['events' => json_encode($events, JSON_UNESCAPED_UNICODE)]);
     }
 
     public function partners()
