@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Option\StoreRequest;
 use App\Http\Requests\Admin\Option\UpdateRequest;
 use App\Models\Option;
+use Illuminate\Support\Facades\Storage;
 
 class OptionController extends Controller
 {
@@ -34,6 +35,17 @@ class OptionController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
+
+        if ($data['type'] === "image" || $data['type'] === "img") {
+            $data['value'] = Storage::disk('public')->put('/images', $data['file']);
+        }
+
+        if ($data['type'] === "document" || $data['type'] === "docs") {
+            $data['value'] = Storage::disk('public')->put('/docs', $data['file']);
+        }
+
+        unset($data['file']);
+
         Option::create($data);
 
         return redirect()->route('admin.options.index');

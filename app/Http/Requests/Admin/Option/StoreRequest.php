@@ -29,6 +29,7 @@ class StoreRequest extends FormRequest
             'key' => 'required|string',
             'value' => 'required|string',
             'description' => 'nullable|string',
+            'file' => ['nullable', 'file'],
         ];
     }
 
@@ -46,6 +47,7 @@ class StoreRequest extends FormRequest
             'value.require' => 'Данное поле обязательно для заполнения',
             'value.string' => 'Данное поле должно быть строкой',
             'description.string' => 'Данное поле должно быть строкой',
+            'file.max' => 'Загружаемый файл должен быть не более 1 Мб',
         ];
     }
 }
