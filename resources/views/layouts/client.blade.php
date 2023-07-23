@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ asset('dist/files/fonts/stylesheet.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('dist/css/style.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dist/css/style.css') }}">
     <title>Festival</title>
 </head>
 <body>
