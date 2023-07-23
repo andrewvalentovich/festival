@@ -42,11 +42,6 @@ class HomeController extends Controller
         return view('jury', compact('jury'));
     }
 
-    public function contests()
-    {
-        return view('contests');
-    }
-
     public function video()
     {
         return view('video');

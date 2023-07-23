@@ -114,7 +114,7 @@
             <div class="type__action">
                 <div class="type__action-nav border">
                     <div class="type__action-nav-body block">
-                        <a class="type__action-nav-item" href="{{ route('contests') }}"">
+                        <a class="type__action-nav-item" href="{{ route('contests.index') }}">
                             <div class="pic">
                                 <img src="{{ asset('dist/img/icons/Pencil.svg') }}" alt="Подать заявку">
                             </div>

@@ -30,8 +30,11 @@ Route::get('/partners', [App\Http\Controllers\HomeController::class, 'partners']
 Route::get('/contacts', [App\Http\Controllers\HomeController::class, 'contacts'])->name('contacts');
 Route::get('/decrees', [App\Http\Controllers\HomeController::class, 'decrees'])->name('decrees');
 Route::get('/documents', [App\Http\Controllers\HomeController::class, 'documents'])->name('documents');
-Route::get('/contests', [App\Http\Controllers\HomeController::class, 'contests'])->name('contests');
 Route::get('/calendar', [App\Http\Controllers\HomeController::class, 'calendar'])->name('calendar');
+
+Route::get('/contests', [App\Http\Controllers\Contests\IndexController::class, 'index'])->name('contests.index');
+Route::get('/contests/art', [App\Http\Controllers\Contests\IndexController::class, 'art'])->name('contests.art');
+Route::post('/contests/send', [App\Http\Controllers\Contests\IndexController::class, 'send'])->name('contests.send');
 
 Route::get('/galleries', [App\Http\Controllers\Galleries\IndexController::class, 'index'])->name('galleries.index');
 Route::get('/galleries/{slug}', [App\Http\Controllers\Galleries\IndexController::class, 'detail'])->name('galleries.detail');
@@ -47,6 +50,7 @@ Route::get('/events/{slug}', [App\Http\Controllers\Events\IndexController::class
 // Но которые пытались попасть в админку
 Route::get('/auth_abort', [App\Http\Controllers\HomeController::class, 'auth_abort'])->name('auth_abort');
 
+// Админка
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/', IndexController::class)->name('admin.index');
 
