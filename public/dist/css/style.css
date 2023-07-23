@@ -679,7 +679,8 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: .24px
+  letter-spacing: .24px;
+  white-space: pre-line;
 }
 
 .type__link {
@@ -1027,4 +1028,62 @@ body {
   .header__logo img {
       height: 30px
   }
+}
+
+.datepicker-w {
+  height: 180px;
+}
+#datepicker {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+#datepicker .ui-state-active {
+  border: 1px solid #c5c5c5;
+  background: #b6b3b3;
+  font-weight: normal;
+  color: #454545;
+}
+#datepicker .ui-state-highlight {
+  border: 1px solid #c5c5c5;
+  background: #f6f6f6;
+  font-weight: normal;
+  color: #454545;
+}
+#datepicker .ui-state-highlight.ui-state-active {
+  background: #b6b3b3;
+}
+[data-handler="selectDay"].event {
+  position: relative;
+}
+[data-handler="selectDay"].event::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  left: 4px;
+  top: 50%;
+  transform: translate(0, -50%);
+  background: green;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.type__events-list {
+  margin-top: 20px;
+}
+.type__events-list-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.type__events-list-item .type__date {
+  font-size: 10px;
+}
+.type__subtitle {
+  margin-bottom: 4px;
+}
+.type__lead {
+  margin-bottom: 5px;
+}
+.type__events-list-title {
+  margin-bottom: 20px;
+  font-size: 20px;
 }
