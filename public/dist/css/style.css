@@ -682,7 +682,9 @@ body {
   letter-spacing: .24px;
   white-space: pre-line;
 }
-
+.type__lead.no-preline {
+  white-space: normal;
+}
 .type__link {
   color: #f8f8f8;
   font-family: Inter;
