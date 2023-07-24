@@ -1,5 +1,6 @@
 @extends('layouts.client')
 
+@section('title')Конкурс художников@endsection
 @section('content')
     <div class="type__about-title type__title">
         Подать заявку на конкурс художников

@@ -1,5 +1,5 @@
 @extends('layouts.client')
-@section('title'){{ isset($page['about_title']) ? $page['about_title'] : '' }}@endsection
+@section('title'){{ isset($page['about_title']) ? $page['about_title'] : 'О фестивале' }}@endsection
 @section('content')
     <div class="type__about-title type__title">
         {{ isset($page['about_title']) ? $page['about_title'] : '' }}

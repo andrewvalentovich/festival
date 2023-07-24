@@ -7,7 +7,7 @@
     @yield('styles')
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/css/app.css'])
-    <title>Festival</title>
+    <title>@yield('title')</title>
 </head>
 <body>
 <div class="wrapper">
