@@ -572,6 +572,10 @@ body {
   position: relative
 }
 
+.type__news-item.type__news-item_jury .type__news-item-text{
+  justify-content: flex-start;
+}
+
 .type__news-item:not(:last-child) {
   margin-bottom: 20px
 }
@@ -681,6 +685,10 @@ body {
   line-height: normal;
   letter-spacing: .24px;
   white-space: pre-line;
+}
+
+.type__lead.no-preline {
+  white-space: normal;
 }
 
 .type__link {
