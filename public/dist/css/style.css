@@ -572,6 +572,10 @@ body {
   position: relative
 }
 
+.type__news-item.type__news-item_jury .type__news-item-text{
+  justify-content: flex-start;
+}
+
 .type__news-item:not(:last-child) {
   margin-bottom: 20px
 }

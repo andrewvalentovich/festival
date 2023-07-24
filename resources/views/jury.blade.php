@@ -7,7 +7,7 @@
     </div>
     <div class="type__news-list">
         @foreach($jury as $person)
-        <div class="type__news-item ">
+        <div class="type__news-item type__news-item_jury">
             <div class="type__about-item-pic">
                 <img src="{{ $person->image_url }}">
             </div>
