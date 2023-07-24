@@ -720,14 +720,14 @@ body {
   width: 100%
 }
 
-.border {
+.border_block {
   border-radius: 10px;
   position: relative;
   padding: 2px;
   overflow: hidden
 }
 
-.border::before {
+.border_block::before {
   content: "";
   position: absolute;
   left: 0;
@@ -738,7 +738,7 @@ body {
   border-radius: 10px 10px 10px 10px
 }
 
-.border::after {
+.border_block::after {
   content: "";
   position: absolute;
   left: 50%;

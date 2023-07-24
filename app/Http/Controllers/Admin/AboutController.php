@@ -49,6 +49,12 @@ class AboutController extends Controller
     {
         $data = $request->validated();
 
+        foreach ($data as $key => $value) {
+            if(is_null($data[$key])) {
+                unset($data[$key]);
+            }
+        }
+
         // Если есть картинка
         if (isset($data['about_image'])) {
 

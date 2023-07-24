@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="border nav">
+            <div class="border_block nav">
                 <nav class="nav__body block ">
                     <div class="nav__list">
                         <a href="{{ route('index') }}" class="nav__list-item {{ request()->routeIs('index') ? 'active' : '' }}">Главная</a>
@@ -114,7 +114,7 @@
     <div class="type container">
         <div class="type__content">
             <div class="type__action">
-                <div class="type__action-nav border">
+                <div class="type__action-nav border_block">
                     <div class="type__action-nav-body block">
                         <a class="type__action-nav-item" href="{{ route('contests.index') }}">
                             <div class="pic">
@@ -158,16 +158,16 @@
                         </a>
                     </div>
                 </div>
-                <div class="type__action-pic border">
+                <div class="type__action-pic border_block">
                     <img src="{{ asset('dist/img/pic/rahmanov.png') }}" alt="rahmanov">
                 </div>
             </div>
-            <div class="type__about border">
+            <div class="type__about border_block">
                 <div class="type__about-body block">
                     @yield('content')
                 </div>
             </div>
-            <div class="type__news border">
+            <div class="type__news border_block">
                 <div class="type__news-body block">
                     <div class="type__news-title type__title">
                         Новости
@@ -193,7 +193,7 @@
                     </div>
                 </div>
             </div>
-            <div class="type__pic-mobile border">
+            <div class="type__pic-mobile border_block">
                 <img src="{{ asset('dist/img/pic/rahmanov.png') }}" alt="rahmanov">
             </div>
         </div>

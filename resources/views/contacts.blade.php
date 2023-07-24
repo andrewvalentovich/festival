@@ -1,5 +1,5 @@
 @extends('layouts.client')
-
+@section('title')Контакты@endsection
 @section('content')
     <div class="type__about-title type__title">
         Контакты

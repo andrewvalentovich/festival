@@ -1,5 +1,6 @@
 @extends('layouts.client')
 
+@section('title')Документы@endsection
 @section('content')
     <div class="type__about-title type__title">
         Документы

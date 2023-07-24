@@ -1,5 +1,9 @@
 @extends('layouts.client')
 
+@section('title')
+    ПЕРВЫЙ ВСЕРОССИЙСКИЙ ФЕСТИВАЛЬ НАРОДНЫЙ РАХМАНИНОВ
+@endsection
+
 @section('content')
     <div class="type__about-title type__title">
         О нашем фестивале
@@ -7,7 +11,7 @@
     <div class="type__about-list">
 
         @foreach($jury as $person)
-            <div class="type__about-item border">
+            <div class="type__about-item border_block">
                 <div class="type__about-item-body block">
                     <div class="type__about-item-pic">
                         <img src="{{ $person->image_url }}">

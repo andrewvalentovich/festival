@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -152,30 +152,30 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/kanban.html" class="nav-link">
-                            <i class="nav-icon far fa-envelope"></i>
-                            <p>
-                                Форма
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/kanban.html" class="nav-link">
-                            <i class="fas fa-play nav-icon"></i>
-                            <p>
-                                Видео
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/kanban.html" class="nav-link">
-                            <i class="nav-icon fas fa-columns"></i>
-                            <p>
-                                Трансляция
-                            </p>
-                        </a>
-                    </li>
+{{--                    <li class="nav-item">--}}
+{{--                        <a href="pages/kanban.html" class="nav-link">--}}
+{{--                            <i class="nav-icon far fa-envelope"></i>--}}
+{{--                            <p>--}}
+{{--                                Форма--}}
+{{--                            </p>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item">--}}
+{{--                        <a href="pages/kanban.html" class="nav-link">--}}
+{{--                            <i class="fas fa-play nav-icon"></i>--}}
+{{--                            <p>--}}
+{{--                                Видео--}}
+{{--                            </p>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                    <li class="nav-item">--}}
+{{--                        <a href="pages/kanban.html" class="nav-link">--}}
+{{--                            <i class="nav-icon fas fa-columns"></i>--}}
+{{--                            <p>--}}
+{{--                                Трансляция--}}
+{{--                            </p>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     <li class="nav-item">
                         <a href="{{ route('admin.documents.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-file"></i>
