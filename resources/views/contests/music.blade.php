@@ -1,9 +1,9 @@
 @extends('layouts.client')
 
-@section('title')Подать заявку на конкурс художников@endsection
+@section('title')Подать заявку на конкурс музыкантов@endsection
 @section('content')
     <div class="type__about-title type__title">
-        Подать заявку на конкурс художников
+        Подать заявку на конкурс музыкантов
     </div>
     <style>
         .form-group input{
@@ -22,7 +22,7 @@
         <form action="{{ route('contests.send') }}" method="post" enctype="multipart/form-data">
             @csrf
 
-            <input type="hidden" name="contest_type" value="Изобразительное искусство">
+            <input type="hidden" name="contest_type" value="Музыка">
             <div class="form-group">
                 <label for="initials">Ф.И.О. конкурсанта</label>
                 <input type="text" value="{{ old("initials") }}" name="initials" class="form-control">
@@ -68,11 +68,11 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="nomination">Номинация «Изобразительное искусство»</label>
+                <label for="nomination">Номинация «Музыка»</label>
                 <select name="nomination" class="form-control">
                     <option {{ old("nomination") ? "":"selected" }} disabled>Выберите раздел</option>
-                    <option value="Художники" {{ old("nomination") == "Художники" ? "selected":"" }}>1. Художники</option>
-                    <option value="ДПИ (декоративно-прикладное искусство, народные ремёсла)" {{ old("nomination") == "ДПИ (декоративно-прикладное искусство, народные ремёсла)" ? "selected":"" }}>2. ДПИ (декоративно-прикладное искусство, народные ремёсла)</option>
+                    <option value="Инструментальное искусство" {{ old("nomination") == "Инструментальное искусство" ? "selected":"" }}>1. Инструментальное искусство</option>
+                    <option value="Вокальное искусство" {{ old("nomination") == "Вокальное искусство" ? "selected":"" }}>2. Вокальное искусство</option>
                 </select>
                 @error('nomination')
                     <label class="text-danger font-weight-normal" for="nomination">{{ $message }}</label>

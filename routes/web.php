@@ -34,6 +34,8 @@ Route::get('/calendar', [App\Http\Controllers\HomeController::class, 'calendar']
 
 Route::get('/contests', [App\Http\Controllers\Contests\IndexController::class, 'index'])->name('contests.index');
 Route::get('/contests/art', [App\Http\Controllers\Contests\IndexController::class, 'art'])->name('contests.art');
+Route::get('/contests/poetry', [App\Http\Controllers\Contests\IndexController::class, 'poetry'])->name('contests.poetry');
+Route::get('/contests/music', [App\Http\Controllers\Contests\IndexController::class, 'music'])->name('contests.music');
 Route::post('/contests/send', [App\Http\Controllers\Contests\IndexController::class, 'send'])->name('contests.send');
 
 Route::get('/galleries', [App\Http\Controllers\Galleries\IndexController::class, 'index'])->name('galleries.index');

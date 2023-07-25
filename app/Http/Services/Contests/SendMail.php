@@ -23,16 +23,16 @@ class SendMail
             //Server settings
             $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
             $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+            $mail->Host       = config('mail.mailers.smtp.host');                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'andrewvalentovich14@gmail.com';                     //SMTP username
-            $mail->Password   = 'pvoyhrbncgcbtdir';                               //SMTP password
+            $mail->Username   = config('mail.mailers.smtp.username');                     //SMTP username
+            $mail->Password   = config('mail.mailers.smtp.password');                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('nrfest@gmail.com', 'nrfest');
-            $mail->addAddress('andrich_14@mail.ru', 'Andrew Valentovich');     //Add a recipient
+            $mail->setFrom(config('mail.from.address'), config('mail.from.name'));
+            $mail->addAddress(config('mail.to.address'), config('mail.to.name'));     //Add a recipient
 
             //Content
             $mail->CharSet = "utf-8";
