@@ -80,7 +80,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Отправить заявку">
+                <input class="contests_button" type="submit" value="Отправить заявку">
             </div>
         </form>
     </div>
