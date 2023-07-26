@@ -31,6 +31,7 @@ class SendRequest extends FormRequest
             'section' => 'required|string|max:255',
             'age_category' => 'required|string|max:255',
             'nomination' => 'required|string|max:255',
+            'check' => ['required', 'regex: /^(true)$/'],
         ];
     }
 
@@ -61,6 +62,8 @@ class SendRequest extends FormRequest
             'nomination.required' => 'Данное поле является обязательным для заполнения',
             'nomination.string' => 'Данное поле должно быть строкой',
             'nomination.max' => 'Максимальная длина поля 255 символов',
+            'check.required' => 'Для подачи заявки, необходимо подтвердить согласие с положением о конкурсе',
+            'check.regex' => 'Для подачи заявки, необходимо подтвердить согласие с положением о конкурсе',
         ];
     }
 }

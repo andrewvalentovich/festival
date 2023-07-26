@@ -78,6 +78,17 @@
                     <label class="text-danger font-weight-normal" for="nomination">{{ $message }}</label>
                 @enderror
             </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" name="check" type="checkbox" value="true" id="check">
+                    <label class="form-check-label" for="check">
+                        Я согласен с <a target="_blank" style="text-decoration: underline" href="{{ asset('storage/docs/Конкурс_Художников_Рахманинов_docx.pdf') }}">Положением о конкурсе ИЗО</a>
+                    </label>
+                </div>
+                @error('check')
+                <label class="text-danger font-weight-normal" for="check">{{ $message }}</label>
+                @enderror
+            </div>
 
             <div class="form-group">
                 <input class="contests_button" type="submit" value="Отправить заявку">
