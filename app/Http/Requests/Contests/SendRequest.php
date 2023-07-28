@@ -31,7 +31,10 @@ class SendRequest extends FormRequest
             'section' => 'required|string|max:255',
             'age_category' => 'required|string|max:255',
             'nomination' => 'required|string|max:255',
+            'video_link' => 'nullable|string|max:2048',
             'check' => ['required', 'regex: /^(true)$/'],
+            'files' => 'nullable|array|max:3',
+            'files.*' => 'nullable|mimes:jpeg,jpg,bmp,webp,png|max:5124',
         ];
     }
 
@@ -56,6 +59,8 @@ class SendRequest extends FormRequest
             'section.required' => 'Данное поле является обязательным для заполнения',
             'section.string' => 'Данное поле должно быть строкой',
             'section.max' => 'Максимальная длина поля 255 символов',
+            'video_link.string' => 'Данное поле должно быть строкой',
+            'video_link.max' => 'Максимальная длина поля :max символов',
             'age_category.required' => 'Данное поле является обязательным для заполнения',
             'age_category.string' => 'Данное поле должно быть строкой',
             'age_category.max' => 'Максимальная длина поля 255 символов',
@@ -64,6 +69,9 @@ class SendRequest extends FormRequest
             'nomination.max' => 'Максимальная длина поля 255 символов',
             'check.required' => 'Для подачи заявки, необходимо подтвердить согласие с положением о конкурсе',
             'check.regex' => 'Для подачи заявки, необходимо подтвердить согласие с положением о конкурсе',
+            'files.max' => 'Максимальное количество прикреплённых файлов - :max',
+            'files.*.mimes' => 'Можно прикрепить долько фото или видео',
+            'files.*.max' => 'Размер одного файла не должен превышать :max',
         ];
     }
 }

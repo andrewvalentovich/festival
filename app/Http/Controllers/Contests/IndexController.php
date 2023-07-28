@@ -56,15 +56,27 @@ class IndexController extends Controller
     public function send(SendRequest $request)
     {
         $data = $request->validated();
-
-        $mail = SendMail::send(
-            "Заявка на конкурс - {$data['contest_type']}",
-            "ФИО конкурсанта: <b>{$data['initials']}</b>
+        if (!is_null($data['video_link'])) {
+            $mail_body = "ФИО конкурсанта: <b>{$data['initials']}</b>
                 <br/>Место проживания: <b>{$data['address']}</b>
                 <br/>Контакты (телефон, email): <b>{$data['contacts']}</b>
                 <br/>Раздел: <b>{$data['section']}</b>
                 <br/>Возрастная категория: <b>{$data['age_category']}</b>
-                <br/>Номинация «{$data['contest_type']}»: <b>{$data['nomination']}</b>"
+                <br/>Номинация «{$data['contest_type']}»: <b>{$data['nomination']}</b>
+                <br/>Видео: <a href=\"{$data['video_link']}\">{$data['video_link']}</a>";
+        } else {
+            $mail_body = "ФИО конкурсанта: <b>{$data['initials']}</b>
+                <br/>Место проживания: <b>{$data['address']}</b>
+                <br/>Контакты (телефон, email): <b>{$data['contacts']}</b>
+                <br/>Раздел: <b>{$data['section']}</b>
+                <br/>Возрастная категория: <b>{$data['age_category']}</b>
+                <br/>Номинация «{$data['contest_type']}»: <b>{$data['nomination']}</b>";
+        }
+
+        $mail = SendMail::send(
+            "Заявка на конкурс - {$data['contest_type']}",
+            $mail_body,
+            $_FILES['files']
         );
 
         return view($mail ? 'contests.success' : 'contests.wrong');
