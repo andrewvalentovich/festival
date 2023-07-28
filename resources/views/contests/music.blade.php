@@ -92,7 +92,7 @@
                     display: flex;
                 }
                 .input-file-text {
-                    height: 40px;
+                    height: 34px;
                     display: block;
                     box-sizing: border-box;
                     max-width: 100%;
@@ -127,7 +127,7 @@
             </style>
 
             <div class="form-group">
-                <div class="form-main__label" for="files">Приложить видео или фотографии</div>
+                <div class="form-main__label" for="files">Прикрепить фотографии</div>
                 <label class="input-file">
                     <span id="files_text" class="input-file-text form-control" type="text"></span>
                     <input id="files" type="file" name="files[]" multiple>
@@ -164,7 +164,7 @@
         $(document).ready(function() {
             $('.input-file input[type=file]').on('change', function(){
                 let files = this.files;
-                $(this).closest('.input-file').find('#files_text').html(files[0].name);
+                $(this).closest('.input-file').find('#files_text').html("Файлов прикреплено: "+files.length);
             });
         });
     </script>
