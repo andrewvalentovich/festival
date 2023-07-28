@@ -144,7 +144,7 @@
                 <div class="form-check">
                     <input class="form-check-input" name="check" type="checkbox" value="true" id="check">
                     <label class="form-check-label" for="check">
-                        Я согласен с <a target="_blank" style="text-decoration: underline" href="{{ asset('storage/docs/5QPfat821bee2PsGv1X0DiXtMko7dpu2NDfdkJtw.pdf') }}">Положением о конкурсе ИЗО</a>
+                        Я ознакомился с <a target="_blank" style="text-decoration: underline" href="{{ asset('storage/docs/5QPfat821bee2PsGv1X0DiXtMko7dpu2NDfdkJtw.pdf') }}">Положением о конкурсе ИЗО</a>
                     </label>
                 </div>
                 @error('check')
