@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header border-bottom-0">
-                            <a href="{{ route('admin.appeals.create') }}" class="btn btn-primary">Добавть жюри</a>
+                            <a href="{{ route('admin.appeals.create') }}" class="btn btn-primary">Добавть обращение</a>
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">

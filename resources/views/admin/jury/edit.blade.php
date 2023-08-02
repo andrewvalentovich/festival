@@ -72,13 +72,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea name="description" class="form-control" placeholder="Описание" cols="30" rows="5">{{ $jury->description }}</textarea>
-                                    @error('description')
-                                    <label class="text-danger font-weight-normal" for="description">{{ $message }}</label>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
                                     <input type="submit" class="btn btn-primary" value="Обновить">
                                 </div>
                             </form>
