@@ -113,6 +113,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('admin.appeals.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-chart-pie"></i>
+                            <p>
+                                Обращения
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('admin.albums.index') }}" class="nav-link">
                             <i class="nav-icon far fa-image"></i>
                             <p>
