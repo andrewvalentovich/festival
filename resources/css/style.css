@@ -469,7 +469,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
-  padding-top: 10px
+  /*padding-top: 10px*/
 }
 
 .type__about-item-name {
