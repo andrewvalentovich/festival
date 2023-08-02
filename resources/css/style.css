@@ -593,7 +593,7 @@ body {
 }
 
 .type__news-item-text {
-  padding-top: 7px;
+  /*padding-top: 7px;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
