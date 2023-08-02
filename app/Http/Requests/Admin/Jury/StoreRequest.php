@@ -28,7 +28,7 @@ class StoreRequest extends FormRequest
             'last_name' => 'required|string|max:255',
             'patronymic' => 'nullable|string|max:255',
             'merits' => 'nullable|string|max:4096',
-            'description' => 'required|string|max:4096',
+            'description' => 'nullable|string|max:4096',
             'image' => ['required', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
         ];
     }
@@ -50,7 +50,6 @@ class StoreRequest extends FormRequest
             'patronymic.max' => 'Превышено максимальное количество символов (255)',
             'merits.string' => 'Данное поле должно быть строкой',
             'merits.max' => 'Превышено максимальное количество символов (4096)',
-            'description.required' => 'Данное поле является обязательным для заполнения',
             'description.string' => 'Данное поле должно быть строкой',
             'description.max' => 'Превышено максимальное количество символов (4096)',
             'image.required' => 'Данное поле является обязательным для заполнения',

@@ -19,7 +19,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $jury = Jury::orderBy('id', 'desc')->get();
+        $jury = Jury::orderBy('id', 'desc')->whereNotNull('description')->get();
 
         return view('index', compact('jury'));
     }
