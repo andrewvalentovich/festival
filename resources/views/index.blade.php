@@ -10,7 +10,7 @@
     </div>
     <div class="type__about-list">
 
-        @foreach($jury as $person)
+        @foreach($appeals as $person)
             <div class="type__about-item border_block">
                 <div class="type__about-item-body block">
                     <div class="type__about-item-pic">

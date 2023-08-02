@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appeal;
 use App\Models\Contact;
 use App\Models\Decree;
 use App\Models\Document;
@@ -19,9 +20,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $jury = Jury::orderBy('id', 'desc')->whereNotNull('description')->get();
+        $appeals = Appeal::orderBy('id', 'desc')->get();
 
-        return view('index', compact('jury'));
+        return view('index', compact('appeals'));
     }
 
     public function about()
