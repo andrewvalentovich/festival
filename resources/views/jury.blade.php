@@ -15,7 +15,7 @@
                 <p class="type__subtitle">
                     {{ $person->last_name }} {{ $person->name }} {{ !is_null($person->patronymic) ? $person->patronymic : '' }}
                 </p>
-                <p class="type__lead no-preline">
+                <p class="type__lead no-preline" style="-webkit-line-clamp: unset;">
                     @if(!is_null($person->merits))
                         {{ $person->merits }}
                     @endif
