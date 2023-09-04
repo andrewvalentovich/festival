@@ -79,6 +79,8 @@ class IndexController extends Controller
             $_FILES['files']
         );
 
+        dd($mail);
+
         return view($mail ? 'contests.success' : 'contests.wrong');
     }
 }
