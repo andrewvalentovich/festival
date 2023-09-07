@@ -141,6 +141,17 @@
             </div>
 
             <div class="form-group">
+                <div class="form-main__label" for="docs">Прикрепить фотографии</div>
+                <label class="input-file">
+                    <span id="docs_text" class="input-file-text form-control" type="text"></span>
+                    <input id="docs" type="file" name="docs">
+                </label>
+                @error('docs')
+                <label class="text-danger font-weight-normal" for="docs">{{ $message }}</label>
+                @enderror
+            </div>
+
+            <div class="form-group">
                 <div class="form-check">
                     <input class="form-check-input" name="check" type="checkbox" value="true" id="check">
                     <label class="form-check-label" for="check">
@@ -165,6 +176,10 @@
             $('.input-file input[type=file]').on('change', function(){
                 let files = this.files;
                 $(this).closest('.input-file').find('#files_text').html("Файлов прикреплено: "+files.length);
+            });
+            $('#docs').on('change', function(){
+                let docs = this.files;
+                $(this).closest('#docs').find('#docs_text').html("Файлов прикреплено: "+docs.length);
             });
         });
     </script>
