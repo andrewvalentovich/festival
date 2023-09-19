@@ -78,7 +78,7 @@ class IndexController extends Controller
             "Заявка на конкурс - {$data['contest_type']}",
             $mail_body,
             $_FILES['files'],
-            $_FILES['docs']
+            $_FILES['docs'] ?? null
         );
 
         return view($mail ? 'contests.success' : 'contests.wrong');

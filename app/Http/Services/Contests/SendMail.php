@@ -41,15 +41,22 @@ class SendMail
             $mail->Body    = $mail_body;
 //            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-            if($mail_files['name'][0] != "") {
-                for ($i = 0; $i < count($mail_files['name']); $i++) {
-                    $mail->AddAttachment($mail_files['tmp_name'][$i], $mail_files['name'][$i]);
+            if (isset($mail_files)) {
+                if($mail_files['name'][0] != "") {
+                    for ($i = 0; $i < count($mail_files['name']); $i++) {
+                        $mail->AddAttachment($mail_files['tmp_name'][$i], $mail_files['name'][$i]);
+                    }
                 }
             }
 
-            if($mail_doc['name'] != "") {
-                $mail->AddAttachment($mail_doc['tmp_name'], $mail_doc['name']);
+            if (isset($mail_doc)) {
+                if($mail_doc['name'] != "") {
+                    $mail->AddAttachment($mail_doc['tmp_name'], $mail_doc['name']);
+                }
             }
+
+
+
 
             $mail->send();
             $result = true;
