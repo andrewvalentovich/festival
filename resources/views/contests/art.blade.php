@@ -127,7 +127,35 @@
             </style>
 
             <div class="form-group">
-                <div class="form-main__label" for="files">Прикрепить фотографии</div>
+                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб)</div>
+                <label class="input-file">
+                    <span id="files_text" class="input-file-text form-control" type="text"></span>
+                    <input id="files" type="file" name="files[]" multiple>
+                </label>
+                @error('files')
+                    <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
+                @enderror
+                @error('files.*')
+                    <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб)</div>
+                <label class="input-file">
+                    <span id="files_text" class="input-file-text form-control" type="text"></span>
+                    <input id="files" type="file" name="files[]" multiple>
+                </label>
+                @error('files')
+                    <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
+                @enderror
+                @error('files.*')
+                    <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб)</div>
                 <label class="input-file">
                     <span id="files_text" class="input-file-text form-control" type="text"></span>
                     <input id="files" type="file" name="files[]" multiple>

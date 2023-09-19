@@ -127,7 +127,7 @@
             </style>
 
             <div class="form-group">
-                <div class="form-main__label" for="files">Прикрепить фотографии</div>
+                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб)</div>
                 <label class="input-file">
                     <span id="photos_text" class="input-file-text form-control" type="text"></span>
                     <input id="photos" type="file" name="files[]" multiple>
@@ -141,7 +141,35 @@
             </div>
 
             <div class="form-group">
-                <div class="form-main__label" for="docs">Прикрепить текстовый документ (docx, pdf)</div>
+                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб)</div>
+                <label class="input-file">
+                    <span id="photos_text1" class="input-file-text form-control" type="text"></span>
+                    <input id="photos1" type="file" name="files[]" multiple>
+                </label>
+                @error('files')
+                <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
+                @enderror
+                @error('files.*')
+                <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб)</div>
+                <label class="input-file">
+                    <span id="photos_text2" class="input-file-text form-control" type="text"></span>
+                    <input id="photos2" type="file" name="files[]" multiple>
+                </label>
+                @error('files')
+                <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
+                @enderror
+                @error('files.*')
+                <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <div class="form-main__label" for="docs">Прикрепить текстовый документ (docx, pdf до 10 Мб)</div>
                 <label class="input-file">
                     <span id="docs_text" class="input-file-text form-control" type="text"></span>
                     <input id="docs" type="file" name="docs">
@@ -176,6 +204,14 @@
             $('#photos').on('change', function(){
                 let files = this.files;
                 $(this).closest('.input-file').find('#photos_text').html("Файлов прикреплено: "+files.length);
+            });
+            $('#photos1').on('change', function(){
+                let files = this.files;
+                $(this).closest('.input-file').find('#photos_text1').html("Файлов прикреплено: "+files.length);
+            });
+            $('#photos2').on('change', function(){
+                let files = this.files;
+                $(this).closest('.input-file').find('#photos_text2').html("Файлов прикреплено: "+files.length);
             });
             $('#docs').on('change', function(){
                 let docs = this.files;
