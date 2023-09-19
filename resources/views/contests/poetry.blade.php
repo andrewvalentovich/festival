@@ -129,8 +129,8 @@
             <div class="form-group">
                 <div class="form-main__label" for="files">Прикрепить фотографии</div>
                 <label class="input-file">
-                    <span id="files_text" class="input-file-text form-control" type="text"></span>
-                    <input id="files" type="file" name="files[]" multiple>
+                    <span id="photos_text" class="input-file-text form-control" type="text"></span>
+                    <input id="photos" type="file" name="files[]" multiple>
                 </label>
                 @error('files')
                 <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
@@ -141,7 +141,7 @@
             </div>
 
             <div class="form-group">
-                <div class="form-main__label" for="docs">Прикрепить фотографии</div>
+                <div class="form-main__label" for="docs">Прикрепить текстовый документ (docx, pdf)</div>
                 <label class="input-file">
                     <span id="docs_text" class="input-file-text form-control" type="text"></span>
                     <input id="docs" type="file" name="docs">
@@ -173,13 +173,13 @@
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $('.input-file input[type=file]').on('change', function(){
+            $('#photos').on('change', function(){
                 let files = this.files;
-                $(this).closest('.input-file').find('#files_text').html("Файлов прикреплено: "+files.length);
+                $(this).closest('.input-file').find('#photos_text').html("Файлов прикреплено: "+files.length);
             });
             $('#docs').on('change', function(){
                 let docs = this.files;
-                $(this).closest('#docs').find('#docs_text').html("Файлов прикреплено: "+docs.length);
+                $(this).closest('.input-file').find('#docs_text').html("Файлов прикреплено: "+docs.length);
             });
         });
     </script>

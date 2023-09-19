@@ -56,6 +56,7 @@ class IndexController extends Controller
     public function send(SendRequest $request)
     {
         $data = $request->validated();
+
         if (!is_null($data['video_link'])) {
             $mail_body = "ФИО конкурсанта: <b>{$data['initials']}</b>
                 <br/>Место проживания: <b>{$data['address']}</b>
@@ -76,7 +77,8 @@ class IndexController extends Controller
         $mail = SendMail::send(
             "Заявка на конкурс - {$data['contest_type']}",
             $mail_body,
-            $_FILES['files']
+            $_FILES['files'],
+            $_FILES['docs']
         );
 
         return view($mail ? 'contests.success' : 'contests.wrong');

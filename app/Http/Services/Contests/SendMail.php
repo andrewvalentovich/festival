@@ -15,7 +15,7 @@ class SendMail
      * @param string $mail_body
      * @return bool
      */
-    public static function send(string $mail_subject, string $mail_body, array $mail_files = null) : bool
+    public static function send(string $mail_subject, string $mail_body, array $mail_files = null, $mail_doc = null) : bool
     {
         $mail = new PHPMailer(true);
 
@@ -45,6 +45,10 @@ class SendMail
                 for ($i = 0; $i < count($mail_files['name']); $i++) {
                     $mail->AddAttachment($mail_files['tmp_name'][$i], $mail_files['name'][$i]);
                 }
+            }
+
+            if($mail_doc['name'] != "") {
+                $mail->AddAttachment($mail_doc['tmp_name'], $mail_doc['name']);
             }
 
             $mail->send();

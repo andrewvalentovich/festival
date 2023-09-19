@@ -33,8 +33,9 @@ class SendRequest extends FormRequest
             'nomination' => 'required|string|max:255',
             'video_link' => 'nullable|string|max:2048',
             'check' => ['required', 'regex: /^(true)$/'],
-            'files' => 'nullable|array|max:3',
+            'files' => 'nullable|array|max:10',
             'files.*' => 'nullable|mimes:jpeg,jpg,bmp,webp,png|max:5124',
+            'docs' => 'nullable|mimes:docx,pdf|max:10000',
         ];
     }
 
@@ -72,6 +73,8 @@ class SendRequest extends FormRequest
             'files.max' => 'Максимальное количество прикреплённых файлов - :max',
             'files.*.mimes' => 'Можно прикрепить долько фото или видео',
             'files.*.max' => 'Размер одного файла не должен превышать :max',
+            'docs.max' => 'Размер одного документа не должен превышать :max',
+            'docs.mimes' => 'Можно прикрепить документ либо docx, либо pdf',
         ];
     }
 }

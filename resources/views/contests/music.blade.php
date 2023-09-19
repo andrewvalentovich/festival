@@ -130,7 +130,7 @@
                 <div class="form-main__label" for="files">Прикрепить фотографии</div>
                 <label class="input-file">
                     <span id="files_text" class="input-file-text form-control" type="text"></span>
-                    <input id="files" type="file" name="files[]" multiple>
+                    <input id="files" type="file" name="files[]" multiple />
                 </label>
                 @error('files')
                 <label class="text-danger font-weight-normal" for="files">{{ $message }}</label>
