@@ -45,6 +45,19 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="category_id">Звание (категория) жюри</label>
+                            <select id="category_id" name="category_id">
+                                <option disabled selected>Не выбрано</option>
+                                @foreach($jury_categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                                <label class="text-danger font-weight-normal" for="category_id">{{ $message }}</label>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <input type="text" value="{{ old('last_name') }}" name="last_name" class="form-control" placeholder="Фамилия">
                             @error('last_name')
                                 <label class="text-danger font-weight-normal" for="last_name">{{ $message }}</label>

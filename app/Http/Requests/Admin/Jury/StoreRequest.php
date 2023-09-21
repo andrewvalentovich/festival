@@ -25,6 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
+            'category_id' => 'nullable',
             'last_name' => 'required|string|max:255',
             'patronymic' => 'nullable|string|max:255',
             'merits' => 'nullable|string|max:4096',

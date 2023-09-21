@@ -65,6 +65,19 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="category_id">Звание (категория) жюри</label>
+                                    <select id="category_id" name="category_id">
+                                        <option value="0" {{ !isset($jury->category) ? "selected" : "" }}>Не выбрано</option>
+                                        @foreach($jury_categories as $category)
+                                            <option value="{{ $category->id }}" {{ (isset($jury->category) && ($jury->category->id === $category->id)) ? "selected" : "" }}>{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('category_id')
+                                    <label class="text-danger font-weight-normal" for="category_id">{{ $message }}</label>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
                                     <textarea name="merits" class="form-control" placeholder="Заслуги/Награды/Достижения" cols="30" rows="5">{{ $jury->merits }}</textarea>
                                     @error('merits')
                                     <label class="text-danger font-weight-normal" for="merits">{{ $message }}</label>

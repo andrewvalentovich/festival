@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Jury\StoreRequest;
 use App\Http\Requests\Admin\Jury\UpdateRequest;
 use App\Models\Jury;
+use App\Models\JuryCategory;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +19,8 @@ class JuryController extends Controller
     public function index()
     {
         $jury = Jury::orderBy('id', 'desc')->get();
-        return view('admin.jury.index', compact('jury'));
+        $categories = JuryCategory::all();
+        return view('admin.jury.index', compact('jury', 'categories'));
     }
 
     /**
@@ -27,7 +29,8 @@ class JuryController extends Controller
      */
     public function create()
     {
-        return view('admin.jury.create');
+        $jury_categories = JuryCategory::all();
+        return view('admin.jury.create', compact('jury_categories'));
     }
 
     /**
@@ -62,7 +65,8 @@ class JuryController extends Controller
      */
     public function edit(Jury $jury)
     {
-        return view('admin.jury.edit', compact('jury'));
+        $jury_categories = JuryCategory::all();
+        return view('admin.jury.edit', compact('jury', 'jury_categories'));
     }
 
     /**

@@ -8,8 +8,10 @@ use App\Models\Decree;
 use App\Models\Document;
 use App\Models\Event;
 use App\Models\Jury;
+use App\Models\JuryCategory;
 use App\Models\Option;
 use App\Models\Partner;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -38,9 +40,10 @@ class HomeController extends Controller
 
     public function jury()
     {
-        $jury = Jury::orderByRaw("id = 17 DESC")->get();
+        $jury = DB::select('select * from (select * from jury order by name desc) a order by category_id desc');
+        $categories = JuryCategory::all();
 
-        return view('jury', compact('jury'));
+        return view('jury', compact('jury', 'categories'));
     }
 
     public function video()

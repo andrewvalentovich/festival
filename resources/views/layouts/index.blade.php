@@ -125,6 +125,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('admin.jury_categories.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-chart-pie"></i>
+                            <p>
+                                Категории жюри
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('admin.appeals.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>

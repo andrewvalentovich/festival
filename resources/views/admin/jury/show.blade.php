@@ -42,6 +42,12 @@
                                 <label for="name">Имя</label>
                                 <input type="text" id="name" class="form-control" value="{{ $jury->name }}" readonly>
                             </div>
+                            @if(isset($jury->category))
+                            <div class="form-group">
+                                <label for="jury_category">Категория</label>
+                                <input type="text" id="jury_category" class="form-control" value="{{ $jury->category->name }}" readonly>
+                            </div>
+                            @endif
                             <div class="form-group">
                                 <label for="last_name">Фамилия</label>
                                 <input type="text" id="last_name" class="form-control" value="{{ $jury->last_name }}" readonly>

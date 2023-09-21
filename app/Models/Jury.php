@@ -17,4 +17,11 @@ class Jury extends Model
     {
         return url('storage/' . $this->image);
     }
+
+    // Привязка жюри к категории (много жюри к одной категории)
+    public function category()
+    {
+        return $this->belongsTo(JuryCategory::class, 'category_id', 'id');
+    }
+
 }

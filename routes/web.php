@@ -58,6 +58,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::group(['as' => 'admin.'], function() {
         Route::resource('jury', \App\Http\Controllers\Admin\JuryController::class); // CRUD model Jury
+        Route::resource('jury_categories', \App\Http\Controllers\Admin\JuryCategoriesController::class); // CRUD model JuryCategories
         Route::resource('appeals', \App\Http\Controllers\Admin\AppealController::class); // CRUD model Appeal
         Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class); // CRUD model Contact
         Route::resource('partners', \App\Http\Controllers\Admin\PartnerController::class); // CRUD model Partner
