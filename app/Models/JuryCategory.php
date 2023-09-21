@@ -18,4 +18,10 @@ class JuryCategory extends Model
     {
         return $this->HasMany(Jury::class);
     }
+
+    // Привязка категории к обращениям (одна категория к нескольким обращениям)
+    public function appeals()
+    {
+        return $this->HasMany(Appeal::class);
+    }
 }

@@ -27,6 +27,7 @@ class StoreRequest extends FormRequest
             'name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'patronymic' => 'nullable|string|max:255',
+            'category_id' => 'nullable',
             'merits' => 'nullable|string|max:4096',
             'description' => 'nullable|string|max:4096',
             'image' => ['required', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],

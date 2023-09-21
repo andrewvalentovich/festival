@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Appeal\StoreRequest;
 use App\Http\Requests\Admin\Appeal\UpdateRequest;
 use App\Models\Appeal;
+use App\Models\JuryCategory;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +19,8 @@ class AppealController extends Controller
     public function index()
     {
         $appeals = Appeal::orderBy('id', 'desc')->get();
-        return view('admin.appeals.index', compact('appeals'));
+        $categories = JuryCategory::all();
+        return view('admin.appeals.index', compact('appeals', 'categories'));
     }
 
     /**
@@ -27,7 +29,8 @@ class AppealController extends Controller
      */
     public function create()
     {
-        return view('admin.appeals.create');
+        $categories = JuryCategory::all();
+        return view('admin.appeals.create', compact('categories'));
     }
 
     /**
@@ -62,7 +65,8 @@ class AppealController extends Controller
      */
     public function edit(Appeal $appeal)
     {
-        return view('admin.appeals.edit', compact('appeal'));
+        $categories = JuryCategory::all();
+        return view('admin.appeals.edit', compact('appeal', 'categories'));
     }
 
     /**

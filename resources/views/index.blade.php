@@ -10,7 +10,8 @@
     </div>
     <div class="type__about-list">
 
-        @foreach($appeals as $person)
+        @foreach($appeals as $key => $value)
+            @foreach($value as $person)
             <div class="type__about-item border_block">
                 <div class="type__about-item-body block">
                     <div class="type__about-item-pic">
@@ -33,6 +34,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         @endforeach
     </div>
 @endsection

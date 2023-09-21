@@ -27,6 +27,7 @@ class UpdateRequest extends FormRequest
             'name' => 'nullable|string|max:255',
             'last_name' => 'nullable|string|max:255',
             'patronymic' => 'nullable|string|max:255',
+            'category_id' => 'nullable',
             'merits' => 'nullable|string|max:4096',
             'description' => 'nullable|string|max:4096',
             'image' => ['nullable', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],

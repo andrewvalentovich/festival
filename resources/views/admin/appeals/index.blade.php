@@ -33,7 +33,7 @@
                                     <td>Имя</td>
                                     <td>Фамилия</td>
                                     <td>Отчество</td>
-                                    <td>Описание</td>
+                                    <td>Категория</td>
                                     <td>Действие</td>
                                 </tr>
                                 </thead>
@@ -47,7 +47,7 @@
                                         <td>{{ $person->name }}</td>
                                         <td>{{ $person->last_name }}</td>
                                         <td>{{ $person->patronymic }}</td>
-                                        <td>{{ Str::limit($person->description, 30) }}</td>
+                                        <td>{{ isset($person->category) ? $person->category->name : "Не выбрано" }}</td>
                                         <td class="project-actions">
                                             <a class="btn btn-primary btn-sm" href="{{ route('admin.appeals.show', $person->id) }}">
                                                 <i class="fas fa-folder"></i>

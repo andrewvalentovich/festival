@@ -50,6 +50,12 @@
                                 <label for="patronymic">Отчество</label>
                                 <input type="text" id="patronymic" class="form-control" value="{{ $appeal->patronymic }}" readonly>
                             </div>
+                            @if(isset($appeal->category))
+                                <div class="form-group">
+                                    <label for="appeal_category">Категория</label>
+                                    <input type="text" id="appeal_category" class="form-control" value="{{ $appeal->category->name }}" readonly>
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label for="merits">Заслуги/Награды/Достижения</label>
                                 <textarea id="description" class="form-control" rows="8" readonly>{{ $appeal->merits }}</textarea>

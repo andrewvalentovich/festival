@@ -22,7 +22,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $appeals = Appeal::orderBy('id', 'desc')->get();
+//        $appeals = Appeal::orderBy('id', 'desc')->get();
+        $appeals = Appeal::orderBy('last_name', 'asc')
+            ->get()
+            ->groupBy('category_id');
 
         return view('index', compact('appeals'));
     }
@@ -42,6 +45,10 @@ class HomeController extends Controller
     {
         $jury = DB::select('select * from (select * from jury order by last_name desc) a order by category_id desc');
         $categories = JuryCategory::all();
+
+        $jury = Jury::orderBy('last_name', 'asc')
+            ->get()
+            ->groupBy('category_id');
 
         return view('jury', compact('jury', 'categories'));
     }

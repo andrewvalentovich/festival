@@ -59,6 +59,19 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="category_id">Звание (категория)</label>
+                            <select id="category_id" name="category_id">
+                                <option disabled selected>Не выбрано</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                            <label class="text-danger font-weight-normal" for="category_id">{{ $message }}</label>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <textarea
                                 name="merits"
                                 id="admin_appeal_create_merits"

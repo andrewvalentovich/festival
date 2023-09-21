@@ -17,4 +17,10 @@ class Appeal extends Model
     {
         return url('storage/' . $this->image);
     }
+
+    // Привязка обращения к категории (много обращений к одной категории)
+    public function category()
+    {
+        return $this->belongsTo(JuryCategory::class, 'category_id', 'id');
+    }
 }
