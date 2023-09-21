@@ -43,7 +43,7 @@ class HomeController extends Controller
 
     public function jury()
     {
-        $jury = DB::select('select * from (select * from jury order by last_name desc) a order by category_id desc');
+//        $jury = DB::select('select * from (select * from jury order by last_name desc) a order by category_id desc');
         $categories = JuryCategory::all();
 
         $jury = Jury::orderBy('last_name', 'desc')
