@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea name="about_content" class="form-control" placeholder="Контент" cols="30" rows="10">{{ isset($page['about_content']) ? $page['about_content'] : '' }}</textarea>
+                                    <textarea name="about_content" id="content" class="form-control" placeholder="Контент" cols="30" rows="10">{{ isset($page['about_content']) ? $page['about_content'] : '' }}</textarea>
                                     @error('content')
                                         <label class="text-danger font-weight-normal" for="content">{{ $message }}</label>
                                     @enderror

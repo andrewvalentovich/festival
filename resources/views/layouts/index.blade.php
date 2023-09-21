@@ -24,7 +24,19 @@
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/datepicker/css/datepicker.css') }}">
     <!-- Datepicker -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/datepicker/css/datepicker.css') }}">
+    <script src="{{asset('editor/tinymce/js/tinymce/tinymce.min.js')}}" referrerpolicy="origin"></script>
 
+    <script type="text/javascript">
+        tinymce.init({
+            selector: '#content',
+            plugins: 'a_tinymce_plugin',
+            a_plugin_option: true,
+            a_configuration_option: 400,
+            plugins: 'advlist link image lists',
+            plugins: 'code',
+            toolbar: 'a11ycheck|language | undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent|code'
+        });
+    </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

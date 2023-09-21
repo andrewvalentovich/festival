@@ -10,6 +10,6 @@
         @endif
     </div>
     <p class="type__about-item-lead  type__lead">
-        {{ isset($page['about_content']) ? $page['about_content'] : '' }}
+        {!! isset($page['about_content']) ? $page['about_content'] : '' !!}
     </p>
 @endsection

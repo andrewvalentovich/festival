@@ -169,7 +169,7 @@
             </div>
 
             <div class="form-group">
-                <div class="form-main__label" for="docs">Прикрепить текстовый документ (docx, pdf до 10 Мб)</div>
+                <div class="form-main__label" for="docs">Прикрепить текстовый документ (docs, pdf до 10 Мб)</div>
                 <label class="input-file">
                     <span id="docs_text" class="input-file-text form-control" type="text"></span>
                     <input id="docs" type="file" name="docs">

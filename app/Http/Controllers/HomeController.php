@@ -38,7 +38,7 @@ class HomeController extends Controller
 
     public function jury()
     {
-        $jury = Jury::orderBy('id', 'desc')->get();
+        $jury = Jury::orderByRaw("id = 17 DESC")->get();
 
         return view('jury', compact('jury'));
     }
