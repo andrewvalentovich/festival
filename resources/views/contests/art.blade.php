@@ -38,10 +38,17 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="contacts">Телефон, email</label>
-                <input type="text" value="{{ old("contacts") }}" name="contacts" class="form-control">
-                @error('contacts')
-                    <label class="text-danger font-weight-normal" for="contacts">{{ $message }}</label>
+                <label for="phone">Телефон</label>
+                <input type="text" value="{{ old("phone") }}" name="phone" class="form-control">
+                @error('phone')
+                <label class="text-danger font-weight-normal" for="phone">{{ $message }}</label>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта (email)</label>
+                <input type="text" value="{{ old("email") }}" name="email" class="form-control">
+                @error('email')
+                <label class="text-danger font-weight-normal" for="email">{{ $message }}</label>
                 @enderror
             </div>
             <div class="form-group">
@@ -127,7 +134,7 @@
             </style>
 
             <div class="form-group">
-                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб)</div>
+                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб, не больше 10)</div>
                 <label class="input-file">
                     <span id="files_text" class="input-file-text form-control" type="text"></span>
                     <input id="files" type="file" name="files[]" multiple>
@@ -141,7 +148,7 @@
             </div>
 
             <div class="form-group">
-                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб)</div>
+                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб, не больше 10)</div>
                 <label class="input-file">
                     <span id="files_text" class="input-file-text form-control" type="text"></span>
                     <input id="files" type="file" name="files[]" multiple>
@@ -155,7 +162,7 @@
             </div>
 
             <div class="form-group">
-                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб)</div>
+                <div class="form-main__label" for="files">Прикрепить фотографии (до 5 Мб, не больше 10)</div>
                 <label class="input-file">
                     <span id="files_text" class="input-file-text form-control" type="text"></span>
                     <input id="files" type="file" name="files[]" multiple>

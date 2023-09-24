@@ -60,7 +60,8 @@ class IndexController extends Controller
         if (!is_null($data['video_link'])) {
             $mail_body = "ФИО конкурсанта: <b>{$data['initials']}</b>
                 <br/>Место проживания: <b>{$data['address']}</b>
-                <br/>Контакты (телефон, email): <b>{$data['contacts']}</b>
+                <br/>Телефон: <b>{$data['phone']}</b>
+                <br/>Электронная почта: (email): <b>{$data['email']}</b>
                 <br/>Раздел: <b>{$data['section']}</b>
                 <br/>Возрастная категория: <b>{$data['age_category']}</b>
                 <br/>Номинация «{$data['contest_type']}»: <b>{$data['nomination']}</b>
@@ -68,7 +69,8 @@ class IndexController extends Controller
         } else {
             $mail_body = "ФИО конкурсанта: <b>{$data['initials']}</b>
                 <br/>Место проживания: <b>{$data['address']}</b>
-                <br/>Контакты (телефон, email): <b>{$data['contacts']}</b>
+                <br/>Телефон: <b>{$data['phone']}</b>
+                <br/>Электронная почта: (email): <b>{$data['email']}</b>
                 <br/>Раздел: <b>{$data['section']}</b>
                 <br/>Возрастная категория: <b>{$data['age_category']}</b>
                 <br/>Номинация «{$data['contest_type']}»: <b>{$data['nomination']}</b>";
