@@ -122,6 +122,7 @@
                             </div>
                             <span>
                                 Подать заявку
+                                <div style="color: orange;">(до 25.09.2023)</div>
                             </span>
                         </a>
                         <a class="type__action-nav-item" href="{{ route('calendar') }}">

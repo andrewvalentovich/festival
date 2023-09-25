@@ -5,6 +5,9 @@
     <div class="type__about-title type__title">
         Подать заявку на конкурс
     </div>
+    <div class="type__about-title type__title" style="color: red; font-size: 20px;">
+        Окончание приёма заявок до 25.09.2023 23:59
+    </div>
     <div class="type__gallery-list">
         <div style="margin-bottom: 38px;">
             <div class="type__galler">
@@ -43,4 +46,7 @@
             </div>
         </div>
     </div>
+    <p class="type__subtitle" style="color: red; font-size: 15px;">
+        nrfest@yandex.ru
+    </p>
 @endsection
