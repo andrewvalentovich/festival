@@ -40,6 +40,7 @@
                         <source media="(max-width: 1023px)" srcset="{{ asset('dist/img/pic/logo-3.png') }}" />
                         <img src="{{ asset('dist/img/pic/logo-3.png') }}" alt="Президентский фонд культурных инициатив">
                     </picture>
+                    <p style="padding-top: 10px;">Заявка No ПФКИ-23-2-014731</p>
                 </div>
             </div>
             <div class="header__menu ">
