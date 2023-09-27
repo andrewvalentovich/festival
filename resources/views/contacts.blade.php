@@ -44,8 +44,7 @@
         <div class="type__news-item">
             <div class="type__news-item-text">
                 <p class="type__subtitle" style="text-decoration: underline; padding-bottom: 10px;">Адрес</p>
-                <p class="type__lead">Фонд содействия сохранению наследия Сергея Рахманинова «Рахманиновское общество»
-                    115035, г. Москва, ул. Большая Ордынка, д. 6/2, стр. 1.
+                <p class="type__lead">Фонд содействия сохранению наследия Сергея Рахманинова «Рахманиновское общество» 115035, г. Москва, ул. Большая Ордынка, д. 6/2, стр. 1.
                 </p>
             </div>
         </div>
