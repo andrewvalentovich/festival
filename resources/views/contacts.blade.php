@@ -37,8 +37,9 @@
         <div class="type__news-item">
             <div class="type__news-item-text">
                 <p class="type__subtitle" style="text-decoration: underline; padding-bottom: 10px;">Горячая линия</p>
-                <a href="tel:89182017080" class="type__lead">+7 (918) 201-70-80</a>
+                <a target="_blank" href="tel:89182017080" class="type__lead">+7 (918) 201-70-80</a>
                 <p class="type__lead">nrfest@yandex.ru</p>
+                <a target="_blank" href="https://t.me/NR_fest" class="type__lead">Телеграм канал: НАРОДНЫЙ РАХМАНИНОВ</a>
             </div>
         </div>
         <div class="type__news-item">
