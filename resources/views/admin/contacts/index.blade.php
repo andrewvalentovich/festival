@@ -24,7 +24,7 @@
                             <a href="{{ route('admin.contacts.create') }}" class="btn btn-primary">Добавть контакт</a>
                         </div>
                         <!-- /.card-header -->
-                        <p class="card-body table-responsive p-0 m-0">
+                        <div class="card-body table-responsive p-0 m-0">
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                 <tr>

@@ -684,7 +684,7 @@ body {
   font-weight: 400;
   line-height: normal;
   letter-spacing: .24px;
-  white-space: pre-line;
+  /*white-space: pre-line;*/
 }
 
 .type__lead.no-preline {

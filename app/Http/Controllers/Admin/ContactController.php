@@ -39,7 +39,10 @@ class ContactController extends Controller
     {
         $data = $request->validated();
 
-        $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+        if (isset($data['image'])) {
+            $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+        }
+
         Contact::create($data);
 
         return redirect()->route('admin.contacts.index');

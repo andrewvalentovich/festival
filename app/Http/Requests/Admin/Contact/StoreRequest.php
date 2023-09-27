@@ -28,9 +28,9 @@ class StoreRequest extends FormRequest
             'last_name' => 'required|string|max:255',
             'patronymic' => 'nullable|string|max:255',
             'position' => 'required|string|max:255',
-            'phone' => ['required', 'string', 'max:255', 'regex:/^(\+7|8)\d{3}\d{3}\d{2}\d{2}$/'],
-            'email' => 'required|string|max:255',
-            'image' => ['required', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
+            'phone' => ['nullable', 'string', 'max:255', 'regex:/^(\+7|8)\d{3}\d{3}\d{2}\d{2}$/'],
+            'email' => 'nullable|string|max:255',
+            'image' => ['nullable', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
         ];
     }
 
