@@ -24,7 +24,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:60',
+            'title' => 'required|string|max:255',
             'description' => 'nullable|string',
         ];
     }
@@ -37,7 +37,7 @@ class StoreRequest extends FormRequest
         return [
             'title.required' => 'Данное поле является обязательным для заполнения',
             'title.string' => 'Данное поле должно быть строкой',
-            'title.max' => 'Максимальное количество символов для данного поля - 60',
+            'title.max' => 'Максимальное количество символов для данного поля - 255',
             'description.string' => 'Данное поле должно быть строкой',
         ];
     }

@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'nullable|string|max:60',
+            'title' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'created_at' => ['nullable', 'regex:/^(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})$/i'],
         ];
@@ -37,7 +37,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title.string' => 'Данное поле должно быть строкой',
-            'title.max' => 'Максимальное количество символов для данного поля - 60',
+            'title.max' => 'Максимальное количество символов для данного поля - 255',
             'description.string' => 'Данное поле должно быть строкой',
             'created_at.regex' => 'Данное поле должно быть датой',
         ];
