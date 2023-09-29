@@ -12,6 +12,13 @@
                 border: 1px solid;
                 padding: 7px 10px;
                 box-sizing: border-box;
+                color: #f8f8f8;
+                font-family: Inter;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: .24px;
             }
 
             table {
