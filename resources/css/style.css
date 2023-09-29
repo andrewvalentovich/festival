@@ -500,7 +500,8 @@ body {
 }
 
 .type__action-nav-body {
-  padding: 21px 8px
+  padding: 21px 8px;
+    height: auto!important;
 }
 
 .type__action-nav-item {
@@ -968,7 +969,7 @@ body {
   }
 
   .type__action-nav-body {
-      padding: 25px 17px
+      padding: 25px 17px;
   }
 
   .type__news-title {
