@@ -522,6 +522,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 36px;
   width: 36px;
   height: 36px
 }

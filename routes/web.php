@@ -32,6 +32,11 @@ Route::get('/decrees', [App\Http\Controllers\HomeController::class, 'decrees'])-
 Route::get('/documents', [App\Http\Controllers\HomeController::class, 'documents'])->name('documents');
 Route::get('/calendar', [App\Http\Controllers\HomeController::class, 'calendar'])->name('calendar');
 
+Route::get('/master-classes', [App\Http\Controllers\MasterClassesController::class, 'index'])->name('master-classes.index');
+Route::get('/master-classes/participants', [App\Http\Controllers\MasterClassesController::class, 'participants'])->name('master-classes.participants');
+Route::get('/master-classes/schedule', [App\Http\Controllers\MasterClassesController::class, 'schedule'])->name('master-classes.schedule');
+Route::get('/master-classes/booking', [App\Http\Controllers\MasterClassesController::class, 'booking'])->name('master-classes.booking');
+
 Route::get('/contests', [App\Http\Controllers\Contests\IndexController::class, 'index'])->name('contests.index');
 Route::get('/contests/art', [App\Http\Controllers\Contests\IndexController::class, 'art'])->name('contests.art');
 Route::get('/contests/poetry', [App\Http\Controllers\Contests\IndexController::class, 'poetry'])->name('contests.poetry');

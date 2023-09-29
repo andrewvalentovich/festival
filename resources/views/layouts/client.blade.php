@@ -126,6 +126,14 @@
                                 <div style="color: orange;">(до 25.09.2023)</div>
                             </span>
                         </a>
+                        <a class="type__action-nav-item" href="{{ route('master-classes.index') }}">
+                            <div class="pic">
+                                <img src="{{ asset('dist/img/icons/Calendar.svg') }}" alt="Календарный план">
+                            </div>
+                            <span>
+                                Художественные Мастер-классы
+                            </span>
+                        </a>
                         <a class="type__action-nav-item" href="{{ route('calendar') }}">
                             <div class="pic">
                                 <img src="{{ asset('dist/img/icons/Calendar.svg') }}" alt="Календарный план">
