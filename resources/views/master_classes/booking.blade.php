@@ -14,7 +14,7 @@
             <li>
                 <span class="type__subtitle">Лейзгольд Марина</span>
                 <span> - </span>
-                <a target="_blank" style="text-decoration: underline" href="https://docs.google.com/document/d/1iFWeP_rMu3vUhL957vvV6GDprPvpnlzT/edit?usp=sharing&ouid=102042510746563642267&rtpof=true&sd=true">Ссылка на запись</a>
+                <a target="_blank" style="text-decoration: underline" href="https://docs.google.com/document/d/1XdZo2Y6yuHjuiSSHBm3VjrvFwf1GVV5i9P22Eqr4OtE/edit?usp=sharing">Ссылка на запись</a>
             </li>
             <li>
                 <span class="type__subtitle">Жгивалёва Марина</span>
