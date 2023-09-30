@@ -49,4 +49,9 @@
     <p class="type__subtitle" style="color: red; font-size: 15px;">
         nrfest@yandex.ru
     </p>
+    <p class="type__subtitle" style="margin-top: 30px; text-align: center"><strong>Дорогие друзья!</strong></p>
+    <p class="type__subtitle">
+        Благодарим всех, кто откликнулся и принял участие в конкурсе "Народный Рахманинов". В связи с большим количеством заявок, по решению оргкомитета, работа членов жюри продлена по 2 октября включительно.  Результаты конкурса будут объявлены 3 октября и опубликованы на сайте:
+    <a class="type__subtitle" style="text-decoration: underline" href="{{ route('index') }}">www.nrfest.ru</a>
+    </p>
 @endsection
