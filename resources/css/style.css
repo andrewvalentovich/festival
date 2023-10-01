@@ -676,7 +676,6 @@ body {
 .type__subtitle span {
   display: block;
   font-weight: 400;
-  text-transform: lowercase;
 }
 .type__lead {
   color: #f8f8f8;
