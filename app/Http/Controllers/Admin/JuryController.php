@@ -79,6 +79,10 @@ class JuryController extends Controller
     {
         $data = $request->validated();
 
+        if(isset($data['category_id'])) {
+            $data['category_id'] = $data['category_id'] == 0 ? null : $data['category_id'];
+        }
+
         if(isset($data['image'])) {
             $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         }
