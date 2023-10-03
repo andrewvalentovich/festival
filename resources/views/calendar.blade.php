@@ -75,7 +75,6 @@
                 // Создаем переменную, в которой будет храниться ссылка на слушатель события
                 let clickHandler = function(event) {
                 event.preventDefault(); // Предотвращаем стандартное поведение (перезагрузку страницы и переход по ссылке)
-                console.log('test')
                 };
 
                 // Добавляем обработчик клика к элементам с классом "event"
@@ -164,8 +163,6 @@
                 }
                 const currentDate = new Date(); // Текущая дата
                 const sortedEvents = events.filter(event => {
-                    console.log("event.data");
-                    console.log(event.date);
                     const eventDateParts = event.date.split(".");
                     const eventDate = new Date(`${eventDateParts[2]}-${eventDateParts[1]}-${eventDateParts[0]}`);
                     return eventDate >= currentDate;
