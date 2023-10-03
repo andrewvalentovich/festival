@@ -66,6 +66,13 @@
                         </div>
 
                         <div class="form-group">
+                            <input type="text" value="{{ old('link') }}" name="link" class="form-control" placeholder="Ссылка">
+                            @error('link')
+                                <label class="text-danger font-weight-normal" for="link">{{ $message }}</label>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <textarea
                                 name="description"
                                 id="admin_event_create_textarea"

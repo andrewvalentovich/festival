@@ -28,6 +28,7 @@ class UpdateRequest extends FormRequest
             'date' => 'nullable|string',
             'location' => 'nullable|string',
             'description' => 'nullable|string',
+            'link' => 'nullable|string',
             'image' => ['nullable', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
         ];
     }

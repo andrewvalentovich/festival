@@ -36,6 +36,7 @@
                                     <img style="max-width: 100%" src="{{ asset($event->image_url) }}" alt="">
                                 </div>
                             @endif
+
                             <div class="form-group">
                                 <label class="font-weight-normal" for="title">Название</label>
                                 <input type="text" value="{{ $event->title }}" name="title" class="form-control" placeholder="Название" readonly>
@@ -52,6 +53,11 @@
                                 <label class="font-weight-normal" for="location">Место проведения</label>
                                 <input type="text" value="{{ $event->location }}" name="location" class="form-control" placeholder="Место проведения" readonly>
                             </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-normal" for="link">Ссылка</label>
+                                    <input type="text" value="{{ $event->link }}" name="link" class="form-control" placeholder="Ссылка" readonly>
+                                </div>
 
                             <div class="form-group">
                                 <label class="font-weight-normal" for="description">Описание мероприятия</label>

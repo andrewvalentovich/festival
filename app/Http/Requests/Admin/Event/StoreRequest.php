@@ -28,6 +28,7 @@ class StoreRequest extends FormRequest
             'date' => 'required|string',
             'location' => 'required|string',
             'description' => 'required|string',
+            'link' => 'nullable|string',
             'image' => ['nullable', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
         ];
     }
