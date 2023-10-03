@@ -25,6 +25,9 @@
                     <p class="type__lead">
                         {{ $event->description }}
                     </p>
+                    <a class="type__buy-btn type__btn" href="#">
+                        Купить билеты
+                    </a>
                     <a class="type__news-item-more type__link" href="{{ route('events.detail', $event->slug) }}">
                         Далее...
                     </a>
