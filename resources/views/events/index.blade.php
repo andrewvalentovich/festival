@@ -23,7 +23,7 @@
                         </span>
                     </p>
                     <p class="type__lead">
-                        {{ $event->description }}
+                        {!! $event->description !!}
                     </p>
                     <a class="type__buy-btn type__btn" href="#">
                         Купить билеты

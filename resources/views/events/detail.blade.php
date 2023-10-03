@@ -11,7 +11,7 @@
         </div>
     @endif
     <p class="type__about-item-lead type__lead">
-        {{ $event->description }}
+        {!! $event->description !!}
     </p>
     <p class="type__lead type__date">
         {{ $event->date_day_month_year_format }}
