@@ -376,7 +376,7 @@ body {
   border-radius: 16px;
   gap: 7px;
   margin: 0 0 5px auto;
-  display: flex;
+  display: inline-flex;
 }
 
 .type__btn:hover {
