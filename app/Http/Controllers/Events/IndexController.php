@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Events;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use Carbon\Carbon;
 
 class IndexController extends Controller
 {
@@ -14,7 +15,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $events = Event::orderBy('date', 'desc')->paginate(10);
+        $events = Event::where('date', ">", Carbon::today()->format('Y-m-d HH:ii:ss'))->orderBy('date', 'asc')->paginate(10);
 
         return view('events.index', compact( 'events'));
     }
