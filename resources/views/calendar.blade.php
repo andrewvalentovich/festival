@@ -141,7 +141,7 @@
                     listItem.classList.add('type__events-list-item');
 
                     const link = document.createElement('a');
-                    link.href = event.slug;
+                    link.href = 'events/'+event.slug;
                     link.textContent = event.title;
 
                     listItem.appendChild(link);
