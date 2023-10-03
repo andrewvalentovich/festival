@@ -16,4 +16,9 @@
     <p class="type__lead type__date">
         {{ $event->date_day_month_year_format }}
     </p>
+    @if(isset($event->link))
+        <a class="type__buy-btn type__btn" target="_blank" href="{{ $event->link }}">
+            Купить билеты
+        </a>
+    @endif
 @endsection
