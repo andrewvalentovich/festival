@@ -90,27 +90,26 @@
                 //добавляем даты из бд в календарь
                 addEvenetsDataToCalendar(eventsData)
                 function addEvenetsDataToCalendar(data) {
-                const calendar = document.querySelector('#datepicker');
-                const calendarActiveDates = calendar.querySelectorAll('[data-handler="selectDay"]');
+                    const calendar = document.querySelector('#datepicker');
+                    const calendarActiveDates = calendar.querySelectorAll('[data-handler="selectDay"]');
+                    calendarActiveDates.forEach(element => {
+                        let dateElement = '';
+                        const year = element.getAttribute('data-year');
+                        const month = parseInt(element.getAttribute('data-month'), 10) + 1;
+                        const day = element.querySelector('a').innerHTML;
 
-                calendarActiveDates.forEach(element => {
-                    let dateElement = '';
-                    const year = element.getAttribute('data-year');
-                    const month = parseInt(element.getAttribute('data-month'), 10) + 1;
-                    const day = element.querySelector('a').innerHTML;
+                        const formattedMonth = String(month).padStart(2, '0');
+                        const formattedDay = String(day).padStart(2, '0');
 
-                    const formattedMonth = String(month).padStart(2, '0');
-                    const formattedDay = String(day).padStart(2, '0');
+                        dateElement = `${formattedDay}.${formattedMonth}.${year}`;
+                        const eventDataDate = data.map(obj => obj.date);
+                        const isDatePresent = eventDataDate.includes(dateElement);
 
-                    dateElement = `${formattedDay}.${formattedMonth}.${year}`;
-
-                    const eventDataDate = data.map(obj => obj.data);
-                    const isDatePresent = eventDataDate.includes(dateElement);
-                    //если на дату есть меропрятие даем ему класс event
-                    if (isDatePresent) {
-                    element.classList.add('event')
-                    }
-                });
+                        //если на дату есть меропрятие даем ему класс event
+                        if (isDatePresent) {
+                            element.classList.add('event')
+                        }
+                    });
                 }
 
                 //получаем список мероприятий на выбранную дату
@@ -119,8 +118,8 @@
                 const month = (item.getMonth() + 1).toString().padStart(2, '0'); // Добавляем ведущий нуль при необходимости
                 const year = item.getFullYear();
                 const currentDate = `${day}.${month}.${year}`
-                const eventsOnCurrentDate = eventsData.filter((event) => event.data === currentDate);
-                createEventsList(eventsOnCurrentDate)
+                const eventsOnCurrentDate = eventsData.filter((event) => event.date === currentDate);
+                    createEventsList(eventsOnCurrentDate)
                 }
 
                 //функция получает массив событий и отображает их на странице
