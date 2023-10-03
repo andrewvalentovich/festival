@@ -8,9 +8,11 @@
     <div class="type__news-list">
         @foreach($events as $event)
             <div class="type__news-item ">
-                <div class="type__news-item-pic">
-                    <img src="{{ $event->image_url }}" alt="event">
-                </div>
+                @if(isset($event->image))
+                    <div class="type__news-item-pic">
+                        <img src="{{ $event->image_url }}" alt="event">
+                    </div>
+                @endif
                 <div class="type__news-item-text">
                     <p class="type__subtitle">
                         {{ $event->title }}

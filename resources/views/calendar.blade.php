@@ -54,7 +54,7 @@
                 yearSuffix: ''
             };
             $.datepicker.setDefaults($.datepicker.regional['ru']);
-            
+
                 //создаем календарь
                 $("#datepicker").datepicker({
                 dateFormat: "dd.mm.yy", // Устанавливаем формат даты "день.месяц.год"
@@ -69,7 +69,7 @@
                     },0)
                 },
                 });
-                //делаем календарь развернутым сразу 
+                //делаем календарь развернутым сразу
                 $("#datepicker").datepicker("setDate", $('#datepicker_value').val());
 
                 // Создаем переменную, в которой будет храниться ссылка на слушатель события
@@ -92,18 +92,18 @@
                 function addEvenetsDataToCalendar(data) {
                 const calendar = document.querySelector('#datepicker');
                 const calendarActiveDates = calendar.querySelectorAll('[data-handler="selectDay"]');
-                
+
                 calendarActiveDates.forEach(element => {
                     let dateElement = '';
                     const year = element.getAttribute('data-year');
                     const month = parseInt(element.getAttribute('data-month'), 10) + 1;
                     const day = element.querySelector('a').innerHTML;
-                
+
                     const formattedMonth = String(month).padStart(2, '0');
                     const formattedDay = String(day).padStart(2, '0');
-                
+
                     dateElement = `${formattedDay}.${formattedMonth}.${year}`;
-                
+
                     const eventDataDate = data.map(obj => obj.data);
                     const isDatePresent = eventDataDate.includes(dateElement);
                     //если на дату есть меропрятие даем ему класс event
@@ -118,7 +118,7 @@
                 const day = item.getDate().toString().padStart(2, '0'); // Добавляем ведущий нуль при необходимости
                 const month = (item.getMonth() + 1).toString().padStart(2, '0'); // Добавляем ведущий нуль при необходимости
                 const year = item.getFullYear();
-                const currentDate = `${day}.${month}.${year}` 
+                const currentDate = `${day}.${month}.${year}`
                 const eventsOnCurrentDate = eventsData.filter((event) => event.data === currentDate);
                 createEventsList(eventsOnCurrentDate)
                 }
@@ -141,17 +141,17 @@
                 events.forEach((event) => {
                     const listItem = document.createElement('div');
                     listItem.classList.add('type__events-list-item');
-                
+
                     const link = document.createElement('a');
                     link.href = event.slug;
                     link.textContent = event.title;
-                
+
                     listItem.appendChild(link);
-                
+
                     typeEventsList.appendChild(listItem);
                 });
                 }
-                
+
                 //функция для отображения ближайших мероприятий
                 function getClosestEvents(events) {
                 const typeEventsList = document.querySelector('.type__events-list');
@@ -165,29 +165,31 @@
                 }
                 const currentDate = new Date(); // Текущая дата
                 const sortedEvents = events.filter(event => {
-                    const eventDateParts = event.data.split(".");
+                    console.log("event.data");
+                    console.log(event.date);
+                    const eventDateParts = event.date.split(".");
                     const eventDate = new Date(`${eventDateParts[2]}-${eventDateParts[1]}-${eventDateParts[0]}`);
                     return eventDate >= currentDate;
                 }).sort((a, b) => {
-                    const dateA = new Date(a.data.split(".").reverse().join("-"));
-                    const dateB = new Date(b.data.split(".").reverse().join("-"));
+                    const dateA = new Date(a.date.split(".").reverse().join("-"));
+                    const dateB = new Date(b.date.split(".").reverse().join("-"));
                     return dateA - dateB;
                 });
                 sortedEvents.slice(0, 5).forEach((event) => {
                     const listItem = document.createElement('div');
                     listItem.classList.add('type__events-list-item');
-                
+
                     const link = document.createElement('a');
-                    link.href = event.slug;
+                    link.href = "events/"+event.slug;
                     link.textContent = event.title;
 
                     const date = document.createElement('p');
                     date.classList.add('type__date')
-                    date.innerHTML += formatDate(event.data);
+                    date.innerHTML += formatDate(event.date);
 
                     listItem.appendChild(link);
                     listItem.appendChild(date);
-                
+
                     typeEventsList.appendChild(listItem);
                 });
 

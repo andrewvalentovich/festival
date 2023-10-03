@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             @error('image')
-                            <label class="text-danger font-weight-normal" for="image">{{ $message }}</label>
+                                <label class="text-danger font-weight-normal" for="image">{{ $message }}</label>
                             @enderror
                         </div>
 

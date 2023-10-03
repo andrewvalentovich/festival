@@ -43,7 +43,9 @@ class EventController extends Controller
         }
 
         // Кладём картинку в Storage
-        $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+        if(isset($data['image'])) {
+            $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+        }
 
         Event::create($data);
 

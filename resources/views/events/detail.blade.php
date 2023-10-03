@@ -5,10 +5,12 @@
     <div class="type__about-title type__title">
         {{ $event->title }}
     </div>
-    <div class="type__about-video">
-        <img src="{{ $event->image_url }}" alt="event">
-    </div>
-    <p class="type__about-item-lead  type__lead">
+    @if(isset($event->image))
+        <div class="type__about-video">
+            <img src="{{ $event->image_url }}" alt="event">
+        </div>
+    @endif
+    <p class="type__about-item-lead type__lead">
         {{ $event->description }}
     </p>
     <p class="type__lead type__date">

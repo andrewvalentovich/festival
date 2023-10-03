@@ -31,9 +31,11 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-3">
-                            <div class="form-group">
-                                <img style="max-width: 100%" src="{{ asset($event->image_url) }}" alt="">
-                            </div>
+                            @if(isset($event->image))
+                                <div class="form-group">
+                                    <img style="max-width: 100%" src="{{ asset($event->image_url) }}" alt="">
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label class="font-weight-normal" for="title">Название</label>
                                 <input type="text" value="{{ $event->title }}" name="title" class="form-control" placeholder="Название" readonly>
