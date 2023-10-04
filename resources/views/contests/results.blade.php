@@ -7,7 +7,7 @@
     <div class="type__about-title type__title">
         Победители и лауреаты конкурса
         Первый Всероссийский фестиваль «Народный Рахманинов»
-        с&nbsp;15.07&nbsp;-&nbsp;29.09.2023&nbsp;г.
+        &nbsp;15.07&nbsp;-&nbsp;29.09.2023&nbsp;г.
     </div>
     <div class="type__news-list">
         <style>
