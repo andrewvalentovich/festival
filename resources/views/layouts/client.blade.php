@@ -117,6 +117,15 @@
             <div class="type__action">
                 <div class="type__action-nav border_block">
                     <div class="type__action-nav-body block">
+                        <a class="type__action-nav-item" href="{{ route('contests.results') }}">
+                            <div class="pic">
+                                <img src="{{ asset('dist/img/icons/Pencil.svg') }}" alt="Результаты онлайн-конкурса">
+                            </div>
+                            <span>
+                                Результаты онлайн-конкурса
+{{--                                <div style="color: orange;">(до 25.09.2023)</div>--}}
+                            </span>
+                        </a>
                         <a class="type__action-nav-item" href="{{ route('master-classes.index') }}">
                             <div class="pic">
                                 <img src="{{ asset('dist/img/icons/Calendar.svg') }}" alt="Календарный план">
@@ -159,15 +168,6 @@
                             <span>
 									Положения
 								</span>
-                        </a>
-                        <a class="type__action-nav-item" href="{{ route('contests.index') }}">
-                            <div class="pic">
-                                <img src="{{ asset('dist/img/icons/Pencil.svg') }}" alt="Подать заявку">
-                            </div>
-                            <span>
-                                Онлайн-конкурс подать заявку
-                                <div style="color: orange;">(до 25.09.2023)</div>
-                            </span>
                         </a>
                     </div>
                 </div>

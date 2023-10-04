@@ -19,6 +19,36 @@ class IndexController extends Controller
     }
 
     /**
+     * List contests.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function results()
+    {
+        return view('contests.results');
+    }
+
+    /**
+     * List contests.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function listContests()
+    {
+        return view('contests.list');
+    }
+
+    /**
+     * Catalog.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function catalog()
+    {
+        return view('contests.catalog');
+    }
+
+    /**
      * Show detail contest.
      *
      * @return \Illuminate\Contracts\Support\Renderable

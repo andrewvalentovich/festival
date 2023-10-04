@@ -38,6 +38,9 @@ Route::get('/master-classes/schedule', [App\Http\Controllers\MasterClassesContro
 Route::get('/master-classes/booking', [App\Http\Controllers\MasterClassesController::class, 'booking'])->name('master-classes.booking');
 
 Route::get('/contests', [App\Http\Controllers\Contests\IndexController::class, 'index'])->name('contests.index');
+Route::get('/contests/catalog', [App\Http\Controllers\Contests\IndexController::class, 'catalog'])->name('contests.catalog');
+Route::get('/contests/results', [App\Http\Controllers\Contests\IndexController::class, 'results'])->name('contests.results');
+Route::get('/contests/list', [App\Http\Controllers\Contests\IndexController::class, 'listContests'])->name('contests.list');
 Route::get('/contests/art', [App\Http\Controllers\Contests\IndexController::class, 'art'])->name('contests.art');
 Route::get('/contests/poetry', [App\Http\Controllers\Contests\IndexController::class, 'poetry'])->name('contests.poetry');
 Route::get('/contests/music', [App\Http\Controllers\Contests\IndexController::class, 'music'])->name('contests.music');
