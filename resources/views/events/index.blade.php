@@ -27,7 +27,7 @@
                     </p>
                     @if(isset($event->link))
                         <a class="type__buy-btn type__btn" target="_blank" href="{{ $event->link }}">
-                            Купить билеты
+                            Регистрация
                         </a>
                     @endif
                     <a class="type__news-item-more type__link" href="{{ route('events.detail', $event->slug) }}">
