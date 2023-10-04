@@ -117,21 +117,15 @@
             <div class="type__action">
                 <div class="type__action-nav border_block">
                     <div class="type__action-nav-body block">
-                        <a class="type__action-nav-item" href="{{ route('contests.index') }}">
-                            <div class="pic">
-                                <img src="{{ asset('dist/img/icons/Pencil.svg') }}" alt="Подать заявку">
-                            </div>
-                            <span>
-                                Подать заявку
-                                <div style="color: orange;">(до 25.09.2023)</div>
-                            </span>
-                        </a>
                         <a class="type__action-nav-item" href="{{ route('master-classes.index') }}">
                             <div class="pic">
                                 <img src="{{ asset('dist/img/icons/Calendar.svg') }}" alt="Календарный план">
                             </div>
                             <span>
-                                Художественные Мастер-классы
+                                Регистрация&nbsp;на
+                                художественные
+                                мастер&#8209;классы
+                                11&#8209;16.10.2023
                             </span>
                         </a>
                         <a class="type__action-nav-item" href="{{ route('calendar') }}">
@@ -139,7 +133,7 @@
                                 <img src="{{ asset('dist/img/icons/Calendar.svg') }}" alt="Календарный план">
                             </div>
                             <span>
-                                Календарный план
+                                Регистрация на лекции, концерты, творческие встречи
                             </span>
                         </a>
                         <a class="type__action-nav-item" href="{{ route('live') }}">
@@ -165,6 +159,15 @@
                             <span>
 									Положения
 								</span>
+                        </a>
+                        <a class="type__action-nav-item" href="{{ route('contests.index') }}">
+                            <div class="pic">
+                                <img src="{{ asset('dist/img/icons/Pencil.svg') }}" alt="Подать заявку">
+                            </div>
+                            <span>
+                                Онлайн-конкурс подать заявку
+                                <div style="color: orange;">(до 25.09.2023)</div>
+                            </span>
                         </a>
                     </div>
                 </div>
