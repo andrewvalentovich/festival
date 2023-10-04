@@ -49,7 +49,7 @@
                                         <td>
                                             <a target="_blank" href="{{ $partner->link }}">Перейти на сайт</a>
                                         </td>
-                                        <td>{{ Str::limit($partner->description, 30) }}</td>
+                                        <td>{{ isset($partner->description) ? Str::limit($partner->description, 30) : "" }}</td>
                                         <td class="project-actions">
                                             <a class="btn btn-primary btn-sm" href="{{ route('admin.partners.show', $partner->id) }}">
                                                 <i class="fas fa-folder"></i>

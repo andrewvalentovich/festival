@@ -15,9 +15,11 @@
                 <p class="type__subtitle">
                     {{ $partner->title }}
                 </p>
-                <p class="type__lead">
-                    {{ $partner->description }}
-                </p>
+                @if(isset($partner->description))
+                    <p class="type__lead">
+                        {{ $partner->description }}
+                    </p>
+                @endif
                 <a class="type__link" href="{{ $partner->link }}">
                     {{ $partner->link }}
                 </a>
