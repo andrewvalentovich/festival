@@ -20,7 +20,7 @@
                         {{ $partner->description }}
                     </p>
                 @endif
-                <a class="type__link" href="{{ $partner->link }}">
+                <a class="type__link" target="_blank" href="{{ $partner->link }}">
                     {{ $partner->link }}
                 </a>
             </div>
