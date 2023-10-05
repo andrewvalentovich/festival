@@ -194,7 +194,7 @@
                                     </div>
                                     <div class="type__news-item-text">
                                         <p class="type__lead">
-                                            {{ $article->content }}
+                                            {!! $article->content !!}
                                         </p>
                                         <a class="type__news-item-more type__link" href="{{ route('articles.detail', $article->slug) }}">
                                             Далее...
