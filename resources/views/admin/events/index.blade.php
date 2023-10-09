@@ -25,13 +25,11 @@
                         </div>
                         <!-- /.card-header -->
                         <p class="card-body table-responsive p-0 m-0">
-                            <table class="table table-hover text-nowrap">
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <td>ID</td>
-                                        <td>Картинка</td>
                                         <td>Название</td>
-                                        <td>Место проведения</td>
                                         <td>Дата проведения</td>
                                         <td>Действия</td>
                                     </tr>
@@ -40,13 +38,7 @@
                                 @foreach($events as $event)
                                     <tr>
                                         <td>{{ $event->id }}</td>
-                                        <td>
-                                            @if(isset($event->image))
-                                                <img style="max-width: 150px;" src="{{ $event->image_url }}" alt="Картинка события">
-                                            @endif
-                                        </td>
                                         <td>{{ $event->title }}</td>
-                                        <td>{{ $event->location }}</td>
                                         <td>{{ $event->date }}</td>
                                         <td class="project-actions">
                                             <a class="btn btn-primary btn-sm" href="{{ route('admin.events.show', $event->id) }}">
