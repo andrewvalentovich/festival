@@ -29,10 +29,11 @@
                             <a class="type__buy-btn type__btn" target="_blank" href="{{ $event->link }}">
                                 Регистрация
                             </a>
+                        @else
+                            <a class="type__news-item-more type__link" href="{{ route('events.detail', $event->slug) }}">
+                                Далее...
+                            </a>
                         @endif
-                        <a class="type__news-item-more type__link" href="{{ route('events.detail', $event->slug) }}">
-                            Далее...
-                        </a>
                     </div>
                 </div>
             @endforeach
