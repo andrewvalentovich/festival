@@ -6,7 +6,11 @@
         {{ $article->title }}
     </div>
     <div class="type__about-video">
-        <img src="{{ $article->image_url }}" alt="article">
+        @if(isset($article->video))
+            {!! $article->video !!}
+        @else
+            <img src="{{ $article->image_url }}" alt="news">
+        @endif
     </div>
     <p class="type__about-item-lead  type__lead" style="white-space: pre-line;">
         {!! $article->content !!}

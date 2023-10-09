@@ -9,7 +9,7 @@
         @foreach($articles as $article)
             <div class="type__news-item ">
                 <div class="type__news-item-pic">
-                    <img src="{{ $article->image_url }}" alt="article">
+                    <img src="{{ $article->image_url }}" alt="news">
                 </div>
                 <div class="type__news-item-text">
                     <p class="type__subtitle">

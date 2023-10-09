@@ -46,6 +46,11 @@
                                 <label for="content">Контент</label>
                                 <textarea id="content" class="form-control" rows="8" readonly>{{ $article->content }}</textarea>
                             </div>
+                            @if(isset($article->video))
+                                <div class="form-group">
+                                    {!! $article->video !!}
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label for="created_at">Дата создания</label>
                                 <input type="text" id="created_at" class="form-control" value="{{ date('d-m-Y H:i:s', strtotime($article->created_at)) }}" readonly>

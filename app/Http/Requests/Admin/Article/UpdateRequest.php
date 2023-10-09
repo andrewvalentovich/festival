@@ -26,6 +26,7 @@ class UpdateRequest extends FormRequest
         return [
             'title' => 'nullable|string',
             'content' => 'nullable|string',
+            'video' => 'nullable|string',
             'image' => ['nullable', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
             'created_at' => ['nullable', 'regex:/^(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})$/i'],
         ];
