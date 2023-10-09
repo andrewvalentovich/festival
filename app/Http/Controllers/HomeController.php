@@ -11,6 +11,7 @@ use App\Models\Jury;
 use App\Models\JuryCategory;
 use App\Models\Option;
 use App\Models\Partner;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -79,7 +80,9 @@ class HomeController extends Controller
 
     public function calendar()
     {
-        return view('calendar');
+        $events = Event::where('date', ">", Carbon::today()->format('Y-m-d HH:ii:ss'))->orderBy('date', 'asc')->paginate(10);
+
+        return view('calendar', compact('events'));
     }
 
     public function partners()

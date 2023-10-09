@@ -15,7 +15,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $events = Event::where('date', ">", Carbon::today()->format('Y-m-d HH:ii:ss'))->orderBy('date', 'asc')->paginate(10);
+        $events = Event::orderBy('created_at', 'desc')->paginate(10);
 
         return view('events.index', compact( 'events'));
     }
