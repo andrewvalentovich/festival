@@ -79,7 +79,11 @@ class AppealController extends Controller
     {
         $data = $request->validated();
 
-        if(isset($data['image'])) {
+        if (isset($data['category_id']) && $data['category_id'] == 0) {
+            $data['category_id'] = null;
+        }
+
+        if (isset($data['image'])) {
             $data['image'] = Storage::disk('public')->put('/images', $data['image']);
         }
         $appeal->update($data);
