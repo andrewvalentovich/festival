@@ -48,6 +48,17 @@
                                 <div class="form-group">
                                     <label class="font-weight-normal" for="title">Название</label>
                                     <input type="text" value="{{ $event->title }}" name="title" class="form-control" placeholder="Название">
+                                    @error('title')
+                                    <label class="text-danger font-weight-normal" for="title">{{ $message }}</label>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-normal" for="slug">Slug</label>
+                                    <input type="text" value="{{ $event->slug }}" name="slug" class="form-control" placeholder="Slug">
+                                    @error('slug')
+                                    <label class="text-danger font-weight-normal" for="slug">{{ $message }}</label>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
@@ -55,11 +66,17 @@
                                     <div class="input-group date" id="event_edit_date">
                                         <input type="text" name="date" value="{{ date('d-m-Y H:i:s', strtotime($event->date)) }}" class="form-control"/>
                                     </div>
+                                    @error('date')
+                                    <label class="text-danger font-weight-normal" for="date">{{ $message }}</label>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label class="font-weight-normal" for="location">Место проведения</label>
                                     <input type="text" value="{{ $event->location }}" name="location" class="form-control" placeholder="Место проведения">
+                                    @error('location')
+                                    <label class="text-danger font-weight-normal" for="location">{{ $message }}</label>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">
@@ -78,6 +95,9 @@
                                         placeholder="Описание мероприятия"
                                         cols="30" rows="10"
                                     >{{ $event->description }}</textarea>
+                                    @error('description')
+                                    <label class="text-danger font-weight-normal" for="description">{{ $message }}</label>
+                                    @enderror
                                 </div>
 
                                 <div class="form-group">

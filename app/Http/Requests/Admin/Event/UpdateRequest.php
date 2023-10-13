@@ -25,6 +25,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title' => 'nullable|string',
+            'slug' => 'nullable|string',
             'date' => 'nullable|string',
             'location' => 'nullable|string',
             'description' => 'nullable|string',
