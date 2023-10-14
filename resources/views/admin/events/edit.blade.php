@@ -54,7 +54,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="font-weight-normal" for="slug">Slug</label>
+                                    <label class="font-weight-normal" for="slugф">Slug</label>
                                     <input type="text" value="{{ $event->slug }}" name="slug" class="form-control" placeholder="Slug">
                                     @error('slug')
                                     <label class="text-danger font-weight-normal" for="slug">{{ $message }}</label>
