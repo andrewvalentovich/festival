@@ -19,7 +19,7 @@
                     {{ !is_null($contact->patronymic) ? $contact->patronymic : '' }}
                 </p>
                 <p class="type__lead">
-                    {{ $contact->position }}
+                    {!! $contact->position !!}
                 </p>
                 <p class="type__lead">
                     <a href="mailto:{{ $contact->email }}">
