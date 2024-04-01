@@ -25,8 +25,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'content' => 'required|string',
-            'video' => 'nullable|string',
+            'content' => 'required|string|max:16777215',
+            'video' => 'nullable|string|max:65535',
             'image' => ['required', 'file', 'mimes:jpeg,jpg,bmp,webp,png'],
         ];
     }
@@ -41,6 +41,8 @@ class StoreRequest extends FormRequest
             'title.string' => 'Данное поле должно быть строкой',
             'content.required' => 'Данное поле является обязательным для заполнения',
             'content.string' => 'Данное поле должно быть строкой',
+            'content.max' => 'Данное поле не должно превышать :max символов',
+            'video.max' => 'Данное поле не должно превышать :max символов',
             'image.required' => 'Данное поле является обязательным для заполнения',
             'image.mimes' => 'Прикреплённый файл должен быть: jpeg,jpg,bmp или png',
         ];
