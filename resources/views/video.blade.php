@@ -97,9 +97,9 @@
                 <p class="type__subtitle" style="margin-bottom: 16px;">
                     Первого Всероссийского фестиваля «Народный Рахманинов»
                 </p>
-                <a target="_blank" href="https://cloud.mail.ru/public/QpeC/ZfBCJemnn" class="type__lead">
-                    https://cloud.mail.ru/public/QpeC/ZfBCJemnn
-                </a>
+                <div class="type__about-video">
+                    <video style="width:100%; height:auto" controls loop src="storage/video/РАХМАНИНОВ сюжет1.mp4"></video>
+                </div>
             </div>
         </div>
         <div class="type__news-item ">
@@ -112,9 +112,9 @@
                 <p class="type__subtitle" style="margin-bottom: 16px;">
                     Первого Всероссийского фестиваля «Народный Рахманинов»
                 </p>
-                <a target="_blank" href="https://cloud.mail.ru/public/kRhE/L4qv7CvWR" class="type__lead">
-                    https://cloud.mail.ru/public/kRhE/L4qv7CvWR
-                </a>
+                <div class="type__about-video">
+                    <video style="width:100%; height:auto" controls loop src="storage/video/РАХМАНИНОВ сюжет2.mp4"></video>
+                </div>
             </div>
         </div>
         <div class="type__news-item ">
@@ -127,9 +127,9 @@
                 <p class="type__subtitle" style="margin-bottom: 16px;">
                     Первого Всероссийского фестиваля «Народный Рахманинов»
                 </p>
-                <a target="_blank" href="https://cloud.mail.ru/public/VseL/tz6SijHgm" class="type__lead">
-                    https://cloud.mail.ru/public/VseL/tz6SijHgm
-                </a>
+                <div class="type__about-video">
+                    <video style="width:100%; height:auto" controls loop src="storage/video/РАХМАНИНОВ сюжет3.mp4"></video>
+                </div>
             </div>
         </div>
         <div class="type__news-item ">
@@ -142,9 +142,9 @@
                 <p class="type__subtitle" style="margin-bottom: 16px;">
                     Первого Всероссийского фестиваля «Народный Рахманинов»
                 </p>
-                <a target="_blank" href="https://cloud.mail.ru/public/N5hF/DC3his8RH" class="type__lead">
-                    https://cloud.mail.ru/public/N5hF/DC3his8RH
-                </a>
+                <div class="type__about-video">
+                    <video style="width:100%; height:auto" controls loop src="storage/video/РАХМАНИНОВ сюжет4.mp4"></video>
+                </div>
             </div>
         </div>
         <div class="type__news-item ">
@@ -157,9 +157,9 @@
                 <p class="type__subtitle" style="margin-bottom: 16px;">
                     Первого Всероссийского фестиваля «Народный Рахманинов»
                 </p>
-                <a target="_blank" href="https://cloud.mail.ru/public/8HYc/uZD8D8azh" class="type__lead">
-                    https://cloud.mail.ru/public/8HYc/uZD8D8azh
-                </a>
+                <div class="type__about-video">
+                    <video style="width:100%; height:auto" controls loop src="storage/video/РАХМАНИНОВ сюжет5.mp4"></video>
+                </div>
             </div>
         </div>
         <div class="type__news-item ">
@@ -172,9 +172,9 @@
                 <p class="type__subtitle" style="margin-bottom: 16px;">
                     Первого Всероссийского фестиваля «Народный Рахманинов»
                 </p>
-                <a target="_blank" href="https://cloud.mail.ru/public/6ci5/8xh94vFCy" class="type__lead">
-                    https://cloud.mail.ru/public/6ci5/8xh94vFCy
-                </a>
+                <div class="type__about-video">
+                    <video style="width:100%; height:auto" controls loop src="storage/video/РАХМАНИНОВ сюжет6.mp4"></video>
+                </div>
             </div>
         </div>
         <div class="type__news-item ">
@@ -187,9 +187,9 @@
                 <p class="type__subtitle" style="margin-bottom: 16px;">
                     Первого Всероссийского фестиваля «Народный Рахманинов»
                 </p>
-                <a target="_blank" href="https://cloud.mail.ru/public/qc74/Ha1VcwvQ4" class="type__lead">
-                    https://cloud.mail.ru/public/qc74/Ha1VcwvQ4
-                </a>
+                <div class="type__about-video">
+                    <video style="width:100%; height:auto" controls loop src="storage/video/РАХМАНИНОВ сюжет7.mp4"></video>
+                </div>
             </div>
         </div>
 
